@@ -1,322 +1,107 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  /* Header */
-  .main-header {
-    background: #333;
-    padding: 1rem 2rem;
-  }
-  
-/* Sticky Navigation */
-.main-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: black;
-  box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.1);
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main-nav .logo img {
-  width: 10rem;
-  height: auto;
+body {
+  background-color: #242065;
+  font-family: "Source Sans Pro";
+  color: #6fb3ce;
 }
 
-.main-nav nav ul {
-  display: flex;
-  list-style: none;
+h1 {
+  text-align: center;
+  font-size: 40px;
 }
 
-.main-nav nav ul li {
-  margin-left: 2rem;
+/* Timeline Title Styling */
+.timeline-title h2 {
+  text-align: center;        /* Center the text horizontally */
+  font-size: 60px;           /* Increase the font size */
+  font-weight: 600;          /* Make the font weight bold */
+  color: #16475a;            /* Use a text color that matches the theme */
+  margin-top: 50px;          /* Add some space above the title */
+  margin-bottom: 30px;       /* Add some space below the title */
 }
 
-.main-nav nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  transition: color 0.3s ease;
+.timeline {
+  padding: 50px 0;
 }
 
-.main-nav nav ul li a:hover {
-  color: grey;
+.timeline li {
+  position: relative;
+  list-style-type: none;
+  width: 6px;
+  background-color: #2c395e;
+  margin: 0 auto;
+  padding-top: 50px;
 }
 
-.contact-btn {
-  border: 2px solid white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
-
-.contact-btn:hover {
-  background-color: white;
-  color: black;
-}
-
-/* Hamburger Menu (Default Hidden) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  z-index: 1001; /* Ensure it stays above other elements */
-}
-
-.hamburger span {
-  background-color: white;
-  height: 3px;
+.timeline li::after {
+  background: #2c395e;
+  content: '';
   width: 25px;
-  margin: 5px 0;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.timeline li .event {
+  position: relative;
+  width: 400px;
+  padding: 15px;
   border-radius: 5px;
-  transition: all 0.3s ease;
+  bottom: 0;
+  background: #c3e3f7;   /* text box BG-Color*/ 
 }
 
-
-
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+.timeline li:nth-child(odd) .event {
+  left: 45px;
 }
 
-.hamburger.active span:nth-child(2) {
-  opacity: 0; /* Hide middle line */
+.timeline li:nth-child(even) .event {
+  left: -445px;
 }
 
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+time {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.hamburger span {
-  background-color: white;
-  height: 3px;
-  width: 25px;
-  margin: 5px 0;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+.timeline li .event {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 
-.nav-links-mobile {
-  display: none; /* Hide by default */
+.timeline li:nth-child(odd) .event {
+  transform: translate3d(200px, 0, 0);
 }
 
-.nav-links-mobile li a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
+.timeline li:nth-child(even) .event {
+  transform: translate3d(-200px, 0, 0);
 }
 
-/* When Active (Expanded) */
-.nav-links-mobile.active {
-  display: none; 
+.timeline li.show .event {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
 }
 
-.nav-links-mobile li a:hover {
-  color: grey;
+@media screen and (max-width: 900px) {
+  .timeline li .event {
+    width: 250px;
+  }
+  .timeline li:nth-child(even) .event {
+    left: -289px;
+    /*250+45-6*/
+  }
 }
-  
-  /* Hero */
-  .hero {
-    background: #d9d9d9;
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: 600;
-  }
-  
-  /* Timeline */
-  .timeline {
-    padding: 3rem 1rem;
-    background: #fff;
-  }
-  
-  .timeline h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .timeline-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .timeline-container .year {
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
-  
-  .timeline-container .events {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .timeline-container .events li {
-    padding: 0.5rem 0;
-  }
-  
-  .timeline-container .current {
-    margin-top: 2rem;
-    font-size: 1.2rem;
-    color: #007BFF;
-  }
-  
-  /* Missions */
-  .missions {
-    background: #f9f9f9;
-    padding: 3rem 1rem;
-  }
-  
-  .missions h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .missions-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-  }
-  
-  .mission-card {
-    background: #fff;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-  }
-  
-  .image-placeholder {
-    background: #ddd;
-    height: 150px;
-    margin-bottom: 1rem;
-  }
-  
-  /* Footer */
-  .footer {
-    background: #333;
-    color: #fff;
-    padding: 2rem;
-  }
-  
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  
-  .footer-logo img {
-    width: 80px;
-  }
-  
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-links ul li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .footer-links ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .footer-social img {
-    width: 30px;
-    margin-right: 0.5rem;
-  }
-
-  /* Responsive Adjustments */
-  @media (max-width: 768px) {
-    .social-wrapper {
-      position: absolute;
-      top: 50%;
-      right: 2rem;
-      transform: translateY(600%);
-      display: flex;
-      flex-direction: row; /* Horizontal layout */
-      align-items: center;
-      max-width: 100%; /* Ensure full width */
-      padding-left: 3rem;
-    }
-  
-    .divider {
-      width: 250px; /* Horizontal divider */
-      height: 2px; /* Divider height */
-      background-color: #333; /* Darker color for the divider */
-      margin: 1rem 1rem; /* Spacing on both sides */
-    }
-  
-    .social-icons {
-      display: flex;
-      flex-direction: row; /* Keep icons in a row */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Align icons vertically */
-    }
-
-    .hero-content {
-      text-align: center;
-      padding:0;
-      margin: 0;
-      justify-content: center;
-      max-width: 100%;
-      margin-bottom: 5rem;
-    }
-
-    .hamburger {
-      display: flex; /* Display hamburger on smaller screens */
-    }
-    
-    .main-nav nav ul {
-      display: none;
-    }
-
-    .nav-links {
-      display: none; /* Hide desktop menu */
-    }
-
-    /* Mobile Navigation Menu (Default Hidden) */
-    .nav-links-mobile {
-      position: absolute;
-      top: 70px;
-      right: 0;
-      width: 100%;
-      background-color: black;
-      padding: 2rem;
-      list-style: none;
-      flex-direction: column;
-      text-align: center;
-      gap: 1rem;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-      display: none; /* Hide by default */
-      transition: all 0.3s ease; /* Smooth expand and collapse */
-      
-    }
-
-    /* When Active (Expanded) */
-    .nav-links-mobile.active {
-      display: flex; 
-    }
-
-  }
-  
