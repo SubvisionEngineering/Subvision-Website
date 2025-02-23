@@ -18,7 +18,7 @@
     padding: 1rem 2rem;
   }
   
-  /* Sticky Navigation */
+/* Sticky Navigation */
 .main-nav {
   position: sticky;
   top: 0;
@@ -244,5 +244,79 @@
   .footer-social img {
     width: 30px;
     margin-right: 0.5rem;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .social-wrapper {
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      transform: translateY(600%);
+      display: flex;
+      flex-direction: row; /* Horizontal layout */
+      align-items: center;
+      max-width: 100%; /* Ensure full width */
+      padding-left: 3rem;
+    }
+  
+    .divider {
+      width: 250px; /* Horizontal divider */
+      height: 2px; /* Divider height */
+      background-color: #333; /* Darker color for the divider */
+      margin: 1rem 1rem; /* Spacing on both sides */
+    }
+  
+    .social-icons {
+      display: flex;
+      flex-direction: row; /* Keep icons in a row */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Align icons vertically */
+    }
+
+    .hero-content {
+      text-align: center;
+      padding:0;
+      margin: 0;
+      justify-content: center;
+      max-width: 100%;
+      margin-bottom: 5rem;
+    }
+
+    .hamburger {
+      display: flex; /* Display hamburger on smaller screens */
+    }
+    
+    .main-nav nav ul {
+      display: none;
+    }
+
+    .nav-links {
+      display: none; /* Hide desktop menu */
+    }
+
+    /* Mobile Navigation Menu (Default Hidden) */
+    .nav-links-mobile {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      background-color: black;
+      padding: 2rem;
+      list-style: none;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      display: none; /* Hide by default */
+      transition: all 0.3s ease; /* Smooth expand and collapse */
+      
+    }
+
+    /* When Active (Expanded) */
+    .nav-links-mobile.active {
+      display: flex; 
+    }
+
   }
   
