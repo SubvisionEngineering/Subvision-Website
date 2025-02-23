@@ -3,13 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Mission</title>
+  <title>Contact Us</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="our_Mission.css">
+  
+  <!-- Bootstrap CSS -->
+  
+
+  <!-- Link to External JavaScript File -->
+  <script src="scripts.js" defer></script>
+  <script src="timeline.js" defer></script>
 </head>
 <body>
-
-  <!-- Sticky Navigation -->
+ <!-- Sticky Navigation -->
 <header class="main-nav">
   <div class="logo">
     <img src="SVG/logo.svg" alt="Subvision Logo">
@@ -39,84 +46,100 @@
   <li><a href="#contact" class="contact-btn">Contact Us</a></li>
 </ul>
 
-<!-- Hero Section -->
-<section class="hero">
-  <h1>Our Mission</h1>
-</section>
+<!-- Mobile Navigation -->
+<ul class="nav-links-mobile">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About Us</a></li>
+  <li><a href="#team">Our Team</a></li>
+  <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+</ul>
 
-<!-- Timeline Section -->
-<section class="timeline" id="timeline">
-  <h2>Timeline</h2>
-  <div class="timeline-container">
-    <div class="year">2023</div>
-    <ul class="events">
-      <li>
-        <span>May</span> Club Starts
-      </li>
-      <li>
-        <span>Dec</span> 1st ROV Completed
-      </li>
-    </ul>
-    <div class="year">2024</div>
-    <ul class="events">
-      <li>
-        <span>May</span> Chang ECO-OP
-      </li>
-      <li>
-        <span>June</span> MateROV Worlds
-      </li>
-    </ul>
-    <div class="current">
-      <span>Now</span> <strong>ZIMA</strong>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="social-wrapper">
+      <div class="divider"></div>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><img src="img/Facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/subvision.robotics" target="_blank" aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
+        <a href="#" aria-label="LinkedIn"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
+      </div>
+      <div class="divider"></div>
     </div>
-  </div>
-</section>
 
-<!-- Missions Section -->
-<section class="missions" id="missions">
-  <h2>Missions</h2>
-  <div class="missions-grid">
-    <div class="mission-card">
-      <div class="image-placeholder"></div>
-      <p>Simple explanation about Mission 1.</p>
+    <div class="hero-content">
+      <h1>Our Mission</h1>
+      <p>Reach out to us via email or leave a message. We’d love to hear from you!</p>
+      <a href="#contact-form" class="contact-us-btn">Contact Us</a>
     </div>
-    <div class="mission-card">
-      <div class="image-placeholder"></div>
-      <p>Simple explanation about Mission 2.</p>
-    </div>
-    <div class="mission-card">
-      <div class="image-placeholder"></div>
-      <p>Simple explanation about Mission 3.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="SVG/logo.svg" alt="Subvision Footer Logo">
-      <p>Location: 8888 University Dr W, Burnaby, BC V5A 1S6</p>
-      <p>Email: subvisionengineering@gmail.com</p>
-    </div>
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#team">Our Team</a></li>
+  <!-- Timeline Section (Updated) -->
+   <section class="timeline">
+  <section class="timeline-title">
+    <h2>Timeline</h2>
+  </section>
+
+  <section class="ag-timeline-block">
+    <div>
+      <ul class="timeline">
+        <li>
+          <div class="event">
+            <time>2023</time>
+            <p>May: Club Starts</p>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <time>2023</time>
+            <p>Dec: 1st Rov Completed</p>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <time>2024</time>
+            <p>May: Chang ECO-OP</p>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <time>2024</time>
+            <p>June: MateRov Worlds</p>
+          </div>
+        </li>
+        <li>
+          <div class="event">
+            <time>2025</time>
+            <p>Now: ZIMA</p>
+          </div>
+        </li>
       </ul>
     </div>
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <a href="#" aria-label="Facebook"><img src="img/Facebook.png" alt="Facebook"></a>
-      <a href="https://www.instagram.com/subvision.robotics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
-      <a href="#" aria-label="LinkedIn"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
-    </div>
-  </div>
-</footer>
+  </section>
+</section>
 
-<script src="script.js"></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="SVG/logo.svg" alt="Subvision Footer Logo">
+        <p>Location: 8888 University Dr W, Burnaby, BC V5A 1S6</p>
+        <p>Email: subvisionengineering@gmail.com</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#" aria-label="Facebook"><img src="img/Facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/subvision.robotics" target="_blank" aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
+        <a href="#" aria-label="LinkedIn"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
