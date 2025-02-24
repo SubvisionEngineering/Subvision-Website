@@ -1,4 +1,63 @@
 
+/* Industry Issues Styling */
+.industry-issues{
+  padding: 3rem 8rem;
+  background-color: #f5f5f5;
+  display: grid;
+  gap: 4rem;
+  column-gap: 8rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.industry-issues-header{
+  text-align: center;
+  font-weight: 600;
+  color: #16475a;
+  background-color: #f5f5f5;
+}
+.industry-issues-header h2{
+  font-size: 60px;
+  font-weight: 600;
+  padding-top: 50px;
+}
+
+.img-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.industry-issues-container1 img{
+  width: 100%;
+  height: auto;
+}
+
+.industry-issues-container2 img{
+  width: 100%;
+  height: auto;
+}
+
+
+.industry-issues h2{
+  text-align: center;        /* Center the text horizontally */
+  font-size: 60px;           /* Increase the font size */
+  font-weight: 600;          /* Make the font weight bold */
+  color: #16475a;    
+}
+
+.industry-issues h3{
+  margin-top: 1rem;
+  color: #16475a;
+  z-index: 1;
+}
+
+.industry-issues p{
+  color: #16475a;
+}
+
+
 
 /* Timeline Title Styling */
 .timeline-title h2 {
@@ -106,6 +165,83 @@ time {
      distribution of space.
   */
   justify-content: center;
+
+.zima{
+  padding: 3rem 8rem;
+  background-color: #f5f5f5;
+}
+
+.zima-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.zima h2{
+  font-size: 60px;
+  font-weight: 600;
+  color: #16475a;
+  text-align: center;
+}
+
+.zima h3, .zima p{
+  color: #16475a;
+}
+
+.zima-img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zima-img img{
+  max-width: 100%;
+  height: auto;
+  margin-top: 3rem;
+}
+
+
+.zima-container{
+  display: grid;
+  gap: 4rem;
+  column-gap: 8rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1200px){
+  .industry-issues{
+    padding: 3rem 6rem;
+    background-color: #f5f5f5;
+    display: grid;
+    gap: 4rem;
+    column-gap: 6rem;
+    grid-template-columns: 1fr;
+  }
+  .zima{
+    padding: 3rem 6rem;
+  }
+
+  .zima-container{
+    display: grid;
+    gap: 4rem;
+    column-gap: 6rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px){
+  .industry-issues-header{
+    padding: 0rem 2rem;
+  }
+  .industry-issues{
+    padding: 3rem 2rem;
+  }
+
+  .zima{
+    padding: 3rem 2rem;
+  }
+}
+
   
   /* 
      'align-items: stretch;' makes all cards the same height 
