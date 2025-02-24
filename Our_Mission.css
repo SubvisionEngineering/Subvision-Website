@@ -1,4 +1,64 @@
 
+/* Industry Issues Styling */
+.industry-issues{
+  padding: 3rem 11rem;
+  background-color: #f5f5f5;
+  display: grid;
+  gap: 4rem;
+  column-gap: 11rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.industry-issues-header{
+  text-align: center;
+  font-weight: 600;
+  color: #16475a;
+  background-color: #f5f5f5;
+}
+.industry-issues-header h2{
+  font-size: 60px;
+  font-weight: 600;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.img-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.industry-issues-container1 img{
+  width: 100%;
+  height: auto;
+}
+
+.industry-issues-container2 img{
+  width: 100%;
+  height: auto;
+}
+
+
+.industry-issues h2{
+  text-align: center;        /* Center the text horizontally */
+  font-size: 60px;           /* Increase the font size */
+  font-weight: 600;          /* Make the font weight bold */
+  color: #16475a;    
+}
+
+.industry-issues h3{
+  margin-top: 1rem;
+  color: #16475a;
+  z-index: 1;
+}
+
+.industry-issues p{
+  color: #16475a;
+}
+
+
 
 /* Timeline Title Styling */
 .timeline-title h2 {
