@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
+  <title>Our Mission</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="our_Mission.css">
@@ -12,8 +14,11 @@
   <!-- Link to External JavaScript File -->
   <script src="scripts.js" defer></script>
   <script src="timeline.js" defer></script>
+
 </head>
+
 <body>
+
  <!-- Sticky Navigation -->
 <header class="main-nav">
   <div class="logo">
@@ -23,7 +28,8 @@
     <!-- Desktop Navigation -->
     <ul class="nav-links">
       <li><a href="#home">Home</a></li>
-      <li><a href="Our_Mission.html">About Us</a></li>
+      <li><a href="Our_Mission.html">Our Mission</a></li>
+      <li><a href="#team">Contributors</a></li>
       <li><a href="#team">Our Team</a></li>
       <li><a href="index.html" class="contact-btn">Contact Us</a></li>
     </ul>
@@ -142,6 +148,99 @@
   </section>
 </section>
 
+
+<!-- Container to center the card or add spacing around it -->
+<section class="ui-card-container">
+  <!-- Card 1: INNOVATE -->
+  <div class="ui-card">
+    <!-- Corners -->
+    <div class="corner corner-top-left"></div>
+    <div class="corner corner-top-right"></div>
+    <div class="corner corner-bottom-left"></div>
+    <div class="corner corner-bottom-right"></div>
+
+    <!-- Heading & Subheading -->
+    <h1 class="card-header">INNOVATE</h1>
+    <h2 class="card-subheading">Cleaner Hulls, Greener World</h2>
+
+    <!-- Collapsible Body Text -->
+    <div class="card-body-wrapper">
+      <p class="card-body">
+        <strong>Mission Statement:</strong> 
+        We pioneer autonomous robotics to transform marine maintenance into a sustainable, efficient, and eco-friendly process.
+      </p>
+      <p class="card-body">
+        <strong>Description:</strong> 
+        By preventing biofouling at its source, Subvision Robotics boosts vessel performance, reduces fuel consumption, and protects marine ecosystems.
+      </p>
+    </div>
+
+    <!-- Downward Arrow -->
+    <div class="arrow-button">
+      <button class="toggle-btn" aria-label="Toggle dropdown">
+        <span class="arrow-icon">&#x25BC;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 2: EFFICIENCY REIMAGINED -->
+  <div class="ui-card">
+    <div class="corner corner-top-left"></div>
+    <div class="corner corner-top-right"></div>
+    <div class="corner corner-bottom-left"></div>
+    <div class="corner corner-bottom-right"></div>
+
+    <h1 class="card-header">EFFICIENCY REIMAGINED</h1>
+    <h2 class="card-subheading">Optimized Performance, Minimal Impact</h2>
+
+    <div class="card-body-wrapper">
+      <p class="card-body">
+        <strong>Mission Statement:</strong> 
+        At Subvision Robotics, we revolutionize marine maintenance with autonomous, eco-friendly solutions. 
+        Our robotics prevent biofouling at its source—boosting vessel efficiency, slashing fuel consumption, 
+        and safeguarding marine ecosystems.
+      </p>
+      <p class="card-body">
+        <strong>Description:</strong> 
+        Harnessing breakthrough engineering and sustainable design, we transform ship upkeep into a seamless, 
+        cost-effective process that not only powers performance but also nurtures a cleaner, greener world.
+      </p>
+    </div>
+
+    <div class="arrow-button">
+      <button class="toggle-btn" aria-label="Toggle dropdown">
+        <span class="arrow-icon">&#x25BC;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Card 3: SUSTAINABLE TRANSFORMATION -->
+  <div class="ui-card">
+    <div class="corner corner-top-left"></div>
+    <div class="corner corner-top-right"></div>
+    <div class="corner corner-bottom-left"></div>
+    <div class="corner corner-bottom-right"></div>
+
+    <h1 class="card-header">SUSTAINABLE TRANSFORMATION</h1>
+    <h2 class="card-subheading">Pioneering the Future of Ship Maintenance</h2>
+
+    <div class="card-body-wrapper">
+      <p class="card-body">
+        <strong>Mission Statement:</strong> 
+        By merging cutting-edge engineering with eco-friendly design, we’re leading a shift toward cleaner hulls, 
+        healthier oceans, and a greener world—one innovation at a time.
+      </p>
+      <p class="card-body">
+        <strong>Description:</strong> 
+        Our commitment to sustainable transformation drives us to develop innovative solutions that not only enhance 
+        operational efficiency but also protect our marine environment for future generations.
+      </p>
+    </div>
+
+    <div class="arrow-button">
+      <button class="toggle-btn" aria-label="Toggle dropdown">
+        <span class="arrow-icon">&#x25BC;</span>
+      </button>
 <section class="zima">
   <h2>Project ZIMA</h2>
   <div class="zima-container">
@@ -154,6 +253,19 @@
     </div>
   </div>
 </section>
+
+
+<!-- Minimal JavaScript to toggle expanded state -->
+<script>
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Find the .card-body-wrapper within the same card
+      const cardBodyWrapper = button.closest('.ui-card').querySelector('.card-body-wrapper');
+      cardBodyWrapper.classList.toggle('expanded');
+    });
+  });
+</script>
 
   <!-- Footer -->
   <footer class="footer">
