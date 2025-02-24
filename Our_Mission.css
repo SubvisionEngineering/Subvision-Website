@@ -1,0 +1,432 @@
+
+/* Industry Issues Styling */
+.industry-issues{
+  padding: 3rem 8rem;
+  background-color: #f5f5f5;
+  display: grid;
+  gap: 4rem;
+  column-gap: 8rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.industry-issues-header{
+  text-align: center;
+  font-weight: 600;
+  color: #16475a;
+  background-color: #f5f5f5;
+}
+.industry-issues-header h2{
+  font-size: 60px;
+  font-weight: 600;
+  padding-top: 50px;
+}
+
+.img-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.industry-issues-container1 img{
+  width: 100%;
+  height: auto;
+}
+
+.industry-issues-container2 img{
+  width: 100%;
+  height: auto;
+}
+
+
+.industry-issues h2{
+  text-align: center;        /* Center the text horizontally */
+  font-size: 60px;           /* Increase the font size */
+  font-weight: 600;          /* Make the font weight bold */
+  color: #16475a;    
+}
+
+.industry-issues h3{
+  margin-top: 1rem;
+  color: #16475a;
+  z-index: 1;
+}
+
+.industry-issues p{
+  color: #16475a;
+}
+
+
+
+/* Timeline Title Styling */
+.timeline-title h2 {
+  text-align: center;        /* Center the text horizontally */
+  font-size: 60px;           /* Increase the font size */
+  font-weight: 600;          /* Make the font weight bold */
+  color: #16475a;            /* Use a text color that matches the theme */
+  margin-top: 50px;          /* Add some space above the title */
+  margin-bottom: 30px;       /* Add some space below the title */
+}
+
+.timeline {
+  padding: 50px 0;
+  background-color: #f5f5f5;
+}
+
+.timeline li {
+  position: relative;
+  list-style-type: none;
+  width: 6px;
+  background-color: #2c395e;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.timeline li::after {
+  background: #2c395e;
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.timeline li .event {
+  position: relative;
+  width: 400px;
+  padding: 15px;
+  border-radius: 5px;
+  bottom: 0;
+  background: #c3e3f7;   /* text box BG-Color*/ 
+}
+
+.timeline li:nth-child(odd) .event {
+  left: 45px;
+}
+
+.timeline li:nth-child(even) .event {
+  left: -445px;
+}
+
+.event p {
+  color: #2c395e;
+}
+
+time {
+  font-weight: bold;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+  color: #2c395e;
+}
+
+.timeline li .event {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.timeline li:nth-child(odd) .event {
+  transform: translate3d(200px, 0, 0);
+}
+
+.timeline li:nth-child(even) .event {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline li.show .event {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+  .timeline li .event {
+    width: 250px;
+  }
+  .timeline li:nth-child(even) .event {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+
+.zima{
+  padding: 3rem 8rem;
+  background-color: #f5f5f5;
+}
+
+.zima-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.zima h2{
+  font-size: 60px;
+  font-weight: 600;
+  color: #16475a;
+  text-align: center;
+}
+
+.zima h3, .zima p{
+  color: #16475a;
+}
+
+.zima-img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zima-img img{
+  max-width: 100%;
+  height: auto;
+  margin-top: 3rem;
+}
+
+
+.zima-container{
+  display: grid;
+  gap: 4rem;
+  column-gap: 8rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1200px){
+  .industry-issues{
+    padding: 3rem 6rem;
+    background-color: #f5f5f5;
+    display: grid;
+    gap: 4rem;
+    column-gap: 6rem;
+    grid-template-columns: 1fr;
+  }
+  .zima{
+    padding: 3rem 6rem;
+  }
+
+  .zima-container{
+    display: grid;
+    gap: 4rem;
+    column-gap: 6rem;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px){
+  .industry-issues-header{
+    padding: 0rem 2rem;
+  }
+  .industry-issues{
+    padding: 3rem 2rem;
+  }
+
+  .zima{
+    padding: 3rem 2rem;
+  }
+}
+
+/**************************************************/
+/* 1. Container for Three Cards in a Row          */
+/**************************************************/
+.ui-card-container {
+  display: flex;
+  /* 
+     'justify-content: center;' is fine, but you can also use 
+     'space-around' or 'space-between' if you want different 
+     distribution of space.
+  */
+  justify-content: center;
+
+  
+  /* 
+     'align-items: stretch;' makes all cards the same height 
+     (in their collapsed state), matching the tallest card 
+     in the row.
+  */
+  align-items: stretch;
+  
+  gap: 3rem;               /* Increase gap for more spacing between cards */
+  padding: 4rem;           /* Increase padding for more space around cards */
+  background-color: #000;  /* Dark background (optional) */
+}
+
+/**************************************************/
+/* 2. Card Styles                                 */
+/**************************************************/
+.ui-card {
+  position: relative;
+  background-color: #111;       /* Dark card background */
+  
+  /* 
+     Keep a fixed width so they're aligned in a row. 
+     If you want them narrower, reduce from 600px.
+  */
+  width: 600px;                
+  
+  /*
+     Optionally, set a minimum height so all cards have 
+     the same baseline height (even if text is short).
+  */
+  min-height: 350px;           
+  
+  /*
+     Increase padding a bit so the content has more breathing room.
+     The bottom padding is larger so the arrow won't overlap text.
+  */
+  padding: 3rem 2rem 5rem 2rem; 
+  
+  box-sizing: border-box;
+  border: 1px dashed #555;      /* Thin dashed border */
+  overflow: hidden;             /* For fade effect & corner markers */
+}
+
+/**************************************************/
+/* 3. L-Shaped Corner Markers                     */
+/**************************************************/
+.corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+}
+
+/* Top-left */
+.corner-top-left {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Top-right */
+.corner-top-right {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+}
+
+/* Bottom-left */
+.corner-bottom-left {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+}
+
+/* Bottom-right */
+.corner-bottom-right {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+
+/**************************************************/
+/* 4. Typography & Text Hierarchy                 */
+/**************************************************/
+.card-header {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-subheading {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #bbb;
+  margin: 0 0 1rem 0;
+}
+
+/**************************************************/
+/* 5. Collapsible Body Text                       */
+/**************************************************/
+.card-body-wrapper {
+  max-height: 60px; /* Collapsed height */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.5s ease;
+}
+
+.card-body-wrapper:not(.expanded)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(transparent, #111);
+}
+
+/* Expanded state: enough height for full text */
+.card-body-wrapper.expanded {
+  max-height: 1000px; /* Large enough to reveal entire paragraph */
+}
+
+.card-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #fff;
+  margin: 0;
+}
+
+/**************************************************/
+/* 6. Downward Arrow Button                       */
+/**************************************************/
+.arrow-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.arrow-icon {
+  font-size: 20px;
+  color: #fff;
+  transition: transform 0.5s ease;
+}
+
+/* Rotate the arrow 180deg when expanded */
+.card-body-wrapper.expanded + .arrow-button .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/**************************************************/
+/* 7. Hover Effect                                */
+/**************************************************/
+/* (Add your glass-blur or highlight effect here, if desired) */
+
+/**************************************************/
+/* 8. Responsive Tweaks                           */
+/**************************************************/
+@media (max-width: 900px) {
+  .ui-card-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem; /* Reduce padding on mobile if desired */
+  }
+  .ui-card {
+    width: 90%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+    min-height: auto; /* Let cards shrink as needed on smaller screens */
+  }
+}
