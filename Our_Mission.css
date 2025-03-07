@@ -1,4 +1,3 @@
-
 /* Industry Issues Styling */
 .industry-issues{
   padding: 3rem 8rem;
@@ -70,87 +69,174 @@
 }
 
 .timeline {
-  padding: 50px 0;
+  padding: 6rem 0;
   background-color: #f5f5f5;
 }
 
-.timeline li {
-  position: relative;
-  list-style-type: none;
-  width: 6px;
-  background-color: #2c395e;
-  margin: 0 auto;
-  padding-top: 50px;
+.timeline-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #16475a;
+  margin-bottom: 4rem;
 }
 
-.timeline li::after {
-  background: #2c395e;
-  content: '';
-  width: 25px;
-  height: 25px;
+.timeline-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 4rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: #16475a;
+  opacity: 0.3;
+}
+
+.timeline-line::after {
+  content: 'Now';
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #16475a;
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.timeline-line.reached-end::after {
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.timeline-year {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #16475a;
+  margin: 3rem 0;
+  position: relative;
+  background: #f5f5f5;
+  padding: 0 2rem;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+  position: relative;
+  min-height: 120px;
+}
+
+.timeline-month {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #16475a;
+  width: 100px;
+  text-align: right;
+}
+
+.timeline-month.left {
+  right: calc(50% + 2rem);
+}
+
+.timeline-month.right {
+  left: calc(50% + 2rem);
+  text-align: left;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background: #16475a;
   border-radius: 50%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0;
+  z-index: 2;
 }
 
-.timeline li .event {
+.timeline-content {
+  width: 45%;
   position: relative;
-  width: 400px;
-  padding: 15px;
-  border-radius: 5px;
-  bottom: 0;
-  background: #c3e3f7;   /* text box BG-Color*/ 
 }
 
-.timeline li:nth-child(odd) .event {
-  left: 45px;
+.timeline-content.left {
+  margin-right: auto;
+  padding-right: 4rem;
+  text-align: right;
 }
 
-.timeline li:nth-child(even) .event {
-  left: -445px;
+.timeline-content.right {
+  margin-left: auto;
+  padding-left: 4rem;
+  text-align: left;
 }
 
-.event p {
-  color: #2c395e;
+.timeline-details {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-time {
-  font-weight: bold;
-  font-size: 18px;
-  display: block;
-  margin-bottom: 10px;
-  color: #2c395e;
+.timeline-details h4 {
+  color: #16475a;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
-.timeline li .event {
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
+.timeline-details p {
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
 }
 
-.timeline li:nth-child(odd) .event {
-  transform: translate3d(200px, 0, 0);
-}
-
-.timeline li:nth-child(even) .event {
-  transform: translate3d(-200px, 0, 0);
-}
-
-.timeline li.show .event {
-  transform: none;
-  visibility: visible;
-  opacity: 1;
-}
-
-@media screen and (max-width: 900px) {
-  .timeline li .event {
-    width: 250px;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 0 2rem;
   }
-  .timeline li:nth-child(even) .event {
-    left: -289px;
-    /*250+45-6*/
+
+  .timeline-line {
+    left: 2rem;
+  }
+
+  .timeline-year {
+    text-align: left;
+    left: 2rem;
+    transform: none;
+  }
+
+  .timeline-month.left,
+  .timeline-month.right {
+    left: 4rem;
+    text-align: left;
+    top: -2rem;
+  }
+
+  .timeline-dot {
+    left: 2rem;
+  }
+
+  .timeline-content.left,
+  .timeline-content.right {
+    width: calc(100% - 4rem);
+    margin-left: 4rem;
+    padding: 0;
+    text-align: left;
   }
 }
 
@@ -429,4 +515,79 @@ time {
     margin-bottom: 2rem;
     min-height: auto; /* Let cards shrink as needed on smaller screens */
   }
+}
+
+/* Add these animations and transitions */
+.timeline-dot.highlight {
+  background: #4a90e2;
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+}
+
+.timeline-dot.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(74, 144, 226, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+  }
+}
+
+.timeline-details {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.timeline-details.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add these new styles while keeping all existing styles */
+
+.timeline-progress {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 0; /* This will be animated based on scroll */
+  background: #4a90e2;
+  z-index: 1;
+  top: 0;
+}
+
+.moving-dot {
+  width: 12px;
+  height: 12px;
+  background: #4a90e2;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+}
+
+/* Add styles for the active month state */
+.timeline-month.active {
+  color: #4a90e2;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Remove the previous at-end styles since we're using the line marker */
+.moving-dot.at-end::after {
+  display: none;
 }

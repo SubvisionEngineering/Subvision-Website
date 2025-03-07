@@ -72,7 +72,7 @@
 
     <div class="hero-content">
       <h1>Our Mission</h1>
-      <p>Reach out to us via email or leave a message. We’d love to hear from you!</p>
+      <p>Reach out to us via email or leave a message. We'd love to hear from you!</p>
       <a href="#contact-form" class="contact-us-btn">Contact Us</a>
     </div>
   </section>
@@ -101,65 +101,104 @@
         <img src="img/Invasive_Species.png"/>
       </div>
       <h3>Invasive Species</h3>
-      <p>Nearly 80% of invasive marine species transfer is caused by biofouling hulls. By keeping hulls perpetually clean, we’re protecting the ocean.</p>
+      <p>Nearly 80% of invasive marine species transfer is caused by biofouling hulls. By keeping hulls perpetually clean, we're protecting the ocean.</p>
     </div>
-  </section>
-  
-  <!-- Timeline Section (Updated) -->
-   <section class="timeline">
-  <section class="timeline-title">
-    <h2>Timeline</h2>
   </section>
 
-  <section class="ag-timeline-block">
-    <div>
-      <ul class="timeline">
-        <li>
-          <div class="event">
-            <time>2023</time>
-            <p>May: Club Starts</p>
+  
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <h2 class="timeline-heading">Our Journey</h2>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      
+      <!-- Add this right after the timeline-line div -->
+      <div class="timeline-progress">
+        <div class="moving-dot"></div>
+      </div>
+      
+      <!-- 2023 -->
+      <div class="timeline-year">2023</div>
+      
+      <!-- Club Starts - Text Left, Month Right -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <div class="timeline-details">
+            <h4>Club Starts</h4>
+            <p>Beginning of our innovative journey in marine robotics</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2023</time>
-            <p>Dec: 1st Rov Completed</p>
+        </div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-month right">May</div>
+      </div>
+
+      <!-- 1st ROV - Text Right, Month Left -->
+      <div class="timeline-item">
+        <div class="timeline-month left">December</div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-content right">
+          <div class="timeline-details">
+            <h4>1st ROV Completed</h4>
+            <p>Successfully built and tested our first underwater vehicle</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2024</time>
-            <p>May: Chang ECO-OP</p>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="timeline-year">2024</div>
+      
+      <!-- Chang ECO-OP - Text Left, Month Right -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <div class="timeline-details">
+            <h4>Chang ECO-OP</h4>
+            <p>Major milestone in environmental cooperation</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2024</time>
-            <p>June: MateRov Worlds</p>
+        </div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-month right">May</div>
+      </div>
+
+      <!-- MateRov - Text Right, Month Left -->
+      <div class="timeline-item">
+        <div class="timeline-month left">June</div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-content right">
+          <div class="timeline-details">
+            <h4>MateRov Worlds</h4>
+            <p>Competing on the global stage</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2025</time>
-            <p>Now: ZIMA</p>
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="timeline-year">2025</div>
+
+      <!-- ZIMA - Current Project -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <div class="timeline-details">
+            <h4>Project ZIMA</h4>
+            <p>Pioneering the future of marine robotics</p>
           </div>
-        </li>
-      </ul>
+        </div>
+        <!-- Remove the Now from here -->
+        <div class="timeline-month right"></div>
+      </div>
     </div>
   </section>
-</section>
-<section class="zima">
-  <h2>Project ZIMA</h2>
-  <div class="zima-container">
-    <div class="zima-img">
-      <img src="img/ZIMA.png" alt="ZIMA">
+  <section class="zima">
+    <h2>Project ZIMA</h2>
+    <div class="zima-container">
+      <div class="zima-img">
+        <img src="img/ZIMA.png" alt="ZIMA">
+      </div>
+      <div class="zima-text">
+        <h3>What is ZIMA?</h3>
+        <p>Project ZIMA is a collaborative effort between Subvision Engineering and the Canadian Institute for Advanced Research in Engineering (CIRA). The project aims to develop a cutting-edge robotic vehicle capable of reaching the moon by 2030.</p>
+      </div>
     </div>
-    <div class="zima-text">
-      <h3>What is ZIMA?</h3>
-      <p>Project ZIMA is a collaborative effort between Subvision Engineering and the Canadian Institute for Advanced Research in Engineering (CIRA). The project aims to develop a cutting-edge robotic vehicle capable of reaching the moon by 2030.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 <!-- Container to center the card or add spacing around it -->
@@ -240,7 +279,7 @@
     <div class="card-body-wrapper">
       <p class="card-body">
         <strong>Mission Statement:</strong> 
-        By merging cutting-edge engineering with eco-friendly design, we’re leading a shift toward cleaner hulls, 
+        By merging cutting-edge engineering with eco-friendly design, we're leading a shift toward cleaner hulls, 
         healthier oceans, and a greener world—one innovation at a time.
       </p>
       <p class="card-body">
@@ -254,7 +293,9 @@
       <button class="toggle-btn" aria-label="Toggle dropdown">
         <span class="arrow-icon">&#x25BC;</span>
       </button>
-    </section>
+    </div>
+  </div>
+</section>
 
 <!-- Footer -->
 <footer class="footer">
