@@ -69,23 +69,23 @@
 }
 
 .timeline {
-  padding: 6rem 0;
+  padding: 6rem 2rem;
   background-color: #f5f5f5;
 }
 
 .timeline-heading {
   text-align: center;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 600;
   color: #16475a;
-  margin-bottom: 4rem;
+  margin-bottom: clamp(2rem, 4vw, 4rem);
 }
 
 .timeline-container {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
-  padding: 0 4rem;
+  padding: 0 clamp(1rem, 3vw, 4rem);
 }
 
 .timeline-line {
@@ -96,6 +96,7 @@
   height: 100%;
   background: #16475a;
   opacity: 0.3;
+  transition: all 0.3s ease;
 }
 
 .timeline-line::after {
@@ -107,45 +108,50 @@
   color: #16475a;
   font-size: 1.2rem;
   font-weight: 500;
-  white-space: nowrap;
-  transition: color 0.3s ease;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
 .timeline-line.reached-end::after {
   color: #4a90e2;
   font-weight: 600;
+  opacity: 1;
 }
 
 .timeline-year {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 600;
   color: #16475a;
   margin: 3rem 0;
   position: relative;
   background: #f5f5f5;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem;
   display: inline-block;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 0.3s ease;
 }
 
 .timeline-item {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4rem 0;
+  margin: clamp(2rem, 4vw, 4rem) 0;
   position: relative;
   min-height: 120px;
+  transition: all 0.3s ease;
 }
 
 .timeline-month {
   position: absolute;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   font-weight: 500;
   color: #16475a;
-  width: 100px;
+  width: auto;
+  min-width: 80px;
   text-align: right;
+  transition: all 0.3s ease;
 }
 
 .timeline-month.left {
@@ -171,6 +177,7 @@
 .timeline-content {
   width: 45%;
   position: relative;
+  margin: clamp(1rem, 2vw, 2rem) 0;
 }
 
 .timeline-content.left {
@@ -187,37 +194,43 @@
 
 .timeline-details {
   background: white;
-  padding: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .timeline-details h4 {
   color: #16475a;
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
   margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .timeline-details p {
   color: #666;
   line-height: 1.5;
   margin: 0;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .timeline-container {
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
 
-  .timeline-line {
+  .timeline-line,
+  .timeline-progress {
     left: 2rem;
   }
 
   .timeline-year {
     text-align: left;
-    left: 2rem;
+    left: 4rem;
     transform: none;
+    padding: 0.5rem 1rem;
+    margin: 2rem 0;
   }
 
   .timeline-month.left,
@@ -225,18 +238,35 @@
     left: 4rem;
     text-align: left;
     top: -2rem;
+    width: auto;
   }
 
-  .timeline-dot {
+  .timeline-dot,
+  .timeline-progress {
+    
+    margin: 0,0;
+    top: 0;
     left: 2rem;
+    left: 0;
   }
 
   .timeline-content.left,
   .timeline-content.right {
-    width: calc(100% - 4rem);
+    width: calc(100% - 5rem);
     margin-left: 4rem;
     padding: 0;
     text-align: left;
+  }
+
+  .timeline-item {
+    margin: 3rem 0;
+    padding-left: 1rem;
+  }
+
+  .timeline-line::after {
+    left: 0;
+    transform: none;
+    bottom: -1.5rem;
   }
 }
 
@@ -557,17 +587,123 @@ html {
 
 /* Add these new styles while keeping all existing styles */
 
-.timeline-progress {
+.timeline-progress-container {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 0; /* This will be animated based on scroll */
-  background: #4a90e2;
-  z-index: 1;
+  height: 100%;
   top: 0;
+  z-index: 1;
 }
 
+.timeline-progress {
+  position: absolute;
+  width: 100%;
+  height: 0;
+  background: #4a90e2;
+  transition: height 0.3s ease-out;
+}
+
+.moving-dot {
+  width: 12px;
+  height: 12px;
+  background: #4a90e2;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+  z-index: 2;
+  transition: top 0.3s ease-out;
+  animation: pulse 2s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(74, 144, 226, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74, 144, 226, 0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .timeline-progress-container {
+    left: 2rem;
+    transform: none;
+  }
+
+  .moving-dot {
+    left: calc(2rem + 1px);
+    transform: translateX(-50%);
+  }
+
+  .timeline-line::after {
+    left: 0;
+    transform: none;
+  }
+}
+
+/* Active state for the dot */
+.moving-dot.at-end {
+  animation: pulse 2s infinite;
+}
+
+/* Add styles for the active month state */
+.timeline-month.active {
+  color: #4a90e2;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+/* Remove the previous at-end styles since we're using the line marker */
+.moving-dot.at-end::after {
+  display: none;
+}
+
+/* Tablet Responsive Design */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .timeline-container {
+    padding: 0 2rem;
+  }
+
+  .timeline-content.left,
+  .timeline-content.right {
+    width: 42%;
+  }
+
+  .timeline-month {
+    width: 80px;
+  }
+}
+
+/* Enhanced transitions */
+.timeline-content,
+.timeline-month,
+.timeline-details,
+.moving-dot {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Active state enhancements */
+.timeline-month.active {
+  color: #4a90e2;
+  font-weight: 600;
+  transform: scale(1.05);
+}
+
+.timeline-details.visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Moving dot enhancements */
 .moving-dot {
   width: 12px;
   height: 12px;
@@ -578,16 +714,10 @@ html {
   bottom: 0;
   transform: translateX(-50%);
   box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.2);
+  z-index: 2;
 }
 
-/* Add styles for the active month state */
-.timeline-month.active {
-  color: #4a90e2;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-/* Remove the previous at-end styles since we're using the line marker */
-.moving-dot.at-end::after {
-  display: none;
+/* Semantic spacing adjustments */
+.timeline-details {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
 }

@@ -14,6 +14,7 @@
   <!-- Link to External JavaScript File -->
   <script src="scripts.js" defer></script>
   <script src="timeline.js" defer></script>
+  <script src="cardExpansion.js" defer></script>
 
 </head>
 
@@ -112,8 +113,9 @@
     <div class="timeline-container">
       <div class="timeline-line"></div>
       
-      <!-- Add this right after the timeline-line div -->
-      <div class="timeline-progress">
+      <!-- Group progress line and dot together -->
+      <div class="timeline-progress-container">
+        <div class="timeline-progress"></div>
         <div class="moving-dot"></div>
       </div>
       
@@ -229,7 +231,10 @@
 
     <!-- Downward Arrow -->
     <div class="arrow-button">
-      <button class="toggle-btn" aria-label="Toggle dropdown">
+      <button 
+        class="toggle-btn" 
+        aria-label="Toggle mission details" 
+        aria-expanded="false">
         <span class="arrow-icon">&#x25BC;</span>
       </button>
     </div>
@@ -260,7 +265,10 @@
     </div>
 
     <div class="arrow-button">
-      <button class="toggle-btn" aria-label="Toggle dropdown">
+      <button 
+        class="toggle-btn" 
+        aria-label="Toggle mission details" 
+        aria-expanded="false">
         <span class="arrow-icon">&#x25BC;</span>
       </button>
     </div>
@@ -290,7 +298,10 @@
     </div>
 
     <div class="arrow-button">
-      <button class="toggle-btn" aria-label="Toggle dropdown">
+      <button 
+        class="toggle-btn" 
+        aria-label="Toggle mission details" 
+        aria-expanded="false">
         <span class="arrow-icon">&#x25BC;</span>
       </button>
     </div>
@@ -323,16 +334,4 @@
 </footer>
 </body>
 
-
-<!-- Minimal JavaScript to toggle expanded state -->
-<script>
-  const toggleButtons = document.querySelectorAll('.toggle-btn');
-  toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Find the .card-body-wrapper within the same card
-      const cardBodyWrapper = button.closest('.ui-card').querySelector('.card-body-wrapper');
-      cardBodyWrapper.classList.toggle('expanded');
-    });
-  });
-</script>
 </html>
