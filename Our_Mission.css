@@ -228,7 +228,7 @@
   .timeline-year {
     text-align: left;
     left: 4rem;
-    transform: none;
+  transform: none;
     padding: 0.5rem 1rem;
     margin: 2rem 0;
   }
@@ -350,25 +350,13 @@
 /* 1. Container for Three Cards in a Row          */
 /**************************************************/
 .ui-card-container {
-  display: flex;
-  /* 
-     'justify-content: center;' is fine, but you can also use 
-     'space-around' or 'space-between' if you want different 
-     distribution of space.
-  */
-  justify-content: center;
-
-  
-  /* 
-     'align-items: stretch;' makes all cards the same height 
-     (in their collapsed state), matching the tallest card 
-     in the row.
-  */
-  align-items: stretch;
-  
-  gap: 3rem;               /* Increase gap for more spacing between cards */
-  padding: 4rem;           /* Increase padding for more space around cards */
-  background-color: #000;  /* Dark background (optional) */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 4rem 4rem;
+  background-color: #000;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /**************************************************/
@@ -376,29 +364,16 @@
 /**************************************************/
 .ui-card {
   position: relative;
-  background-color: #111;       /* Dark card background */
-  
-  /* 
-     Keep a fixed width so they're aligned in a row. 
-     If you want them narrower, reduce from 600px.
-  */
-  width: 600px;                
-  
-  /*
-     Optionally, set a minimum height so all cards have 
-     the same baseline height (even if text is short).
-  */
-  min-height: 350px;           
-  
-  /*
-     Increase padding a bit so the content has more breathing room.
-     The bottom padding is larger so the arrow won't overlap text.
-  */
-  padding: 3rem 2rem 5rem 2rem; 
-  
+  background-color: #111;
+  min-height: 280px;
+  padding: 2rem;
   box-sizing: border-box;
-  border: 1px dashed #555;      /* Thin dashed border */
-  overflow: hidden;             /* For fade effect & corner markers */
+  border: 1px dashed #555;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /**************************************************/
@@ -406,9 +381,10 @@
 /**************************************************/
 .corner {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #fff;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #4a90e2;
+  transition: all 0.3s ease;
 }
 
 /* Top-left */
@@ -451,39 +427,32 @@
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
+  transition: color 0.3s ease;
 }
 
 .card-subheading {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  color: #bbb;
-  margin: 0 0 1rem 0;
+  color: #4a90e2;
+  margin: 0 0 1.5rem 0;
+  transition: color 0.3s ease;
 }
 
 /**************************************************/
 /* 5. Collapsible Body Text                       */
 /**************************************************/
 .card-body-wrapper {
-  max-height: 60px; /* Collapsed height */
-  overflow: hidden;
-  position: relative;
-  transition: max-height 0.5s ease;
+  opacity: 0.7;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  margin-top: auto;
 }
 
-.card-body-wrapper:not(.expanded)::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(transparent, #111);
-}
-
-/* Expanded state: enough height for full text */
-.card-body-wrapper.expanded {
-  max-height: 1000px; /* Large enough to reveal entire paragraph */
+/* Show body text always but enhance on hover */
+.ui-card:hover .card-body-wrapper {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card-body {
@@ -533,17 +502,21 @@
 /**************************************************/
 /* 8. Responsive Tweaks                           */
 /**************************************************/
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .ui-card-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem; /* Reduce padding on mobile if desired */
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+    gap: 2rem;
   }
+}
+
+@media (max-width: 768px) {
+  .ui-card-container {
+    grid-template-columns: 1fr;
+  }
+  
   .ui-card {
-    width: 90%;
-    max-width: 500px;
-    margin-bottom: 2rem;
-    min-height: auto; /* Let cards shrink as needed on smaller screens */
+    min-height: 250px;
   }
 }
 
@@ -720,4 +693,260 @@ html {
 /* Semantic spacing adjustments */
 .timeline-details {
   margin-bottom: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Add section header styling */
+.mission-cards-section {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  background-color: #000;
+}
+
+.mission-cards-section h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: #fff;
+    margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Add subtle animation for cards */
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.ui-card:hover {
+  animation: cardFloat 3s ease-in-out infinite;
+}
+
+/* Add these styles to your existing CSS */
+.mission-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mission-subtitle {
+  color: #bbb;
+  font-size: 1.25rem;
+  margin: 1.5rem auto 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  transition: color 0.3s ease;
+}
+
+.mission-cta-wrapper {
+  margin-top: 2rem;
+  perspective: 1000px;
+}
+
+.mission-cta {
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  background: transparent;
+}
+
+.mission-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 0;
+  height: 100%;
+  background: white;
+  transform: skewX(-20deg);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.mission-cta:hover {
+  color: #000;
+}
+
+.mission-cta:hover::before {
+  width: calc(100% + 20px);
+}
+
+/* Add border animation */
+.mission-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.mission-cta:hover::after {
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .mission-cta {
+    padding: 0.7rem 1.75rem;
+    font-size: 1rem;
+  }
+}
+
+/* Button Comparison Container */
+.button-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Version 1 - Gradient Style */
+.mission-cta-v1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-cta-v1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #4a90e2, #357abd);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.mission-cta-v1:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3);
+}
+
+.mission-cta-v1:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.mission-cta-v1 .cta-icon {
+  transition: transform 0.3s ease;
+}
+
+.mission-cta-v1:hover .cta-icon {
+  transform: translateX(5px);
+}
+
+/* Updated Contact-style button */
+.button-comparison .contact-btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Text wrapper */
+.button-comparison .contact-btn .btn-text {
+  position: relative;
+  z-index: 3;
+  transition: color 0.3s ease;
+}
+
+/* White border */
+.button-comparison .contact-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid #fff;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* White fill background */
+.button-comparison .contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 0;
+  height: 100%;
+  background: #fff;
+  transform: skewX(-20deg);
+  transition: width 0.4s ease;
+  z-index: 2;
+}
+
+/* Hover states */
+.button-comparison .contact-btn:hover::before {
+  width: calc(100% + 20px);
+}
+
+.button-comparison .contact-btn:hover .btn-text {
+  color: #000;
+}
+
+.button-comparison .contact-btn:hover::after {
+  transform: scale(1.1);
+  opacity: 0;
+}
+
+/* Container styles */
+.button-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .button-comparison .contact-btn {
+    padding: 0.7rem 1.75rem;
+    font-size: 1rem;
+  }
 }
