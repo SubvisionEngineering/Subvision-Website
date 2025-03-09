@@ -97,75 +97,30 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => prev.remove(), 150);
   }
 
+  const teamContents = document.querySelectorAll('.team-content');
+
   tabButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const versionContainer = this.closest('.tab-structure');
-      const siblingButtons = versionContainer.querySelectorAll('.tab-button');
-      const titleElement = versionContainer.querySelector('.selected-team');
-      const isVersion2 = versionContainer.classList.contains('v2');
+    button.addEventListener('click', () => {
+      const teamId = button.dataset.team;
       
-      // Remove active class from all buttons
-      siblingButtons.forEach(btn => {
+      // Hide all team contents
+      teamContents.forEach(content => {
+        content.classList.add('hidden');
+      });
+
+      // Show selected team content
+      const selectedTeam = document.getElementById(`${teamId}-team`);
+      if (selectedTeam) {
+        selectedTeam.classList.remove('hidden');
+      }
+
+      // Update active state of buttons
+      tabButtons.forEach(btn => {
         btn.classList.remove('active');
         btn.setAttribute('aria-pressed', 'false');
       });
-
-      // Add active class to clicked button
-      this.classList.add('active');
-      this.setAttribute('aria-pressed', 'true');
-
-      // Get the team name
-      const teamName = this.querySelector('.tab-label').textContent;
-      const newText = `${teamName} Team`;
-
-      if (isVersion2) {
-        const currentText = titleElement.textContent;
-        
-        // Create wrapper to maintain dimensions
-        const wrapper = document.createElement('div');
-        wrapper.className = 'slot-wrapper';
-        
-        // Create text elements
-        const oldTextEl = document.createElement('div');
-        oldTextEl.className = 'slot-text';
-        oldTextEl.textContent = currentText;
-        
-        const newTextEl = document.createElement('div');
-        newTextEl.className = 'slot-text';
-        newTextEl.textContent = newText;
-        newTextEl.style.transform = 'translateY(100%)';
-        newTextEl.style.opacity = '0';
-        
-        // Set up animation
-        wrapper.appendChild(oldTextEl);
-        wrapper.appendChild(newTextEl);
-        
-        // Store original content
-        const originalContent = titleElement.innerHTML;
-        
-        // Apply animation
-        titleElement.innerHTML = '';
-        titleElement.appendChild(wrapper);
-        
-        // Trigger animations
-        requestAnimationFrame(() => {
-          oldTextEl.style.animation = 'slideOutUp 0.3s ease-out forwards';
-          setTimeout(() => {
-            newTextEl.style.animation = 'slideInUp 0.3s ease-out forwards';
-          }, 150);
-        });
-        
-        // Clean up after animation
-        setTimeout(() => {
-          titleElement.innerHTML = newText;
-        }, 450);
-      } else {
-        // Original animation for other versions
-        titleElement.classList.remove('animate');
-        void titleElement.offsetWidth;
-        titleElement.textContent = newText;
-        titleElement.classList.add('animate');
-      }
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
     });
   });
 
@@ -173,4 +128,114 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.teamObserver) {
     window.teamObserver.disconnect();
   }
+
+  // Business team data
+  const businessTeam = {
+    leader: {
+      name: "Nicole Villaraso",
+      role: "Business Lead",
+      linkedin: "#"
+    },
+    members: [
+      {
+        name: "Zahid Hassan Joy",
+        role: "Business Development",
+        linkedin: "#"
+      },
+      {
+        name: "Henry",
+        role: "Business Operations",
+        linkedin: "#"
+      },
+      {
+        name: "Member 3",
+        role: "Business Analytics",
+        linkedin: "#"
+      }
+    ]
+  };
+
+  // Get all tab buttons and team sections
+  const teamSections = document.querySelectorAll('.team-section');
+  
+  // Function to create business team HTML
+  function createBusinessTeamHTML() {
+    const leaderHTML = `
+      <div class="leader-section">
+        <div class="member-card">
+          <img src="/placeholder.svg?height=100&width=100" alt="" class="member-avatar">
+          <div class="member-info">
+            <h3 class="member-name">${businessTeam.leader.name}</h3>
+            <p class="member-title">${businessTeam.leader.role}</p>
+            <div class="member-social">
+              <a href="${businessTeam.leader.linkedin}" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    const membersHTML = businessTeam.members.map(member => `
+      <div class="member-card">
+        <img src="/placeholder.svg?height=100&width=100" alt="" class="member-avatar">
+        <div class="member-info">
+          <h3 class="member-name">${member.name}</h3>
+          <p class="member-title">${member.role}</p>
+          <div class="member-social">
+            <a href="${member.linkedin}" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <div class="team-header">
+        <h2 class="team-title">Business Team</h2>
+        <p class="team-description">Driving growth and managing operations to ensure company success.</p>
+      </div>
+      ${leaderHTML}
+      <div class="members-row">
+        ${membersHTML}
+      </div>
+    `;
+  }
+
+  // Handle tab clicks
+  tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const teamType = button.getAttribute('data-tab');
+      const selectedTeamTitle = document.querySelector('.selected-team');
+      const businessSection = document.getElementById('business');
+      
+      // Update active states
+      tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
+
+      // Hide all sections first
+      teamSections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      // Update selected team title
+      const teamName = button.querySelector('.tab-label').getAttribute('data-text');
+      selectedTeamTitle.textContent = `${teamName} Team`;
+
+      // Show business team content only when business tab is clicked
+      if (teamType === 'business') {
+        businessSection.innerHTML = createBusinessTeamHTML();
+        businessSection.classList.add('active');
+      }
+    });
+  });
+
+  // Initialize with executives team
+  // renderTeam('executives');
 }); 
