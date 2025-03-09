@@ -100,15 +100,22 @@
   
   /* Fix selected team text positioning */
   .selected-team {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    overflow: hidden;
     min-height: 2.5rem;
+    height: 4rem;
     padding: 1rem 2rem;
     margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: #fff;
     font-size: 1.75rem;
     text-align: center;
-    position: relative;
+    width: auto;
+    min-width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   /* Regular tab buttons */
@@ -294,6 +301,12 @@
     .tab-label {
       font-size: 0.875rem;
     }
+  
+    .selected-team {
+      min-width: 300px;
+      font-size: 1.5rem;
+      padding: 1rem 1.5rem;
+    }
   }
   
   /* Accessibility */
@@ -338,7 +351,7 @@
     position: relative;
     overflow: hidden;
     min-height: 2.5rem;
-    height: 4rem; /* Fixed height to prevent shifting */
+    height: 4rem;
     padding: 1rem 2rem;
     margin-top: 3rem;
     background: rgba(255, 255, 255, 0.05);
@@ -347,7 +360,7 @@
     font-size: 1.75rem;
     text-align: center;
     width: auto;
-    min-width: 250px; /* Fixed minimum width */
+    min-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -356,7 +369,7 @@
   /* Animation container */
   .slot-wrapper {
     position: absolute;
-    inset: 0; /* Fill parent */
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -369,7 +382,8 @@
     text-align: center;
     left: 0;
     padding: inherit;
-    line-height: 1.2; /* Consistent line height */
+    line-height: 1.2;
+    white-space: nowrap;
   }
   
   @keyframes slideOutUp {
@@ -436,7 +450,7 @@
   }
   
   .selected-team.animate {
-    animation: none; /* Reset any existing animations */
+    animation: none;
   }
   
   /* Version 1 Animation */
@@ -457,7 +471,7 @@
   
   /* Version 2 Animation */
   .v2 .selected-team.animate {
-    animation: none; /* Reset any existing animations */
+    animation: none;
   }
   
   /* Version 3 Animation */
@@ -480,7 +494,7 @@
   
   /* Active state styles */
   .tab-button.active {
-    pointer-events: none; /* Prevent clicking active tab */
+    pointer-events: none;
   }
   
   .v1 .tab-button.active {
@@ -524,4 +538,642 @@
   .version-title-container,
   .version-title {
     display: none !important;
+  }
+  
+  /* Team members grid and cards */
+  .members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+  
+  .members-row {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Team member cards */
+  .member-card {
+    /* Delete all these styles */
+  }
+  
+  /* Avatar container */
+  .member-avatar-container {
+    /* Delete all these styles */
+  }
+  
+  /* Member info */
+  .member-name {
+    /* Delete all these styles */
+  }
+  
+  .member-title {
+    /* Delete all these styles */
+  }
+  
+  /* Animation for card appearance */
+  .animate-fadeInUp {
+    /* Delete all these styles */
+  }
+  
+  @keyframes fadeInUp {
+    /* Delete all these styles */
+  }
+  
+  /* Layout */
+  .members-row {
+    /* Delete all these styles */
+  }
+  
+  /* Leader card slightly larger */
+  .leader-section .member-card {
+    /* Delete all these styles */
+  }
+  
+  .leader-section .member-avatar-container {
+    /* Delete all these styles */
+  }
+  
+  .leader-section .member-name {
+    /* Delete all these styles */
+  }
+  
+  .leader-section .member-title {
+    /* Delete all these styles */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    /* Delete all these styles */
+  }
+  
+  /* Team Sections Container */
+  .team-sections-container {
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+  
+  /* Team Section */
+  .team-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .team-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Team Header */
+  .team-header {
+    display: none;
+  }
+  
+  .team-title {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #60a5fa, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+  
+  .team-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+  }
+  
+  /* Member Cards */
+  .member-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    width: 300px;
+    transition: all 0.4s ease;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(147, 197, 253, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Member avatar - just a clean circle */
+  .member-avatar {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Clean circle with border only */
+  .avatar-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+  }
+  
+  /* Member info */
+  .member-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.25rem;
+    text-align: center;
+  }
+  
+  .member-title {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+  
+  /* Selected Team Title with Slot Machine Animation - Improved spacing */
+  .selected-team-container {
+    position: relative;
+    height: 5rem;
+    min-width: 350px;
+    background-color: rgba(17, 17, 17, 0.95);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 3rem 0 1.5rem; /* Adjusted vertical spacing */
+  }
+  
+  .slot-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem; /* Added horizontal padding */
+  }
+  
+  .slot-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    padding: 0 1rem; /* Added padding to prevent text touching edges */
+  }
+  
+  /* Team description spacing */
+  .team-description {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 42rem;
+    margin: 0 auto 3rem; /* Adjusted bottom margin */
+    padding: 0 1rem; /* Added horizontal padding */
+  }
+  
+  /* Team member card - Base styling */
+  .team-member-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  /* Team member card with hover effects */
+  .team-member-card {
+    width: calc(33.333% - 1.35rem);
+    min-width: 280px;
+    max-width: 320px;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* Card hover effect */
+  .team-member-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+      0 10px 25px rgba(0, 0, 0, 0.1),
+      0 0 15px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Member avatar */
+  .member-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  
+  .member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .member-avatar:hover img {
+    transform: scale(1.1);
+  }
+  
+  /* Member info */
+  .member-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0.25rem;
+    text-align: center;
+  }
+  
+  .member-title {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Stagger animation delays */
+  .team-member-card:nth-child(1) { animation-delay: 0.1s; }
+  .team-member-card:nth-child(2) { animation-delay: 0.2s; }
+  .team-member-card:nth-child(3) { animation-delay: 0.3s; }
+  
+  /* Animation for card appearance */
+  .animate-fadeInUp {
+    /* Delete all these styles */
+  }
+  
+  @keyframes fadeInUp {
+    /* Delete all these styles */
+  }
+  
+  /* Layout */
+  .members-row {
+    /* Delete all these styles */
+  }
+  
+  /* Leader card slightly larger */
+  .leader-section .member-card {
+    /* Delete all these styles */
+  }
+  
+  .leader-section .member-avatar-container {
+    /* Delete all these styles */
+  }
+  
+  .leader-section .member-name {
+    /* Delete all these styles */
+  }
+  
+  .leader-section .member-title {
+    /* Delete all these styles */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .team-member-grid {
+      gap: 1.5rem;
+    }
+    
+    .team-member-card {
+      width: calc(50% - 0.75rem); /* Two cards per row on medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .team-member-card {
+      width: 100%; /* One card per row on mobile */
+      max-width: 280px;
+    }
+  }
+  
+  /* Team Sections Container */
+  .team-sections-container {
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+  
+  /* Team Section */
+  .team-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .team-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Team Header */
+  .team-header {
+    display: none;
+  }
+  
+  .team-title {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #60a5fa, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+  
+  .team-description {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+  }
+  
+  /* Member Cards */
+  .member-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+    padding: 2.5rem;
+    width: 300px;
+    transition: all 0.4s ease;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(147, 197, 253, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .member-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    border: 3px solid rgba(147, 197, 253, 0.3);
+    padding: 5px;
+  }
+  
+  .member-info {
+    text-align: center;
+  }
+  
+  .member-name {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+  
+  .member-title {
+    color: rgba(147, 197, 253, 0.8);
+    margin-bottom: 2rem;
+  }
+  
+  /* Selected Team Title with Slot Machine Animation - Improved spacing */
+  .selected-team-container {
+    position: relative;
+    height: 5rem;
+    min-width: 350px;
+    background-color: rgba(17, 17, 17, 0.95);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 3rem 0 1.5rem; /* Adjusted vertical spacing */
+  }
+  
+  .slot-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem; /* Added horizontal padding */
+  }
+  
+  .slot-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    padding: 0 1rem; /* Added padding to prevent text touching edges */
+  }
+  
+  /* Team description spacing */
+  .team-description {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 42rem;
+    margin: 0 auto 3rem; /* Adjusted bottom margin */
+    padding: 0 1rem; /* Added horizontal padding */
+  }
+  
+  /* Social icons container */
+  .social-icons {
+    margin-top: 24px;
+  }
+  
+  /* Container for icons in a row */
+  .icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  /* Individual icon */
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* SVG icon */
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 1.5;
+    fill: none;
+    transition: fill 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .social-icon:hover svg {
+    stroke: white;
+    fill: white;
+  }
+
+  /* Social wrapper from Our_Mission.css */
+  .social-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 1.5;
+    fill: none;
+    transition: fill 0.3s ease;
+  }
+
+  .social-icon:hover svg {
+    stroke: white;
+    fill: white;
+  }
+
+  /* Team member social icons styling */
+  .team-social {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .team-social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-social-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: rgba(255, 255, 255, 0.6);
+    stroke-width: 1.5;
+    fill: none;
+    transition: fill 0.3s ease;
+  }
+
+  .team-social-icon:hover svg {
+    stroke: white;
+    fill: white;
+  }
+
+  /* Grid Layout Styling */
+  .team-grid {
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* Both CEO and Executive sections use same grid */
+  .ceo-section,
+  .exec-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* CEO section specific - center the single card */
+  .ceo-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ceo-section .team-member-card {
+    grid-column: 2; /* Center the CEO card in the middle column */
+  }
+
+  /* Fixed size for ALL team member cards */
+  .team-member-card {
+    width: 100%;
+    max-width: 320px;
+    min-width: 280px;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center; /* Centers cards in their grid cells */
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .ceo-section,
+    .exec-section {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ceo-section .team-member-card {
+      grid-column: 1 / -1; /* Full width on smaller screens */
+    }
+    
+    .team-grid {
+      padding: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .ceo-section,
+    .exec-section {
+      grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+      padding: 1rem;
+    }
   }
