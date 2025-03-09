@@ -1,0 +1,527 @@
+:root {
+    --bg-color: #0a0e17;
+    --tab-bg: rgba(30, 41, 59, 0.4);
+    --tab-hover-bg: rgba(56, 89, 152, 0.4);
+    --tab-active-bg: rgba(59, 130, 246, 0.4);
+    --tab-text: rgba(255, 255, 255, 0.7);
+    --tab-hover-text: rgba(255, 255, 255, 0.9);
+    --tab-active-text: #ffffff;
+    --tab-border: rgba(255, 255, 255, 0.1);
+    --tab-hover-border: rgba(147, 197, 253, 0.3);
+    --tab-active-border: rgba(147, 197, 253, 0.5);
+    --tab-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --tab-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+                       0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    --tab-active-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4),
+                        0 8px 10px -6px rgba(59, 130, 246, 0.2);
+    --transition-medium: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .team-categories {
+    padding: 2rem 0;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+  
+  /* Fix spacing after hero section */
+  .hero + .team-categories {
+    margin-top: 2rem;
+  }
+  
+  /* Common section styling */
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    color: #bbb;
+    font-size: 1.25rem;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  /* Tab Versions Container */
+  .tab-versions {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    margin-bottom: 4rem;
+  }
+  
+  /* Common structure for all versions */
+  .tab-structure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 0;
+  }
+  
+  /* Remove any scroll-snap properties */
+  .tab-structure {
+    scroll-snap-align: none;
+  }
+  
+  /* Center exec tab */
+  .exec-tab {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .exec-tab .tab-button {
+    width: 150px;
+    height: 150px;
+  }
+  
+  /* Tab rows with better spacing */
+  .tab-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .tab-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  /* Fix selected team text positioning */
+  .selected-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    font-size: 1.75rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Regular tab buttons */
+  .tab-button {
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Version 1 - Gradient Style */
+  .v1 .tab-button {
+    background: transparent;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .v1 .tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #4a90e2, #357abd);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+  }
+  
+  .v1 .tab-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3);
+  }
+  
+  .v1 .tab-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  /* Version 2 - Contact Button Style */
+  .v2 .tab-button {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  .v2 .tab-button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .v2 .tab-button:hover .tab-icon,
+  .v2 .tab-button:hover .tab-label {
+    color: black;
+  }
+  
+  .v2 .tab-button.active {
+    background-color: white;
+    color: black;
+  }
+  
+  .v2 .tab-button.active .tab-icon,
+  .v2 .tab-button.active .tab-label {
+    color: black;
+  }
+  
+  /* Version 3 - Glass Style */
+  .v3 .tab-button {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .v3 .tab-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .v3 .tab-button:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 
+      0 10px 20px rgba(0, 0, 0, 0.2),
+      0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  .v3 .tab-button:hover::before {
+    opacity: 1;
+  }
+  
+  .v3 .tab-button.active {
+    background: rgba(74, 144, 226, 0.15);
+    border-color: rgba(74, 144, 226, 0.3);
+    box-shadow: 
+      0 10px 20px rgba(74, 144, 226, 0.1),
+      0 0 30px rgba(74, 144, 226, 0.1);
+  }
+  
+  /* Common styles for all versions */
+  .tab-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    height: 130px;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Common icon and label styling */
+  .tab-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-label {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  
+  /* Executive tab specific */
+  .exec-tab .tab-button {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .exec-tab .tab-icon {
+    font-size: 2rem;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .tab-row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .tab-button {
+      width: 110px;
+      height: 110px;
+    }
+    
+    .exec-tab .tab-button {
+      width: 130px;
+      height: 130px;
+    }
+  
+    .tab-icon {
+      font-size: 1.5rem;
+    }
+    
+    .exec-tab .tab-icon {
+      font-size: 1.75rem;
+    }
+    
+    .tab-label {
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* Accessibility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  /* Version 1 - Gradient Style Animations */
+  .v1 .selected-team {
+    background: linear-gradient(90deg, #4a90e2, #357abd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+  
+  .v1 .selected-team.animate {
+    animation: gradientSlide 0.5s ease-out forwards;
+  }
+  
+  @keyframes gradientSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Version 2 - Contact Style Animations */
+  .v2 .selected-team {
+    position: relative;
+    overflow: hidden;
+    min-height: 2.5rem;
+    height: 4rem; /* Fixed height to prevent shifting */
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.75rem;
+    text-align: center;
+    width: auto;
+    min-width: 250px; /* Fixed minimum width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Animation container */
+  .slot-wrapper {
+    position: absolute;
+    inset: 0; /* Fill parent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Text elements */
+  .slot-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    padding: inherit;
+    line-height: 1.2; /* Consistent line height */
+  }
+  
+  @keyframes slideOutUp {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Version 3 - Glass Style Animations */
+  .v3 .selected-team {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .v3 .selected-team.animate {
+    animation: glassReveal 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  @keyframes glassReveal {
+    0% {
+      filter: blur(10px);
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      filter: blur(0);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Add these styles to your existing CSS */
+  
+  /* Common button styles */
+  .tab-button {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Animation classes */
+  .selected-team {
+    transition: opacity 0.3s ease;
+  }
+  
+  .selected-team.animate {
+    animation: none; /* Reset any existing animations */
+  }
+  
+  /* Version 1 Animation */
+  .v1 .selected-team.animate {
+    animation: gradientSlide 0.5s ease-out forwards;
+  }
+  
+  @keyframes gradientSlide {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Version 2 Animation */
+  .v2 .selected-team.animate {
+    animation: none; /* Reset any existing animations */
+  }
+  
+  /* Version 3 Animation */
+  .v3 .selected-team.animate {
+    animation: glassReveal 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+  
+  @keyframes glassReveal {
+    0% {
+      filter: blur(10px);
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      filter: blur(0);
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Active state styles */
+  .tab-button.active {
+    pointer-events: none; /* Prevent clicking active tab */
+  }
+  
+  .v1 .tab-button.active {
+    background: linear-gradient(90deg, #4a90e2, #357abd);
+    border-color: #4a90e2;
+  }
+  
+  .v2 .tab-button.active {
+    background-color: white;
+    color: black;
+  }
+  
+  .v3 .tab-button.active {
+    background: rgba(74, 144, 226, 0.15);
+    border-color: rgba(74, 144, 226, 0.3);
+    box-shadow: 
+      0 10px 20px rgba(74, 144, 226, 0.1),
+      0 0 30px rgba(74, 144, 226, 0.1);
+  }
+  
+  /* Remove scroll snap behavior */
+  html {
+    scroll-behavior: auto;
+  }
+  
+  /* Add dividers between versions */
+  .version-divider {
+    width: 50%;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    margin: 0 auto;
+  }
+  
+  /* Remove all version headers completely */
+  .version-header, 
+  .version-title-container,
+  .version-title {
+    display: none !important;
+  }
