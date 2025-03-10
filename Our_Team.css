@@ -1232,3 +1232,412 @@ html {
     padding: 1rem;
   }
 }
+
+/* Join Us Section Styles */
+.join-us-section {
+  padding: 6rem 4rem;
+  background-color: #0a0e17;
+}
+
+.join-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.join-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.join-content:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.join-text {
+  flex: 1;
+}
+
+.join-text h3 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.join-text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Icon Styles */
+.opportunity-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.outline-icon {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+  stroke: currentColor;
+  transition: all 0.3s ease;
+}
+
+.point:hover .outline-icon {
+  stroke: #fff;
+  fill: #fff;
+}
+
+/* Image Styles */
+.join-image {
+  flex: 1;
+  min-width: 45%;
+  max-width: 50%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.join-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Button Styles */
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.join-btn strong {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.join-btn:hover strong {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .join-us-section {
+    padding: 4rem 2rem;
+  }
+
+  .join-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .join-text h3 {
+    font-size: 2rem;
+  }
+
+  .join-image {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .join-content {
+    padding: 1.5rem;
+  }
+
+  .opportunity-points {
+    gap: 1rem;
+  }
+}
+
+/* Update contact support section styles */
+.contact-support-section {
+  padding: 6rem 4rem;
+  background-color: var(--bg-color);
+}
+
+.support-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.support-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.support-content:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.support-image {
+  flex: 1;
+  max-width: 50%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.support-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.support-text {
+  flex: 1;
+  padding: 2rem;
+}
+
+.support-text h3 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.support-text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contact-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 1.5;
+  fill: none;
+  transition: stroke 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  stroke: #fff;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-info .label {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-info a,
+.contact-info span:not(.label) {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-support-section {
+    padding: 4rem 2rem;
+  }
+
+  .support-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .support-image {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .support-text {
+    padding: 1rem;
+  }
+
+  .support-text h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .support-content {
+    padding: 1.5rem;
+  }
+
+  .contact-points {
+    gap: 1rem;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Update contact form and button styles */
+.contact-form {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.contact-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn:active {
+  transform: translateY(1px);
+}
+
+/* Make the contact action match the tab styling exactly */
+.contact-action {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Use the exact same tab-button class that's used for the team tabs */
+.contact-action .tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 120px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-action .tab-button:hover {
+  border-color: #fff;
+  transform: translateY(-3px);
+}
+
+.contact-action .tab-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-action {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+}
