@@ -15,6 +15,9 @@
   <script src="teamTabs.js" defer></script>
   <script src="v2TeamTabs.js" defer></script>
 
+  <!-- Add this line -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
@@ -90,8 +93,10 @@
     <div class="tab-structure v2">
       <div class="exec-tab">
         <button class="tab-button active" data-tab="executives" aria-pressed="true">
-          <i class="tab-icon fas fa-users-gear"></i>
-          <span class="tab-label" data-text="Execs">Execs</span>
+          <span class="tab-icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </span>
+          <span class="tab-label">Executive</span>
           <span class="sr-only">Executives tab</span>
         </button>
       </div>
@@ -99,43 +104,49 @@
       <div class="tab-rows">
         <!-- First Row -->
         <div class="tab-row">
-          <button class="tab-button" data-tab="software" aria-pressed="false">
-            <i class="tab-icon fas fa-code"></i>
-            <span class="tab-label" data-text="Software">Software</span>
-            <span class="sr-only">Software tab</span>
+          <button class="tab-button" data-tab="software">
+            <span class="tab-icon">
+              <i class="fa-solid fa-code"></i>
+            </span>
+            <span class="tab-label">Software</span>
           </button>
 
-          <button class="tab-button" data-tab="mechatronics" aria-pressed="false">
-            <i class="tab-icon fas fa-microchip"></i>
-            <span class="tab-label" data-text="Mechatronics">Mechatronics</span>
-            <span class="sr-only">Mechatronics tab</span>
+          <button class="tab-button" data-tab="mechatronics">
+            <span class="tab-icon">
+              <i class="fa-solid fa-gear"></i>
+            </span>
+            <span class="tab-label">Mechatronics</span>
           </button>
 
-          <button class="tab-button" data-tab="electronics" aria-pressed="false">
-            <i class="tab-icon fas fa-bolt"></i>
-            <span class="tab-label" data-text="Electronics">Electronics</span>
-            <span class="sr-only">Electronics tab</span>
+          <button class="tab-button" data-tab="electronics">
+            <span class="tab-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </span>
+            <span class="tab-label">Electronics</span>
           </button>
         </div>
 
         <!-- Second Row -->
         <div class="tab-row">
-          <button class="tab-button" data-tab="sem" aria-pressed="false">
-            <i class="tab-icon fas fa-sitemap"></i>
-            <span class="tab-label" data-text="Sem">Sem</span>
-            <span class="sr-only">Sem tab</span>
+          <button class="tab-button" data-tab="sem">
+            <span class="tab-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            <span class="tab-label">SEM</span>
           </button>
 
-          <button class="tab-button" data-tab="business" aria-pressed="false">
-            <i class="tab-icon fas fa-chart-line"></i>
-            <span class="tab-label" data-text="Business">Business</span>
-            <span class="sr-only">Business tab</span>
+          <button class="tab-button" data-tab="business">
+            <span class="tab-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </span>
+            <span class="tab-label">Business</span>
           </button>
 
-          <button class="tab-button" data-tab="graphics" aria-pressed="false">
-            <i class="tab-icon fas fa-palette"></i>
-            <span class="tab-label" data-text="Graphics">Graphics</span>
-            <span class="sr-only">Graphics tab</span>
+          <button class="tab-button" data-tab="graphics">
+            <span class="tab-icon">
+              <i class="fa-solid fa-palette"></i>
+            </span>
+            <span class="tab-label">Graphics</span>
           </button>
         </div>
       </div>
@@ -1433,24 +1444,22 @@
           
           <div class="contact-points">
             <div class="contact-item">
-              <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2-2V6c0-1.1.9-2 2-2z"/>
-                <path d="M22 6l-10 7L2 6"/>
-              </svg>
+              <div class="contact-icon">
+                  <i class="fa-regular fa-envelope"></i>
+              </div>
               <div class="contact-info">
-                <span class="label">Email Us At</span>
-                <a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a>
+                  <span class="label">Email Us At</span>
+                  <a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a>
               </div>
             </div>
             
             <div class="contact-item">
-              <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
+              <div class="contact-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+              </div>
               <div class="contact-info">
-                <span class="label">Visit Us</span>
-                <span>8888 University Dr W, Burnaby, BC</span>
+                  <span class="label">Visit Us</span>
+                  <span>8888 University Dr W, Burnaby, BC</span>
               </div>
             </div>
           </div>

@@ -74,11 +74,11 @@
 }
 
 .team-categories {
-  padding: 2rem 0;
-  background-color: #000;
+  padding-top: 40px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 6rem;
+  align-items: center;
 }
 
 /* Fix spacing after hero section */
@@ -89,7 +89,7 @@
 /* Common section styling */
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 }
 
 .section-header h2 {
@@ -115,11 +115,11 @@
 
 /* Common structure for all versions */
 .tab-structure {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem 0;
+  gap: 40px;
 }
 
 /* Remove any scroll-snap properties */
@@ -143,14 +143,20 @@
 .tab-rows {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  margin-bottom: 1rem;
+  align-items: center;
+  gap: 20px;
 }
 
 .tab-row {
   display: flex;
-  gap: 2rem;
   justify-content: center;
+  gap: 40px;
+}
+
+/* First row (Executive) specific spacing */
+.tab-row:first-child,
+.tab-row:last-child {
+  margin: 0;
 }
 
 /* Fix selected team text positioning */
@@ -175,12 +181,15 @@
 
 /* Regular tab buttons */
 .tab-button {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
+  padding: 16px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.75rem;
 }
 
 /* Version 1 - Gradient Style */
@@ -303,19 +312,15 @@
 
 /* Common icon and label styling */
 .tab-icon {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
+  width: 2rem;  /* 32px */
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.tab-label {
-  font-size: 0.9375rem;
-  font-weight: 500;
-  position: relative;
-  z-index: 2;
-  transition: all 0.3s ease;
+.tab-icon i {
+  font-size: 1.5rem; /* 24px */
 }
 
 /* Executive tab specific */
@@ -330,23 +335,36 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .tab-row {
-    flex-wrap: wrap;
-    justify-content: center;
+  .team-categories {
+    padding-top: 20px;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .tab-structure {
+    gap: 30px;
   }
 
   .tab-button {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
+    padding: 12px;
+  }
+
+  .tab-row {
+    gap: 20px;
+  }
+
+  .tab-icon {
+    width: 1.75rem;  /* 28px */
+    height: 1.75rem;
   }
   
   .exec-tab .tab-button {
     width: 130px;
     height: 130px;
-  }
-
-  .tab-icon {
-    font-size: 1.5rem;
   }
   
   .exec-tab .tab-icon {
@@ -354,7 +372,7 @@
   }
   
   .tab-label {
-    font-size: 0.875rem;
+    font-size: 0.875rem; /* 14px */
   }
 
   .selected-team {
@@ -664,8 +682,21 @@ html {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .team-member-grid {
+    gap: 1.5rem;
+  }
+  
+  .team-member-card {
+    width: calc(50% - 0.75rem); /* Two cards per row on medium screens */
+  }
+}
+
 @media (max-width: 768px) {
-  /* Delete all these styles */
+  .team-member-card {
+    width: 100%; /* One card per row on mobile */
+    max-width: 280px;
+  }
 }
 
 /* Team Sections Container */
@@ -1562,4 +1593,131 @@ html {
     justify-content: center;
     margin-top: 1.5rem;
   }
+}
+
+.tab-icon i {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* If needed, adjust specific icons that might appear different */
+.fa-user-tie,
+.fa-code,
+.fa-gear,
+.fa-microchip,
+.fa-chart-line {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .tab-icon i {
+        font-size: 1.2rem;
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
+.contact-icon {
+    width: 24px;  /* Set fixed width */
+    height: 24px; /* Set fixed height */
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon i {
+    font-size: 24px; /* Consistent icon size */
+    color: white;
+}
+
+/* Specific icon adjustments */
+.fa-envelope,
+.fa-location-dot {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info .label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info a,
+.contact-info span {
+    color: #8B8B8B;
+    text-decoration: none;
+}
+
+/* Update the icons to match the design */
+.tab-button[data-tab="executive"] .tab-icon i {
+    content: "\f007";  /* User icon */
+}
+
+.tab-button[data-tab="software"] .tab-icon i {
+    content: "\f121";  /* Code icon */
+}
+
+.tab-button[data-tab="mechatronics"] .tab-icon i {
+    content: "\f085";  /* Gear icon */
+}
+
+.tab-button[data-tab="electronics"] .tab-icon i {
+    content: "\f2db";  /* Microchip icon */
+}
+
+.tab-button[data-tab="sem"] .tab-icon i {
+    content: "\f201";  /* Chart icon */
+}
+
+.tab-button[data-tab="business"] .tab-icon i {
+    content: "\f0b1";  /* Briefcase icon */
+}
+
+.tab-button[data-tab="graphics"] .tab-icon i {
+    content: "\f53f";  /* Palette icon */
+}
+
+@media (max-width: 768px) {
+    .tab-button {
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+    }
+
+    .tab-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .tab-icon i {
+        font-size: 20px;
+    }
+}
+
+.tab-label {
+    font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem); /* Responsive text size */
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    color: white;
+    margin-top: 0.25rem;
 }
