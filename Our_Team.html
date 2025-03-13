@@ -7,13 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Our Mission</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="our_Mission.css">
   
+  <link rel="stylesheet" href="Our_Team.css">
+  <link rel="stylesheet" href="styles.css">
 
   <!-- Link to External JavaScript File -->
-  <script src="scripts.js" defer></script>
-  <script src="timeline.js" defer></script>
+  <script src="teamTabs.js" defer></script>
+  <script src="v2TeamTabs.js" defer></script>
+
+  <!-- Add this line -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
@@ -24,16 +27,16 @@
   <div class="logo">
     <img src="SVG/logo.svg" alt="Subvision Logo">
   </div>
-  <nav>
-    <!-- Desktop Navigation -->
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="Our_Mission.html">Our Mission</a></li>
-      <li><a href="#team">Contributors</a></li>
-      <li><a href="Our_Team.html">Our Team</a></li>
-      <li><a href="index.html" class="contact-btn">Contact Us</a></li>
-    </ul>
-  </nav>
+      <!-- Desktop Navigation -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="Our_Mission.html">Our Mission</a></li>
+          <li><a href="Our_Mission.html">Contributors</a></li>
+          <li><a href="Our_Team.html">Our Team</a></li>
+          <li><a href="index.html" class="contact-btn">Contact Us</a></li>
+        </ul>
+    </nav>
   <!-- Hamburger Menu -->
   <div class="hamburger">
     <span></span>
@@ -58,6 +61,8 @@
   <li><a href="#contact" class="contact-btn">Contact Us</a></li>
 </ul>
 
+
+
   <!-- Hero Section -->
   <section class="hero">
     <div class="social-wrapper">
@@ -71,54 +76,1431 @@
     </div>
 
     <div class="hero-content">
-      <h1>Meet Our Team</h1>
-      <p>Interested in joining and gaining hands on experience in a variety of fields apply to join.</p>
+      <h1>Meet the team</h1>
+      <p>Reach out to us via email or leave a message. We'd love to hear from you!</p>
+      <a href="#contact-form" class="contact-us-btn">Contact Us</a>
     </div>
   </section>
 
-  <!-- Team header Section -->
-  <section class="team-header">
-    <div>
+  <!-- Add after hero section: -->
+  <section class="team-categories">
+    <div class="section-header">
+      <h2>Our Teams</h2>
+      <p class="section-subtitle">Meet the innovative minds behind Subvision</p>
+    </div>
+
+    <!-- Only Version 2 - Contact Button Style -->
+    <div class="tab-structure v2">
+      <div class="exec-tab">
+        <button class="tab-button active" data-tab="executives" aria-pressed="true">
+          <span class="tab-icon">
+            <i class="fa-solid fa-user-tie"></i>
+          </span>
+          <span class="tab-label">Executive</span>
+          <span class="sr-only">Executives tab</span>
+        </button>
+      </div>
+
+      <div class="tab-rows">
+        <!-- First Row -->
+        <div class="tab-row">
+          <button class="tab-button" data-tab="software">
+            <span class="tab-icon">
+              <i class="fa-solid fa-code"></i>
+            </span>
+            <span class="tab-label">Software</span>
+          </button>
+
+          <button class="tab-button" data-tab="mechatronics">
+            <span class="tab-icon">
+              <i class="fa-solid fa-gear"></i>
+            </span>
+            <span class="tab-label">Mechatronics</span>
+          </button>
+
+          <button class="tab-button" data-tab="electronics">
+            <span class="tab-icon">
+              <i class="fa-solid fa-microchip"></i>
+            </span>
+            <span class="tab-label">Electronics</span>
+          </button>
+        </div>
+
+        <!-- Second Row -->
+        <div class="tab-row">
+          <button class="tab-button" data-tab="sem">
+            <span class="tab-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            <span class="tab-label">SEM</span>
+          </button>
+
+          <button class="tab-button" data-tab="business">
+            <span class="tab-icon">
+              <i class="fa-solid fa-briefcase"></i>
+            </span>
+            <span class="tab-label">Business</span>
+          </button>
+
+          <button class="tab-button" data-tab="graphics">
+            <span class="tab-icon">
+              <i class="fa-solid fa-palette"></i>
+            </span>
+            <span class="tab-label">Graphics</span>
+          </button>
+        </div>
+      </div>
+      <h3 class="selected-team">Executive Team</h3>
     </div>
   </section>
 
- 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="SVG/logo.svg" alt="Subvision Footer Logo">
-      <p>Location: 8888 University Dr W, Burnaby, BC V5A 1S6</p>
-      <p>Email: subvisionengineering@gmail.com</p>
+  <!-- Add this after the tab structure but before the footer -->
+  <div class="team-sections-container">
+    <!-- Executive Team Section -->
+    <div id="executives" class="team-section active">
+      <div class="team-content" id="executives-team">
+        <!-- CEO Section -->
+        <div class="team-grid ceo-section">
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Ali Hakkam</h3>
+            <p class="member-title">Chief Executive Officer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Executive Team Members -->
+        <div class="team-grid exec-section">
+          <!-- Row 1 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Joar Hussain</h3>
+            <p class="member-title">President</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Darren</h3>
+            <p class="member-title">Founding Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Shoieb</h3>
+            <p class="member-title">Founding Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Victor</h3>
+            <p class="member-title">Founding Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Igor</h3>
+            <p class="member-title">Founding Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Nicole Villaraso</h3>
+            <p class="member-title">Business Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Saketh Poori</h3>
+            <p class="member-title">Software Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Onur Yildiz</h3>
+            <p class="member-title">Electronics Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Jason</h3>
+            <p class="member-title">Mechanics Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Md Kashfi Or Rashid</h3>
+            <p class="member-title">Graphics Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Abi</h3>
+            <p class="member-title">SEM Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#team">Our Team</a></li>
-      </ul>
+
+    <!-- Software Team Section -->
+    <div id="software" class="team-section">
+      <div class="team-content" id="software-team">
+        <!-- Software Lead Section -->
+        <div class="team-grid ceo-section">
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Saketh Poori</h3>
+            <p class="member-title">Software Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Software Team Members -->
+        <div class="team-grid exec-section">
+          <!-- Row 1 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Emily Trinh</h3>
+            <p class="member-title">Software Developer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Valentino Tapia</h3>
+            <p class="member-title">Software Developer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Hayden Mai</h3>
+            <p class="member-title">Software Developer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Rodrigo Anasco</h3>
+            <p class="member-title">Software Developer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Tanvir Leon</h3>
+            <p class="member-title">Software Developer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Ahmed</h3>
+            <p class="member-title">Software Developer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <a href="#" aria-label="Facebook"><img src="img/Facebook.png" alt="Facebook"></a>
-      <a href="https://www.instagram.com/subvision.robotics" target="_blank" aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
-      <a href="#" aria-label="LinkedIn"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
+
+    <!-- SEM Team Section -->
+    <div id="sem" class="team-section">
+      <div class="team-content" id="sem-team">
+        <!-- SEM Lead Section -->
+        <div class="team-grid ceo-section">
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Abi</h3>
+            <p class="member-title">SEM Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEM Team Members -->
+        <div class="team-grid exec-section">
+          <!-- Row 1 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Laura Visbal Garcia</h3>
+            <p class="member-title">SEM Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Shoaib</h3>
+            <p class="member-title">SEM Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Theo</h3>
+            <p class="member-title">SEM Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Karl</h3>
+            <p class="member-title">SEM Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">William</h3>
+            <p class="member-title">SEM Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Business Team Section -->
+    <div id="business" class="team-section">
+      <div class="team-content" id="business-team">
+        <!-- Business Lead Section -->
+        <div class="team-grid ceo-section">
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Nicole Villaraso</h3>
+            <p class="member-title">Business Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Team Members -->
+        <div class="team-grid exec-section">
+          <!-- Row 1 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Zahid Hasnain</h3>
+            <p class="member-title">Business Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Henry Kong</h3>
+            <p class="member-title">Business Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Cobby Liang</h3>
+            <p class="member-title">Business Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Raysa</h3>
+            <p class="member-title">Business Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Nicolas Rasya</h3>
+            <p class="member-title">Business Member</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Add an empty card to maintain the grid layout -->
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Graphics Team Section -->
+    <div id="graphics" class="team-section">
+      <div class="team-content" id="graphics-team">
+        <!-- Graphics Lead Section -->
+        <div class="team-grid ceo-section">
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Md Kashfi Or Rashid</h3>
+            <p class="member-title">Graphics Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Graphics Team Members -->
+        <div class="team-grid exec-section">
+          <!-- Row 1 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Lin Chin Yeo (Rachel)</h3>
+            <p class="member-title">Graphics Designer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Yvonne Tan</h3>
+            <p class="member-title">Graphics Designer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Benjamin Nichiporik</h3>
+            <p class="member-title">Graphics Designer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Add empty cards to maintain the grid layout -->
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mechatronics Team Section -->
+    <div id="mechatronics" class="team-section">
+      <div class="team-content">
+        <!-- Mechanics Lead Section -->
+        <div class="team-grid ceo-section">
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Jason</h3>
+            <p class="member-title">Mechanics Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mechanics Team Members -->
+        <div class="team-grid exec-section">
+          <!-- Row 1 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Arjun Gill</h3>
+            <p class="member-title">Mechanics Engineer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Evan</h3>
+            <p class="member-title">Mechanics Engineer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">David</h3>
+            <p class="member-title">Mechanics Engineer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Avgusta Gasenko</h3>
+            <p class="member-title">Mechanics Engineer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Kunwar</h3>
+            <p class="member-title">Mechanics Engineer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Add an empty card to maintain the grid layout -->
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Electronics Team Section -->
+    <div id="electronics" class="team-section">
+      <div class="team-content">
+        <!-- Electronics Lead Section -->
+        <div class="team-grid ceo-section">
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Onur Yildiz</h3>
+            <p class="member-title">Electronics Lead</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Electronics Team Members -->
+        <div class="team-grid exec-section">
+          <!-- Row 1 -->
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Abdullah</h3>
+            <p class="member-title">Electronics Engineer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Rawad</h3>
+            <p class="member-title">Electronics Engineer</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Add an empty card to maintain the grid layout -->
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">Twitter</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Add more empty cards to fill the grid -->
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-member-card" style="visibility: hidden;">
+            <div class="member-avatar"></div>
+            <h3 class="member-name">Placeholder</h3>
+            <p class="member-title">Placeholder</p>
+            <div class="team-social">
+              <a href="#" class="team-social-icon">
+                <span class="sr-only">LinkedIn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- Add other team sections -->
   </div>
-</footer>
+  <section class="join-us-section">
+    <div class="section-header">
+      <h2>Join Us</h2>
+      <p class="section-subtitle">Be part of the next generation of underwater robotics</p>
+    </div>
+
+    <div class="join-container">
+      <div class="join-content">
+        <div class="join-text">
+          <h3>Ready to Make an Impact?</h3>
+          <p>Interested in joining Subvision? We're always looking for passionate individuals to help push the boundaries of innovation. Join us in our mission to revolutionize underwater robotics.</p>
+          
+          <div class="opportunity-points">
+            <div class="point">
+              <svg class="outline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              <span>Work with cutting-edge robotics</span>
+            </div>
+            <div class="point">
+              <svg class="outline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+              <span>Join a diverse team of innovators</span>
+            </div>
+            <div class="point">
+              <svg class="outline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+                <path d="M9 18h6"/>
+                <path d="M10 22h4"/>
+              </svg>
+              <span>Develop real-world solutions</span>
+            </div>
+          </div>
+
+          <a href="#apply" class="join-btn">
+            Apply Now <strong>&#8599;</strong>
+          </a>
+        </div>
+
+        <div class="join-image">
+          <img src="img/apply.png" alt="Join Our Team">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-support-section">
+    <div class="section-header">
+      <h2>Let's Connect</h2>
+      <p class="section-subtitle">Have questions about our projects, technology, or how to get involved?</p>
+    </div>
+
+    <div class="support-container">
+      <div class="support-content">
+        <div class="support-image">
+          <img src="img/questions.png" alt="Support & Questions">
+        </div>
+
+        <div class="support-text">
+          <h3>Get in Touch</h3>
+          <p>Our team is here to help guide you through any inquiries you might have about joining Subvision or our ongoing projects.</p>
+          
+          <div class="contact-points">
+            <div class="contact-item">
+              <div class="contact-icon">
+                  <i class="fa-regular fa-envelope"></i>
+              </div>
+              <div class="contact-info">
+                  <span class="label">Email Us At</span>
+                  <a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                  <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-info">
+                  <span class="label">Visit Us</span>
+                  <span>8888 University Dr W, Burnaby, BC</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-action">
+            <a href="index.html" class="join-btn">
+              Get in Touch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="SVG/logo.svg" alt="Subvision Footer Logo">
+        <p>Location: 8888 University Dr W, Burnaby, BC V5A 1S6</p>
+        <p>Email: subvisionengineering@gmail.com</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Our Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#" aria-label="Facebook"><img src="img/Facebook.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/subvision.robotics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
+        <a href="#" aria-label="LinkedIn"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="teamTabs.js"></script>
+  <script src="v2TeamTabs.js"></script>
 </body>
-
-
-<!-- Minimal JavaScript to toggle expanded state -->
-<script>
-  const toggleButtons = document.querySelectorAll('.toggle-btn');
-  toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Find the .card-body-wrapper within the same card
-      const cardBodyWrapper = button.closest('.ui-card').querySelector('.card-body-wrapper');
-      cardBodyWrapper.classList.toggle('expanded');
-    });
-  });
-</script>
 </html>

@@ -14,6 +14,7 @@
   <!-- Link to External JavaScript File -->
   <script src="scripts.js" defer></script>
   <script src="timeline.js" defer></script>
+  <script src="cardExpansion.js" defer></script>
 
 </head>
 
@@ -24,16 +25,16 @@
   <div class="logo">
     <img src="SVG/logo.svg" alt="Subvision Logo">
   </div>
-  <nav>
-    <!-- Desktop Navigation -->
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="Our_Mission.html">Our Mission</a></li>
-      <li><a href="#team">Contributors</a></li>
-      <li><a href="Our_Team.html">Our Team</a></li>
-      <li><a href="index.html" class="contact-btn">Contact Us</a></li>
-    </ul>
-  </nav>
+      <!-- Desktop Navigation -->
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="Our_Mission.html">Our Mission</a></li>
+          <li><a href="Our_Mission.html">Contributors</a></li>
+          <li><a href="Our_Team.html">Our Team</a></li>
+          <li><a href="index.html" class="contact-btn">Contact Us</a></li>
+        </ul>
+    </nav>
   <!-- Hamburger Menu -->
   <div class="hamburger">
     <span></span>
@@ -72,7 +73,8 @@
 
     <div class="hero-content">
       <h1>Our Mission</h1>
-      <p>Reach out to us via email or leave a message. We’d love to hear from you!</p>
+      <p>Reach out to us via email or leave a message. We'd love to hear from you!</p>
+      <a href="#contact-form" class="contact-us-btn">Contact Us</a>
     </div>
   </section>
 
@@ -100,159 +102,182 @@
         <img src="img/Invasive_Species.png"/>
       </div>
       <h3>Invasive Species</h3>
-      <p>Nearly 80% of invasive marine species transfer is caused by biofouling hulls. By keeping hulls perpetually clean, we’re protecting the ocean.</p>
+      <p>Nearly 80% of invasive marine species transfer is caused by biofouling hulls. By keeping hulls perpetually clean, we're protecting the ocean.</p>
     </div>
-  </section>
-  <!-- Timeline Section (Updated) -->
-   <section class="timeline">
-  <section class="timeline-title">
-    <h2>Timeline</h2>
   </section>
 
-  <section class="ag-timeline-block">
-    <div>
-      <ul class="timeline">
-        <li>
-          <div class="event">
-            <time>2023</time>
-            <p>May: Club Starts</p>
+  
+  <!-- Timeline Section -->
+  <section class="timeline">
+    <h2 class="timeline-heading">Our Journey</h2>
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      
+      <!-- Group progress line and dot together -->
+      <div class="timeline-progress-container">
+        <div class="timeline-progress"></div>
+        <div class="moving-dot"></div>
+      </div>
+      
+      <!-- 2023 -->
+      <div class="timeline-year">2023</div>
+      
+      <!-- Club Starts - Text Left, Month Right -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <div class="timeline-details">
+            <h4>Club Starts</h4>
+            <p>Beginning of our innovative journey in marine robotics</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2023</time>
-            <p>Dec: 1st Rov Completed</p>
+        </div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-month right">May</div>
+      </div>
+
+      <!-- 1st ROV - Text Right, Month Left -->
+      <div class="timeline-item">
+        <div class="timeline-month left">December</div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-content right">
+          <div class="timeline-details">
+            <h4>1st ROV Completed</h4>
+            <p>Successfully built and tested our first underwater vehicle</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2024</time>
-            <p>May: Chang ECO-OP</p>
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="timeline-year">2024</div>
+      
+      <!-- Chang ECO-OP - Text Left, Month Right -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <div class="timeline-details">
+            <h4>Chang ECO-OP</h4>
+            <p>Major milestone in environmental cooperation</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2024</time>
-            <p>June: MateRov Worlds</p>
+        </div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-month right">May</div>
+      </div>
+
+      <!-- MateRov - Text Right, Month Left -->
+      <div class="timeline-item">
+        <div class="timeline-month left">June</div>
+        <!-- <div class="timeline-dot"></div> -->
+        <div class="timeline-content right">
+          <div class="timeline-details">
+            <h4>MateRov Worlds</h4>
+            <p>Competing on the global stage</p>
           </div>
-        </li>
-        <li>
-          <div class="event">
-            <time>2025</time>
-            <p>Now: ZIMA</p>
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="timeline-year">2025</div>
+
+      <!-- ZIMA - Current Project -->
+      <div class="timeline-item">
+        <div class="timeline-content left">
+          <div class="timeline-details">
+            <h4>Project ZIMA</h4>
+            <p>Pioneering the future of marine robotics</p>
           </div>
-        </li>
-      </ul>
+        </div>
+        <!-- Remove the Now from here -->
+        <div class="timeline-month right"></div>
+      </div>
     </div>
   </section>
-</section>
-<section class="zima">
-  <h2>Project ZIMA</h2>
-  <div class="zima-container">
-    <div class="zima-img">
-      <img src="img/ZIMA.png" alt="ZIMA">
+  <section class="zima">
+    <h2>Project ZIMA</h2>
+    <div class="zima-container">
+      <div class="zima-img">
+        <img src="img/ZIMA.png" alt="ZIMA">
+      </div>
+      <div class="zima-text">
+        <h3>What is ZIMA?</h3>
+        <p>Project ZIMA is a collaborative effort between Subvision Engineering and the Canadian Institute for Advanced Research in Engineering (CIRA). The project aims to develop a cutting-edge robotic vehicle capable of reaching the moon by 2030.</p>
+      </div>
     </div>
-    <div class="zima-text">
-      <h3>What is ZIMA?</h3>
-      <p>Project ZIMA is a collaborative effort between Subvision Engineering and the Canadian Institute for Advanced Research in Engineering (CIRA). The project aims to develop a cutting-edge robotic vehicle capable of reaching the moon by 2030.</p>
+  </section>
+
+<!-- Add this section before the ui-card-container -->
+<section class="mission-cards-section">
+  <div class="mission-header">
+    <h2>Our Core Values</h2>
+    <p class="mission-subtitle">Join us in revolutionizing marine technology and creating a sustainable future for our oceans</p>
+    <div class="button-comparison">
+      <!-- Gradient Style -->
+      <div class="cta-wrapper">
+        <a href="/contributors" class="mission-cta-v1">
+          <span class="cta-text">Contribute to Innovation</span>
+          <span class="cta-icon">→</span>
+        </a>
+      </div>
+
+      <!-- Contact Style - Exact match -->
+      <div class="cta-wrapper">
+        <a href="/contributors" class="contact-btn">
+          <span class="btn-text">Contribute to Innovation</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ui-card-container">
+    <!-- Card 1: INNOVATE -->
+    <div class="ui-card">
+      <div class="corner corner-top-left"></div>
+      <div class="corner corner-top-right"></div>
+      <div class="corner corner-bottom-left"></div>
+      <div class="corner corner-bottom-right"></div>
+
+      <h3 class="card-header">INNOVATE</h3>
+      <h4 class="card-subheading">Cleaner Hulls, Greener World</h4>
+      
+      <div class="card-body-wrapper">
+        <p class="card-body">
+          We pioneer autonomous robotics to transform marine maintenance into a sustainable, efficient, and eco-friendly process.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2: EFFICIENCY -->
+    <div class="ui-card">
+      <div class="corner corner-top-left"></div>
+      <div class="corner corner-top-right"></div>
+      <div class="corner corner-bottom-left"></div>
+      <div class="corner corner-bottom-right"></div>
+
+      <h3 class="card-header">EFFICIENCY</h3>
+      <h4 class="card-subheading">Optimized Performance</h4>
+      
+      <div class="card-body-wrapper">
+        <p class="card-body">
+          Revolutionizing marine maintenance with autonomous, eco-friendly solutions that boost vessel efficiency and protect our oceans.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3: SUSTAINABILITY -->
+    <div class="ui-card">
+      <div class="corner corner-top-left"></div>
+      <div class="corner corner-top-right"></div>
+      <div class="corner corner-bottom-left"></div>
+      <div class="corner corner-bottom-right"></div>
+
+      <h3 class="card-header">SUSTAINABILITY</h3>
+      <h4 class="card-subheading">Future of Marine Care</h4>
+      
+      <div class="card-body-wrapper">
+        <p class="card-body">
+          Leading the shift toward cleaner hulls and healthier oceans through innovative engineering and sustainable practices.
+        </p>
+      </div>
     </div>
   </div>
 </section>
-
-
-<!-- Container to center the card or add spacing around it -->
-<section class="ui-card-container">
-  <!-- Card 1: INNOVATE -->
-  <div class="ui-card">
-    <!-- Corners -->
-    <div class="corner corner-top-left"></div>
-    <div class="corner corner-top-right"></div>
-    <div class="corner corner-bottom-left"></div>
-    <div class="corner corner-bottom-right"></div>
-
-    <!-- Heading & Subheading -->
-    <h1 class="card-header">INNOVATE</h1>
-    <h2 class="card-subheading">Cleaner Hulls, Greener World</h2>
-
-    <!-- Collapsible Body Text -->
-    <div class="card-body-wrapper">
-      <p class="card-body">
-        <strong>Mission Statement:</strong> 
-        We pioneer autonomous robotics to transform marine maintenance into a sustainable, efficient, and eco-friendly process.
-      </p>
-      <p class="card-body">
-        <strong>Description:</strong> 
-        By preventing biofouling at its source, Subvision Robotics boosts vessel performance, reduces fuel consumption, and protects marine ecosystems.
-      </p>
-    </div>
-
-    <!-- Downward Arrow -->
-    <div class="arrow-button">
-      <button class="toggle-btn" aria-label="Toggle dropdown">
-        <span class="arrow-icon">&#x25BC;</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Card 2: EFFICIENCY REIMAGINED -->
-  <div class="ui-card">
-    <div class="corner corner-top-left"></div>
-    <div class="corner corner-top-right"></div>
-    <div class="corner corner-bottom-left"></div>
-    <div class="corner corner-bottom-right"></div>
-
-    <h1 class="card-header">EFFICIENCY REIMAGINED</h1>
-    <h2 class="card-subheading">Optimized Performance, Minimal Impact</h2>
-
-    <div class="card-body-wrapper">
-      <p class="card-body">
-        <strong>Mission Statement:</strong> 
-        At Subvision Robotics, we revolutionize marine maintenance with autonomous, eco-friendly solutions. 
-        Our robotics prevent biofouling at its source—boosting vessel efficiency, slashing fuel consumption, 
-        and safeguarding marine ecosystems.
-      </p>
-      <p class="card-body">
-        <strong>Description:</strong> 
-        Harnessing breakthrough engineering and sustainable design, we transform ship upkeep into a seamless, 
-        cost-effective process that not only powers performance but also nurtures a cleaner, greener world.
-      </p>
-    </div>
-
-    <div class="arrow-button">
-      <button class="toggle-btn" aria-label="Toggle dropdown">
-        <span class="arrow-icon">&#x25BC;</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Card 3: SUSTAINABLE TRANSFORMATION -->
-  <div class="ui-card">
-    <div class="corner corner-top-left"></div>
-    <div class="corner corner-top-right"></div>
-    <div class="corner corner-bottom-left"></div>
-    <div class="corner corner-bottom-right"></div>
-
-    <h1 class="card-header">SUSTAINABLE TRANSFORMATION</h1>
-    <h2 class="card-subheading">Pioneering the Future of Ship Maintenance</h2>
-
-    <div class="card-body-wrapper">
-      <p class="card-body">
-        <strong>Mission Statement:</strong> 
-        By merging cutting-edge engineering with eco-friendly design, we’re leading a shift toward cleaner hulls, 
-        healthier oceans, and a greener world—one innovation at a time.
-      </p>
-      <p class="card-body">
-        <strong>Description:</strong> 
-        Our commitment to sustainable transformation drives us to develop innovative solutions that not only enhance 
-        operational efficiency but also protect our marine environment for future generations.
-      </p>
-    </div>
-
-    <div class="arrow-button">
-      <button class="toggle-btn" aria-label="Toggle dropdown">
-        <span class="arrow-icon">&#x25BC;</span>
-      </button>
-    </section>
 
 <!-- Footer -->
 <footer class="footer">
@@ -280,16 +305,4 @@
 </footer>
 </body>
 
-
-<!-- Minimal JavaScript to toggle expanded state -->
-<script>
-  const toggleButtons = document.querySelectorAll('.toggle-btn');
-  toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Find the .card-body-wrapper within the same card
-      const cardBodyWrapper = button.closest('.ui-card').querySelector('.card-body-wrapper');
-      cardBodyWrapper.classList.toggle('expanded');
-    });
-  });
-</script>
 </html>

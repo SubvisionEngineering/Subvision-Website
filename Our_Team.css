@@ -1,0 +1,1723 @@
+:root {
+  --bg-color: #0a0e17;
+  --tab-bg: rgba(30, 41, 59, 0.4);
+  --tab-hover-bg: rgba(56, 89, 152, 0.4);
+  --tab-active-bg: rgba(59, 130, 246, 0.4);
+  --tab-text: rgba(255, 255, 255, 0.7);
+  --tab-hover-text: rgba(255, 255, 255, 0.9);
+  --tab-active-text: #ffffff;
+  --tab-border: rgba(255, 255, 255, 0.1);
+  --tab-hover-border: rgba(147, 197, 253, 0.3);
+  --tab-active-border: rgba(147, 197, 253, 0.5);
+  --tab-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --tab-hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2),
+                     0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  --tab-active-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4),
+                      0 8px 10px -6px rgba(59, 130, 246, 0.2);
+  --transition-medium: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.applications-section{
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.applications-section img{
+  width: 100%;
+  height: auto;
+}
+
+.apply-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+}
+.apply-text a{
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.apply-text a:hover{
+  color: #007bff;
+}
+.applications-section h2{
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.questions-section{
+  padding: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+.questions-section img{
+  width: 80%;
+  height: auto;
+}
+.text-container{
+  display: flex;
+  flex-direction: row-reverse;
+  transform: translateY(-150%);
+  width: 100%;
+}
+.questions-text{
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color:rgba(126, 146, 192, 0.7);
+}
+
+.team-categories {
+  padding-top: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Fix spacing after hero section */
+.hero + .team-categories {
+  margin-top: 2rem;
+}
+
+/* Common section styling */
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: #bbb;
+  font-size: 1.25rem;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Tab Versions Container */
+.tab-versions {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  margin-bottom: 4rem;
+}
+
+/* Common structure for all versions */
+.tab-structure {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Remove any scroll-snap properties */
+.tab-structure {
+  scroll-snap-align: none;
+}
+
+/* Center exec tab */
+.exec-tab {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.exec-tab .tab-button {
+  width: 150px;
+  height: 150px;
+}
+
+/* Tab rows with better spacing */
+.tab-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.tab-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* First row (Executive) specific spacing */
+.tab-row:first-child,
+.tab-row:last-child {
+  margin: 0;
+}
+
+/* Fix selected team text positioning */
+.selected-team {
+  position: relative;
+  overflow: hidden;
+  min-height: 2.5rem;
+  height: 4rem;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.75rem;
+  text-align: center;
+  width: auto;
+  min-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Regular tab buttons */
+.tab-button {
+  width: 110px;
+  height: 110px;
+  padding: 16px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Version 1 - Gradient Style */
+.v1 .tab-button {
+  background: transparent;
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v1 .tab-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #4a90e2, #357abd);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.v1 .tab-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(74, 144, 226, 0.3);
+}
+
+.v1 .tab-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Version 2 - Contact Button Style */
+.v2 .tab-button {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.v2 .tab-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.v2 .tab-button:hover .tab-icon,
+.v2 .tab-button:hover .tab-label {
+  color: black;
+}
+
+.v2 .tab-button.active {
+  background-color: white;
+  color: black;
+}
+
+.v2 .tab-button.active .tab-icon,
+.v2 .tab-button.active .tab-label {
+  color: black;
+}
+
+/* Version 3 - Glass Style */
+.v3 .tab-button {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v3 .tab-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.v3 .tab-button:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 20px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.v3 .tab-button:hover::before {
+  opacity: 1;
+}
+
+.v3 .tab-button.active {
+  background: rgba(74, 144, 226, 0.15);
+  border-color: rgba(74, 144, 226, 0.3);
+  box-shadow: 
+    0 10px 20px rgba(74, 144, 226, 0.1),
+    0 0 30px rgba(74, 144, 226, 0.1);
+}
+
+/* Common styles for all versions */
+.tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Common icon and label styling */
+.tab-icon {
+  width: 2rem;  /* 32px */
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-icon i {
+  font-size: 1.5rem; /* 24px */
+}
+
+/* Executive tab specific */
+.exec-tab .tab-button {
+  width: 150px;
+  height: 150px;
+}
+
+.exec-tab .tab-icon {
+  font-size: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .team-categories {
+    padding-top: 20px;
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+  }
+
+  .tab-structure {
+    gap: 30px;
+  }
+
+  .tab-button {
+    width: 90px;
+    height: 90px;
+    padding: 12px;
+  }
+
+  .tab-row {
+    gap: 20px;
+  }
+
+  .tab-icon {
+    width: 1.75rem;  /* 28px */
+    height: 1.75rem;
+  }
+  
+  .exec-tab .tab-button {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .exec-tab .tab-icon {
+    font-size: 1.75rem;
+  }
+  
+  .tab-label {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .selected-team {
+    min-width: 300px;
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Version 1 - Gradient Style Animations */
+.v1 .selected-team {
+  background: linear-gradient(90deg, #4a90e2, #357abd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.v1 .selected-team.animate {
+  animation: gradientSlide 0.5s ease-out forwards;
+}
+
+@keyframes gradientSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Version 2 - Contact Style Animations */
+.v2 .selected-team {
+  position: relative;
+  overflow: hidden;
+  min-height: 2.5rem;
+  height: 4rem;
+  padding: 1rem 2rem;
+  margin-top: 3rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1.75rem;
+  text-align: center;
+  width: auto;
+  min-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation container */
+.slot-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text elements */
+.slot-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  padding: inherit;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+@keyframes slideOutUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Version 3 - Glass Style Animations */
+.v3 .selected-team {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.v3 .selected-team.animate {
+  animation: glassReveal 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes glassReveal {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Add these styles to your existing CSS */
+
+/* Common button styles */
+.tab-button {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Animation classes */
+.selected-team {
+  transition: opacity 0.3s ease;
+}
+
+.selected-team.animate {
+  animation: none;
+}
+
+/* Version 1 Animation */
+.v1 .selected-team.animate {
+  animation: gradientSlide 0.5s ease-out forwards;
+}
+
+@keyframes gradientSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Version 2 Animation */
+.v2 .selected-team.animate {
+  animation: none;
+}
+
+/* Version 3 Animation */
+.v3 .selected-team.animate {
+  animation: glassReveal 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes glassReveal {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Active state styles */
+.tab-button.active {
+  pointer-events: none;
+}
+
+.v1 .tab-button.active {
+  background: linear-gradient(90deg, #4a90e2, #357abd);
+  border-color: #4a90e2;
+}
+
+.v2 .tab-button.active {
+  background-color: white;
+  color: black;
+}
+
+.v3 .tab-button.active {
+  background: rgba(74, 144, 226, 0.15);
+  border-color: rgba(74, 144, 226, 0.3);
+  box-shadow: 
+    0 10px 20px rgba(74, 144, 226, 0.1),
+    0 0 30px rgba(74, 144, 226, 0.1);
+}
+
+/* Remove scroll snap behavior */
+html {
+  scroll-behavior: auto;
+}
+
+/* Add dividers between versions */
+.version-divider {
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  margin: 0 auto;
+}
+
+/* Remove all version headers completely */
+.version-header, 
+.version-title-container,
+.version-title {
+  display: none !important;
+}
+
+/* Team members grid and cards */
+.members-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.members-row {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Team member cards */
+.member-card {
+  /* Delete all these styles */
+}
+
+/* Avatar container */
+.member-avatar-container {
+  /* Delete all these styles */
+}
+
+/* Member info */
+.member-name {
+  /* Delete all these styles */
+}
+
+.member-title {
+  /* Delete all these styles */
+}
+
+/* Animation for card appearance */
+.animate-fadeInUp {
+  /* Delete all these styles */
+}
+
+@keyframes fadeInUp {
+  /* Delete all these styles */
+}
+
+/* Layout */
+.members-row {
+  /* Delete all these styles */
+}
+
+/* Leader card slightly larger */
+.leader-section .member-card {
+  /* Delete all these styles */
+}
+
+.leader-section .member-avatar-container {
+  /* Delete all these styles */
+}
+
+.leader-section .member-name {
+  /* Delete all these styles */
+}
+
+.leader-section .member-title {
+  /* Delete all these styles */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .team-member-grid {
+    gap: 1.5rem;
+  }
+  
+  .team-member-card {
+    width: calc(50% - 0.75rem); /* Two cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .team-member-card {
+    width: 100%; /* One card per row on mobile */
+    max-width: 280px;
+  }
+}
+
+/* Team Sections Container */
+.team-sections-container {
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+/* Team Section */
+.team-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.team-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Team Header */
+.team-header {
+  display: none;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #60a5fa, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.team-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+/* Member Cards */
+.member-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  width: 300px;
+  transition: all 0.4s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(147, 197, 253, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Member avatar - just a clean circle */
+.member-avatar {
+  width: 96px;
+  height: 96px;
+  margin-bottom: 1rem;
+}
+
+/* Clean circle with border only */
+.avatar-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: transparent;
+}
+
+/* Member info */
+.member-name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.member-title {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+/* Selected Team Title with Slot Machine Animation - Improved spacing */
+.selected-team-container {
+  position: relative;
+  height: 5rem;
+  min-width: 350px;
+  background-color: rgba(17, 17, 17, 0.95);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 3rem 0 1.5rem; /* Adjusted vertical spacing */
+}
+
+.slot-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem; /* Added horizontal padding */
+}
+
+.slot-item {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  padding: 0 1rem; /* Added padding to prevent text touching edges */
+}
+
+/* Team description spacing */
+.team-description {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 42rem;
+  margin: 0 auto 3rem; /* Adjusted bottom margin */
+  padding: 0 1rem; /* Added horizontal padding */
+}
+
+/* Team member card - Base styling */
+.team-member-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Team member card with hover effects */
+.team-member-card {
+  width: calc(33.333% - 1.35rem);
+  min-width: 280px;
+  max-width: 320px;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Card hover effect */
+.team-member-card:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.1),
+    0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* Member avatar */
+.member-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.member-avatar:hover img {
+  transform: scale(1.1);
+}
+
+/* Member info */
+.member-name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.member-title {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation delays */
+.team-member-card:nth-child(1) { animation-delay: 0.1s; }
+.team-member-card:nth-child(2) { animation-delay: 0.2s; }
+.team-member-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Animation for card appearance */
+.animate-fadeInUp {
+  /* Delete all these styles */
+}
+
+@keyframes fadeInUp {
+  /* Delete all these styles */
+}
+
+/* Layout */
+.members-row {
+  /* Delete all these styles */
+}
+
+/* Leader card slightly larger */
+.leader-section .member-card {
+  /* Delete all these styles */
+}
+
+.leader-section .member-avatar-container {
+  /* Delete all these styles */
+}
+
+.leader-section .member-name {
+  /* Delete all these styles */
+}
+
+.leader-section .member-title {
+  /* Delete all these styles */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .team-member-grid {
+    gap: 1.5rem;
+  }
+  
+  .team-member-card {
+    width: calc(50% - 0.75rem); /* Two cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .team-member-card {
+    width: 100%; /* One card per row on mobile */
+    max-width: 280px;
+  }
+}
+
+/* Team Sections Container */
+.team-sections-container {
+  margin-top: 2rem;
+  padding: 0 2rem;
+}
+
+/* Team Section */
+.team-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.team-section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Team Header */
+.team-header {
+  display: none;
+}
+
+.team-title {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #60a5fa, #93c5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.team-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+/* Member Cards */
+.member-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  width: 300px;
+  transition: all 0.4s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(147, 197, 253, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.member-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  border: 3px solid rgba(147, 197, 253, 0.3);
+  padding: 5px;
+}
+
+.member-info {
+  text-align: center;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.member-title {
+  color: rgba(147, 197, 253, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* Selected Team Title with Slot Machine Animation - Improved spacing */
+.selected-team-container {
+  position: relative;
+  height: 5rem;
+  min-width: 350px;
+  background-color: rgba(17, 17, 17, 0.95);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 3rem 0 1.5rem; /* Adjusted vertical spacing */
+}
+
+.slot-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem; /* Added horizontal padding */
+}
+
+.slot-item {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  padding: 0 1rem; /* Added padding to prevent text touching edges */
+}
+
+/* Team description spacing */
+.team-description {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 42rem;
+  margin: 0 auto 3rem; /* Adjusted bottom margin */
+  padding: 0 1rem; /* Added horizontal padding */
+}
+
+/* Social icons container */
+.social-icons {
+  margin-top: 24px;
+}
+
+/* Container for icons in a row */
+.icon-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Individual icon */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG icon */
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 1.5;
+  fill: none;
+  transition: fill 0.3s ease;
+}
+
+/* Hover effect */
+.social-icon:hover svg {
+  stroke: white;
+  fill: white;
+}
+
+/* Social wrapper from Our_Mission.css */
+.social-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 1.5;
+  fill: none;
+  transition: fill 0.3s ease;
+}
+
+.social-icon:hover svg {
+  stroke: white;
+  fill: white;
+}
+
+/* Team member social icons styling */
+.team-social {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.team-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-social-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 1.5;
+  fill: none;
+  transition: fill 0.3s ease;
+}
+
+.team-social-icon:hover svg {
+  stroke: white;
+  fill: white;
+}
+
+/* Grid Layout Styling */
+.team-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Both CEO and Executive sections use same grid */
+.ceo-section,
+.exec-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* CEO section specific - center the single card */
+.ceo-section {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ceo-section .team-member-card {
+  grid-column: 2; /* Center the CEO card in the middle column */
+}
+
+/* Fixed size for ALL team member cards */
+.team-member-card {
+  width: 100%;
+  max-width: 320px;
+  min-width: 280px;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center; /* Centers cards in their grid cells */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .ceo-section,
+  .exec-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ceo-section .team-member-card {
+    grid-column: 1 / -1; /* Full width on smaller screens */
+  }
+  
+  .team-grid {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ceo-section,
+  .exec-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .team-grid {
+    padding: 1rem;
+  }
+}
+
+/* Join Us Section Styles */
+.join-us-section {
+  padding: 6rem 4rem;
+  background-color: #0a0e17;
+}
+
+.join-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.join-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.join-content:hover {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.join-text {
+  flex: 1;
+}
+
+.join-text h3 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.join-text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Icon Styles */
+.opportunity-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.point {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.outline-icon {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.5;
+  stroke: currentColor;
+  transition: all 0.3s ease;
+}
+
+.point:hover .outline-icon {
+  stroke: #fff;
+  fill: #fff;
+}
+
+/* Image Styles */
+.join-image {
+  flex: 1;
+  min-width: 45%;
+  max-width: 50%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+}
+
+.join-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Button Styles */
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.join-btn strong {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.join-btn:hover strong {
+  transform: translate(2px, -2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .join-us-section {
+    padding: 4rem 2rem;
+  }
+
+  .join-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .join-text h3 {
+    font-size: 2rem;
+  }
+
+  .join-image {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .join-content {
+    padding: 1.5rem;
+  }
+
+  .opportunity-points {
+    gap: 1rem;
+  }
+}
+
+/* Update contact support section styles */
+.contact-support-section {
+  padding: 6rem 4rem;
+  background-color: var(--bg-color);
+}
+
+.support-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.support-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.support-content:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.support-image {
+  flex: 1;
+  max-width: 50%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.support-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.support-text {
+  flex: 1;
+  padding: 2rem;
+}
+
+.support-text h3 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.support-text p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contact-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-support-section {
+    padding: 4rem 2rem;
+  }
+
+  .support-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .support-image {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .support-text {
+    padding: 1rem;
+  }
+
+  .support-text h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .support-content {
+    padding: 1.5rem;
+  }
+
+  .contact-points {
+    gap: 1rem;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Update contact form and button styles */
+.contact-form {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.contact-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-btn:active {
+  transform: translateY(1px);
+}
+
+/* Make the contact action match the tab styling exactly */
+.contact-action {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Use the exact same tab-button class that's used for the team tabs */
+.contact-action .tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-width: 120px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-action .tab-button:hover {
+  border-color: #fff;
+  transform: translateY(-3px);
+}
+
+.contact-action .tab-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-action {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+}
+
+.tab-icon i {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* If needed, adjust specific icons that might appear different */
+.fa-user-tie,
+.fa-code,
+.fa-gear,
+.fa-microchip,
+.fa-chart-line {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .tab-icon i {
+        font-size: 1.2rem;
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
+.contact-icon {
+    width: 24px;  /* Set fixed width */
+    height: 24px; /* Set fixed height */
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-icon i {
+    font-size: 24px; /* Consistent icon size */
+    color: white;
+}
+
+/* Specific icon adjustments */
+.fa-envelope,
+.fa-location-dot {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-info .label {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.contact-info a,
+.contact-info span {
+    color: #8B8B8B;
+    text-decoration: none;
+}
+
+/* Update the icons to match the design */
+.tab-button[data-tab="executive"] .tab-icon i {
+    content: "\f007";  /* User icon */
+}
+
+.tab-button[data-tab="software"] .tab-icon i {
+    content: "\f121";  /* Code icon */
+}
+
+.tab-button[data-tab="mechatronics"] .tab-icon i {
+    content: "\f085";  /* Gear icon */
+}
+
+.tab-button[data-tab="electronics"] .tab-icon i {
+    content: "\f2db";  /* Microchip icon */
+}
+
+.tab-button[data-tab="sem"] .tab-icon i {
+    content: "\f201";  /* Chart icon */
+}
+
+.tab-button[data-tab="business"] .tab-icon i {
+    content: "\f0b1";  /* Briefcase icon */
+}
+
+.tab-button[data-tab="graphics"] .tab-icon i {
+    content: "\f53f";  /* Palette icon */
+}
+
+@media (max-width: 768px) {
+    .tab-button {
+        width: 100px;
+        height: 100px;
+        padding: 15px;
+    }
+
+    .tab-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .tab-icon i {
+        font-size: 20px;
+    }
+}
+
+.tab-label {
+    font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem); /* Responsive text size */
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    color: white;
+    margin-top: 0.25rem;
+}
