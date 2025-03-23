@@ -11,9 +11,35 @@
 </head>
 <body>
     <!-- Navigation (from styles.css) -->
+    <!-- Sticky Navigation -->
     <header class="main-nav">
-        <!-- Same as other pages -->
+        <div class="logo">
+            <img src="SVG/logo.svg" alt="Subvision Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Our_Mission.html">Our Mission</a></li>
+                <li><a href="Our_Contributors.html">Contributors</a></li>
+                <li><a href="Our_Team.html">Our Team</a></li>
+                <li><a href="index.html" class="contact-btn">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <ul class="nav-links-mobile">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Our_Mission.html">Our Mission</a></li>
+        <li><a href="Our_Contributors.html">Contributors</a></li>
+        <li><a href="Our_Team.html">Our Team</a></li>
+        <li><a href="index.html">Contact Us</a></li>
+    </ul>
 
     <!-- Hero Section -->
     <section class="contributor-hero">
@@ -58,6 +84,11 @@
 
         <!-- Seymour Story -->
         <div class="story-card right">
+            <div class="story-image">
+                <div class="image-placeholder marine-tech">
+                    <!-- Placeholder for marine technology image -->
+                </div>
+            </div>
             <div class="story-content">
                 <h3>Seymour Marine Technology</h3>
                 <p class="highlight">Industry Mentorship & Equipment Support</p>
@@ -66,11 +97,6 @@
                     <span class="goal-tag">Technical Expertise</span>
                     <span class="goal-tag">Equipment Access</span>
                     <span class="goal-tag">Industry Connection</span>
-                </div>
-            </div>
-            <div class="story-image">
-                <div class="image-placeholder marine-tech">
-                    <!-- Placeholder for marine technology image -->
                 </div>
             </div>
         </div>

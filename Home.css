@@ -86,7 +86,7 @@
 /* Update info panel styling */
 .sponsor-info {
     position: absolute;
-    bottom: -100%;
+    bottom: -300%;
     left: 0;
     width: 100%;
     padding: 1.5rem;
@@ -112,10 +112,36 @@
 /* Hover effects */
 .sponsor-card-large:hover,
 .sponsor-card-medium:hover {
-    transform: translateY(-10px);
+    transform: translateY(0);
     background: white;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
+
+/* Media queries for responsiveness */
+    @media (max-width: 768px) {
+    .sponsor-card-large:hover,
+    .sponsor-card-medium:hover {
+    transform: translateY(0);
+    background: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .sponsor-info h3{
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+    }
+    .sponsor-info p{
+        font-size: 0.8rem;
+        line-height: 1.25;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsors-section{
+        padding: 0;
+    }
+}
+
 
 /* Optional: Add subtle gradient to cards */
 .sponsor-card-large::before,
@@ -151,6 +177,7 @@
 .sponsor-card-medium .sponsor-info {
     transition: bottom 0.3s ease-in-out;
 }
+
 
 /* Responsive layout */
 @media (max-width: 1024px) {

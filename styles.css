@@ -180,7 +180,7 @@ body {
   position: absolute;
   top: 50%;
   right: 2rem;
-  transform: translateY(-50%);
+  transform: translateY(-44%);
   display: flex;
   flex-direction: column; /* Vertical layout */
   align-items: center;
