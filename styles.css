@@ -330,7 +330,7 @@ body {
 }
 
 /* Responsive Adjustments */
-  @media (max-width: 768px) {
+  @media (max-width: 865px) {
     .social-wrapper {
       position: absolute;
       top: 50%;

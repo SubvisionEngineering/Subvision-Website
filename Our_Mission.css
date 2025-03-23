@@ -721,10 +721,6 @@ html {
   }
 }
 
-.ui-card:hover {
-  animation: cardFloat 3s ease-in-out infinite;
-}
-
 /* Add these styles to your existing CSS */
 .mission-header {
   text-align: center;

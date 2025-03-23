@@ -93,7 +93,7 @@
 
 .story-image {
     flex: 1;
-    min-width: 300px;
+    min-width: 200px;
 }
 
 .image-placeholder {
@@ -108,7 +108,7 @@
 
 .story-content {
     flex: 1;
-    padding: 2rem;
+    padding: 0rem;
 }
 
 .story-content h3 {
@@ -122,6 +122,18 @@
     font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .story-content h3 {
+        font-size: 1.5rem;
+    }
+    .story-content p {
+        font-size: 1rem;
+    }
+    .goal-tag{
+        font-size: 1rem;
+    }
 }
 
 .story-goals {
