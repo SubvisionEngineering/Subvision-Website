@@ -1091,10 +1091,6 @@ html {
   padding: 0 1rem; /* Added horizontal padding */
 }
 
-/* Social icons container */
-.social-icons {
-  margin-top: 24px;
-}
 
 /* Container for icons in a row */
 .icon-row {
@@ -1132,12 +1128,6 @@ html {
 }
 
 /* Social wrapper from Our_Mission.css */
-.social-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 24px;
-}
 
 .social-icon {
   width: 40px;
@@ -1540,7 +1530,6 @@ html {
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
-  letter-spacing: 0.5px;
 }
 
 .contact-btn:hover {

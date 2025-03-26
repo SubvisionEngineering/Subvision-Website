@@ -194,7 +194,7 @@
 
 .timeline-details {
   background: white;
-  padding: clamp(1rem, 2vw, 1.5rem);
+  
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -202,7 +202,6 @@
 
 .timeline-details h4 {
   color: #16475a;
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -211,7 +210,6 @@
   color: #666;
   line-height: 1.5;
   margin: 0;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 /* Responsive Design */
@@ -249,10 +247,12 @@
     left: 2rem;
     left: 0;
   }
+  .timeline-content{
+    width: 100%;
+  }
 
   .timeline-content.left,
   .timeline-content.right {
-    width: calc(100% - 5rem);
     margin-left: 4rem;
     padding: 0;
     text-align: left;
@@ -260,13 +260,12 @@
 
   .timeline-item {
     margin: 3rem 0;
-    padding-left: 1rem;
+    padding-left: 0;
   }
 
   .timeline-line::after {
-    left: 0;
     transform: none;
-    bottom: -1.5rem;
+    bottom: -2.5rem;
   }
 }
 
@@ -618,7 +617,7 @@ html {
   }
 
   .timeline-line::after {
-    left: 0;
+    left: -1rem;
     transform: none;
   }
 }
@@ -720,10 +719,6 @@ html {
   100% {
     transform: translateY(0);
   }
-}
-
-.ui-card:hover {
-  animation: cardFloat 3s ease-in-out infinite;
 }
 
 /* Add these styles to your existing CSS */

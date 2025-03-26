@@ -1,0 +1,236 @@
+/* Hero Section */
+.contributor-hero {
+    min-height: 80vh;
+    background: linear-gradient(to bottom right, #000000, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #FF9EC1;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: white;
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+/* Stats Container */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #FF9EC1;
+}
+
+.stat-label {
+    color: white;
+    margin-top: 0.5rem;
+}
+
+/* Stories Section */
+.stories-section {
+    padding: 6rem 2rem;
+    background: #000;
+}
+
+.stories-section h2 {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #FF9EC1;
+    margin-bottom: 4rem;
+}
+
+.story-card {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto 6rem;
+    gap: 4rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.story-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-card.right {
+    flex-direction: row-reverse;
+}
+
+.story-image {
+    flex: 1;
+    min-width: 200px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.story-content {
+    flex: 1;
+    padding: 0rem;
+}
+
+.story-content h3 {
+    color: #FF9EC1;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .story-content h3 {
+        font-size: 1.5rem;
+    }
+    .story-content p {
+        font-size: 1rem;
+    }
+    .goal-tag{
+        font-size: 1rem;
+    }
+}
+
+.story-goals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.goal-tag {
+    background: rgba(255, 158, 193, 0.1);
+    color: #FF9EC1;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+/* Contribute Section */
+.contribute-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(to top, #000000, #1a1a1a);
+    text-align: center;
+}
+
+.contribute-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contribution-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.contribution-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-10px);
+}
+
+.contribution-card i {
+    font-size: 2.5rem;
+    color: #FF9EC1;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FF9EC1;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 158, 193, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .story-card {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .story-card.right {
+        flex-direction: column;
+    }
+
+    .stats-container {
+        gap: 2rem;
+    }
+
+    .contribution-cards {
+        grid-template-columns: 1fr;
+    }
+} 
