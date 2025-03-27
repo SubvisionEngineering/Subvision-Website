@@ -47,7 +47,6 @@
   color: #007bff;
 }
 .applications-section h2{
-  font-size: 2.5rem;
   color: #fff;
 }
 
@@ -93,7 +92,6 @@
 }
 
 .section-header h2 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: #fff;
   margin-bottom: 1rem;
 }
@@ -1383,10 +1381,6 @@ html {
     padding: 2rem;
   }
 
-  .join-text h3 {
-    font-size: 2rem;
-  }
-
   .join-image {
     min-width: 100%;
     max-width: 100%;
@@ -1394,10 +1388,6 @@ html {
 }
 
 @media (max-width: 768px) {
-  .section-header h2 {
-    font-size: 2.5rem;
-  }
-
   .join-content {
     padding: 1.5rem;
   }
@@ -1454,7 +1444,6 @@ html {
 }
 
 .support-text h3 {
-  font-size: 2.5rem;
   color: #fff;
   margin-bottom: 1.5rem;
 }
@@ -1491,10 +1480,6 @@ html {
 
   .support-text {
     padding: 1rem;
-  }
-
-  .support-text h3 {
-    font-size: 2rem;
   }
 }
 

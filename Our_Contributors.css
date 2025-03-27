@@ -14,7 +14,6 @@
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
     color: #FF9EC1;
     margin-bottom: 1rem;
     opacity: 0;
@@ -67,7 +66,6 @@
 
 .stories-section h2 {
     text-align: center;
-    font-size: clamp(2rem, 4vw, 3rem);
     color: #FF9EC1;
     margin-bottom: 4rem;
 }
@@ -113,7 +111,6 @@
 
 .story-content h3 {
     color: #FF9EC1;
-    font-size: 1.75rem;
     margin-bottom: 1rem;
 }
 
