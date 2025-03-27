@@ -22,7 +22,6 @@
 
 .sponsors-section h2 {
     text-align: center;
-    font-size: clamp(2rem, 5vw, 3.5rem);
     color: #FF9EC1;
     margin-bottom: 4rem;
     font-weight: 600;
@@ -99,7 +98,6 @@
 .sponsor-info h3 {
     color: #FF9EC1; /* Theme color for headings */
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
     font-weight: 600;
 }
 
@@ -126,11 +124,9 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
     .sponsor-info h3{
-        font-size: 1rem;
         margin-bottom: 0.25rem;
     }
     .sponsor-info p{
-        font-size: 0.8rem;
         line-height: 1.25;
         margin-bottom: 0;
     }
@@ -138,7 +134,7 @@
 
 @media (max-width: 480px) {
     .sponsors-section{
-        padding: 0;
+        padding: 4rem 0;
     }
 }
 
@@ -193,6 +189,7 @@
 @media (max-width: 768px) {
     .sponsors-grid {
         gap: 1rem;
+        padding: 1rem;
     }
     
     .sponsor-card-medium {
