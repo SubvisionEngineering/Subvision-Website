@@ -1,0 +1,1034 @@
+/* Base Styles */
+:root {
+    --bg-color: #0F1117;
+    --card-bg: #161824;
+    --card-bg-dark: #0D0F17;
+    --card-bg-light: #1A1A24;
+    --text-color: #F5F5F7;
+    --text-muted: #9CA3AF;
+    --border-color: rgba(75, 85, 99, 0.3);
+    --primary-color: #0FB6D0;
+    --primary-light: rgba(15, 182, 208, 0.2);
+    --yellow: #F59E0B;
+    --green: #10B981;
+    --red: #EF4444;
+    --orange: #F97316;
+    --blue: #3B82F6;
+    --radius: 0.75rem;
+    --radius-sm: 0.375rem;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Dashboard Layout */
+  .dashboard {
+    min-height: 100vh;
+    padding: 1.5rem;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-img {
+    height: 40px; /* Increased from 30px */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 0.1rem; /* Smaller margin to bring "ubVision" closer */
+  }
+  
+  .logo-text {
+    font-weight: 700;
+    font-size: 1.5rem; /* Increased from 1.2rem */
+    color: var(--text-color);
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+  }
+  
+  .btn-outline:hover {
+    background-color: rgba(75, 85, 99, 0.5);
+    color: var(--text-color);
+  }
+  
+  .btn-icon {
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-icon:hover {
+    background-color: rgba(75, 85, 99, 0.5);
+    color: var(--text-color);
+  }
+  
+  /* Alert Message */
+  .alert-message {
+    margin-bottom: 1.5rem;
+    background-color: var(--card-bg-light);
+    border-left: 4px solid var(--red);
+    border-radius: var(--radius-sm);
+  }
+  
+  .alert-message > div {
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .alert-icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #F87171;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+  
+  .alert-message p {
+    color: #FCA5A5;
+    font-size: 0.875rem;
+  }
+  
+  /* Main Grid */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .main-grid {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto auto;
+    }
+    
+    .simulation {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+  }
+  
+  /* Cards */
+  .card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  
+  .card-header {
+    padding: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+  
+  .card-title .icon {
+    height: 1.25rem;
+    width: 1.25rem;
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+  }
+  
+  .card-content {
+    padding: 0.75rem;
+  }
+  
+  /* Badges */
+  .badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+  
+  .badge.normal {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+  }
+  
+  .badge.alert {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+  }
+  
+  .badge.cyan {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+  }
+  
+  .badge.red {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+  }
+  
+  /* Icons */
+  .icon {
+    height: 1rem;
+    width: 1rem;
+    color: var(--primary-color);
+  }
+  
+  .icon.yellow {
+    color: var(--yellow);
+  }
+  
+  .icon.green {
+    color: var(--green);
+  }
+  
+  /* Simulation Section */
+  .simulation-visual {
+    aspect-ratio: 16/9;
+    background-color: var(--card-bg-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .ship-icon {
+    height: 6rem;
+    width: 6rem;
+    color: var(--primary-color);
+  }
+  
+  /* Stats */
+  .stat-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+  
+  .stat-value {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .stat-value-inline {
+    margin-left: auto;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  /* Progress Bars */
+  .stat-progress {
+    margin-bottom: 2rem;
+  }
+  
+  .progress-bar {
+    height: 0.15rem;
+    width: 100%;
+    background-color: rgba(75, 85, 99, 0.3);
+    border-radius: 9999px;
+    overflow: hidden;
+    margin: 0.2rem 0;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 9999px;
+  }
+  
+  .progress-fill.yellow {
+    background-color: var(--yellow);
+  }
+  
+  .progress-fill.green {
+    background-color: var(--green);
+  }
+  
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  
+  /* Dot Indicator */
+  .dot-indicator {
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  
+  .dot-inner {
+    height: 0.375rem;
+    width: 0.375rem;
+    border-radius: 9999px;
+    background-color: var(--primary-color);
+  }
+  
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .stat-box {
+    margin-bottom: 0.25rem;
+  }
+  
+  .stat-box-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 0.1rem;
+  }
+  
+  .stat-box-value {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  /* Environment Stats */
+  .env-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 0.75rem;
+  }
+  
+  .env-stat-box {
+    background-color: var(--card-bg-light);
+    padding: 0.3rem;
+    border-radius: var(--radius-sm);
+  }
+  
+  .env-stat-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+  
+  .env-stat-value {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  
+  .env-stat-detail {
+    display: flex;
+    align-items: center;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+  }
+  
+  .indicator {
+    height: 0.35rem;
+    width: 0.35rem;
+    border-radius: 50%;
+    margin-right: 0.15rem;
+  }
+  
+  .indicator.cyan {
+    background-color: var(--primary-color);
+  }
+  
+  .indicator.yellow {
+    background-color: var(--yellow);
+  }
+  
+  .indicator.orange {
+    background-color: var(--orange);
+  }
+  
+  .indicator.blue {
+    background-color: var(--blue);
+  }
+  
+  /* Robot Model */
+  .robot-model {
+    flex: 1;
+    height: 160px;
+    min-height: 130px;
+    background-color: var(--card-bg-dark);
+    border-radius: 0.4rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Style for the robot video */
+  .robot-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: var(--card-bg-dark);
+  }
+  
+  /* Robot Stats */
+  .robot-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .robot-stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+  }
+  
+  .led-indicators {
+    display: flex;
+    gap: 0.25rem;
+  }
+  
+  .led {
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 9999px;
+    background-color: var(--primary-color);
+  }
+  
+  /* Power Stats */
+  .power-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3rem;
+  }
+  
+  .power-stat-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 0.1rem;
+  }
+  
+  .power-stat-value {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  /* Camera Feed */
+  .camera-section {
+    flex: 0.9;
+    padding: 0.5rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+  }
+  
+  /* Camera view optimized to show full image */
+  .camera-view.with-bg-image {
+    flex: 1;
+    width: 90%;
+    height: 145px;
+    margin: 0.4rem auto;
+    background-color: #0D0F17;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    
+    /* Show full image while maintaining good size */
+    background-image: url('../img/Camera_footage.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Add a subtle border */
+    border: 1px solid rgba(15, 182, 208, 0.1);
+    
+    /* Add a subtle inner shadow to enhance depth */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Optional: Add padding inside the camera view to prevent image from touching edges */
+  .camera-view.with-bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.25rem;
+    pointer-events: none;
+  }
+  
+  /* Adjust recording indicator for better visibility */
+  .camera-ui-element.top-left {
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.02rem; /* Better readability */
+  }
+  
+  /* Only keep the recording indicator UI element */
+  .camera-ui-element.top-right {
+    display: none; /* Hide resolution/FPS */
+  }
+  
+  .recording-indicator {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--red);
+    margin-right: 0.3rem;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Hide the camera controls entirely */
+  .camera-controls {
+    display: none;
+  }
+  
+  /* Expanded Camera */
+  .expanded-camera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 100;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  
+  .expanded-camera-settings {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .expanded-camera-settings {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .settings-card {
+    background-color: var(--card-bg-light);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+  }
+  
+  .settings-card-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .settings-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+  
+  .settings-value {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  }
+
+  /* Dashboard Container */
+  .dashboard-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--bg-color);
+  }
+
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    gap: 0.75rem;
+    height: calc(100vh - 50px);
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Left Column */
+  .left-column, .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .simulation-section {
+    flex: 1;
+    background-color: var(--card-bg-dark);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .parameters-section {
+    flex: 1;
+    background-color: var(--card-bg);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Right Column */
+  .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* Status section - contains robot status and power status */
+  .status-section {
+    flex: 1.3;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Robot status card */
+  .robot-status {
+    flex: 1;
+    background-color: var(--card-bg-dark);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .robot-status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .robot-status-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .robot-model {
+    flex: 1;
+    height: 160px;
+    min-height: 130px;
+    background-color: var(--card-bg-dark);
+    border-radius: 0.4rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .robot-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .robot-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .robot-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  /* LED indicators */
+  .led-indicators {
+    display: flex;
+    gap: 0.2rem;
+  }
+
+  .led {
+    height: 0.6rem;
+    width: 0.6rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+  }
+
+  /* Power status card */
+  .power-status {
+    flex: 1.2;
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .power-status-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .power-status-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  /* Progress bars for power status */
+  .power-progress {
+    margin-bottom: 0.5rem;
+  }
+
+  .power-stat-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+  }
+
+  .power-stat-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  .power-stat-value {
+    margin-left: auto;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .power-progress-bar {
+    height: 0.2rem;
+    background-color: rgba(75, 85, 99, 0.3);
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-top: 0.4rem;
+  }
+
+  .power-progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+  }
+
+  .power-progress-fill.yellow {
+    background-color: var(--yellow);
+  }
+
+  .power-progress-fill.green {
+    background-color: var(--green);
+  }
+
+  /* Power stats grid */
+  .power-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .power-stat {
+    text-align: center;
+  }
+
+  .power-stat-grid-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-bottom: 0.2rem;
+  }
+
+  .power-stat-grid-value {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  /* Camera section */
+  .camera-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3rem;
+    height: 28px;
+  }
+
+  .camera-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .camera-title-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+    color: var(--primary-color);
+  }
+
+  .camera-expand-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .camera-expand-icon {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+
+  /* Badge styling */
+  .badge {
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.6rem;
+    font-weight: 500;
+  }
+
+  .badge.normal {
+    background-color: rgba(15, 182, 208, 0.2);
+    color: var(--primary-color);
+  }
+
+  .badge.cyan {
+    background-color: rgba(15, 182, 208, 0.2);
+    color: var(--primary-color);
+  }
+
+  .badge.red {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+  }
+
+  /* Depth and other stats as cards */
+  .stat-card {
+    background-color: var(--card-bg-light);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Two-column layout for the stat cards */
+  .stat-cards-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .main-content {
+      gap: 0.4rem;
+    }
+
+    .dashboard-container {
+      padding: 0.4rem;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .main-content {
+      gap: 0.3rem;
+    }
+
+    .dashboard-container {
+      padding: 0.3rem;
+    }
+  }
+
+  /* Adjust header to accommodate larger logo */
+  .dashboard-header {
+    height: 60px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  /* Card styling for uniformity */
+  .stat-card, .env-stat-box {
+    background-color: var(--card-bg-light);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  /* Card headers with icons */
+  .card-header-with-icon {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    color: var(--text-muted);
+  }
+
+  /* Card labels */
+  .stat-card-label, .env-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Card values */
+  .stat-card-value, .env-stat-value {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Progress bar styling */
+  .stat-progress {
+    background-color: var(--card-bg-light);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Grid layouts */
+  .stat-cards-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .env-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.75rem;
+    height: 100%;
+  }
+
+  /* Uniform details */
+  .env-stat-detail {
+    display: flex;
+    align-items: center;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin-top: auto;
+  }
+
+  /* Icon colors */
+  .icon-time { color: var(--orange); }
+  .icon-depth { color: var(--blue); }
+  .icon-position { color: var(--primary-color); }
+  .icon-temp { color: var(--orange); }
+  .icon-pressure { color: var(--blue); }
+  .icon-visibility { color: var(--primary-color); }
+  .icon-speed { color: var(--yellow); }
+
+  .camera-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom right;
+  }
