@@ -29,11 +29,11 @@ h2{
 }
 
 h3{
-  font size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 h4{
-  font size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 p{
@@ -50,11 +50,11 @@ p{
   }
 
   h3{
-    font size: 2rem;
+    font-size: 2rem;
   }
 
   h4{
-    font size: 1rem;
+    font-size: 1rem;
   }
 
   p{
@@ -71,11 +71,11 @@ p{
   }
 
   h3{
-    font size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   h4{
-    font size: 0.9rem;
+    font-size: 0.9rem;
   }
 
   p{
@@ -199,14 +199,14 @@ p{
   display: flex;
   justify-content: space-between; /* Content on the left, icons on the right */
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   height: 100vh; /* Full viewport height */
   background: #1a1a1a;
 }
 
 .hero-content {
   text-align: left;
-  max-width: 50%;;
+  max-width: 70%;
 }
 
 .hero h1 {
