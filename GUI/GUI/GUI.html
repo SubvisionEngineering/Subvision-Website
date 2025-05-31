@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subvision Dashboard</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Include Three.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="logo">
+        <img src="../img/SubVision-Logo.png" alt="S" class="logo-img">
+        <span class="logo-text">ubVision</span>
+      </div>
+      <button id="alert-toggle" class="btn btn-outline">Trigger Alert</button>
+    </header>
+
+    <!-- Alert Message (hidden by default) -->
+    <div id="alert-message" class="alert-message hidden">
+      <div>
+        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+          <line x1="12" y1="8" x2="12" y2="12" stroke="currentColor" stroke-width="2"/>
+          <line x1="12" y1="16" x2="12" y2="16" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <p>Water leak detected in the main compartment. Please check the robot status immediately.</p>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Left Column -->
+      <div class="left-column">
+        <!-- Simulation Section -->
+        <div class="simulation-section">
+          <div class="simulation-visual">
+            <svg class="ship-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 3V8" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 16V21" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 12H8" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 12H21" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Parameters Section -->
+        <div class="parameters-section">
+          <!-- Estimated Time -->
+          <div class="stat-card">
+            <div class="stat-card-label">
+              <svg class="card-icon icon-time" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Estimated Time
+            </div>
+            <div class="stat-card-value">1h 23m</div>
+          </div>
+          
+          <!-- Percentage Cleaned -->
+          <div class="stat-progress">
+            <div class="stat-label">
+              <svg class="card-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M7 12.5L10 15.5L17 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Percentage Cleaned
+              <span class="stat-value-inline">78%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 78%"></div>
+            </div>
+            <div class="progress-labels">
+              <span>0%</span>
+              <span>100%</span>
+            </div>
+          </div>
+          
+          <!-- Depth and Position in 2 columns -->
+          <div class="stat-cards-row">
+            <!-- Depth -->
+            <div class="stat-card">
+              <div class="stat-card-label">
+                <svg class="card-icon icon-depth" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L12 22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M17 5L12 2L7 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 19L12 22L7 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Depth
+              </div>
+              <div class="stat-card-value">12.5m</div>
+            </div>
+            
+            <!-- Position -->
+            <div class="stat-card">
+              <div class="stat-card-label">
+                <svg class="card-icon icon-position" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M19 10C19 15.5228 12 20 12 20C12 20 5 15.5228 5 10C5 6.13401 8.13401 3 12 3C15.866 3 19 6.13401 19 10Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Position
+            </div>
+              <div class="stat-card-value">X: 12.3, Y: 45.6</div>
+            </div>
+          </div>
+          
+          <!-- Environment Stats - uniform 2x2 grid -->
+          <div class="env-stats-grid">
+            <!-- Temperature -->
+            <div class="env-stat-box">
+              <div class="env-stat-label">
+                <svg class="card-icon icon-temp" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 4C14 2.89543 13.1046 2 12 2C10.8954 2 10 2.89543 10 4V14.0004C8.79002 14.598 8 15.6978 8 17C8 18.6569 9.34315 20 11 20H13C14.6569 20 16 18.6569 16 17C16 15.6978 15.21 14.598 14 14.0004V4Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 18C12.5523 18 13 17.5523 13 17C13 16.4477 12.5523 16 12 16C11.4477 16 11 16.4477 11 17C11 17.5523 11.4477 18 12 18Z" fill="currentColor"/>
+                </svg>
+                Temperature
+              </div>
+              <div class="env-stat-value">24.3°C</div>
+              <div class="env-stat-detail">
+                <span class="indicator orange"></span>
+                <span>+1.2°C from average</span>
+              </div>
+            </div>
+            
+            <!-- Water Pressure -->
+            <div class="env-stat-box">
+              <div class="env-stat-label">
+                <svg class="card-icon icon-pressure" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 6V12L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Water Pressure
+              </div>
+              <div class="env-stat-value">1.24 bar</div>
+              <div class="env-stat-detail">
+                <span class="indicator blue"></span>
+                <span>Normal range</span>
+              </div>
+            </div>
+            
+            <!-- Visibility -->
+            <div class="env-stat-box">
+              <div class="env-stat-label">
+                <svg class="card-icon icon-visibility" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 12C2 12 5 5 12 5C19 5 22 12 22 12C22 12 19 19 12 19C5 19 2 12 2 12Z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Visibility
+              </div>
+              <div class="env-stat-value">Good</div>
+              <div class="env-stat-detail">
+                <span class="indicator cyan"></span>
+                <span>8m range</span>
+              </div>
+            </div>
+            
+            <!-- Ship Speed -->
+            <div class="env-stat-box">
+              <div class="env-stat-label">
+                <svg class="card-icon icon-speed" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4V6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M18 6L16.5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M20 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 12H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M6 6L7.5 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 12L15 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Ship Speed
+              </div>
+              <div class="env-stat-value">2.4 knots</div>
+              <div class="env-stat-detail">
+                <span class="indicator yellow"></span>
+                <span>North-East</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Robot Status Section -->
+        <div class="status-section">
+          <div class="robot-status">
+            <div class="card-header">
+              <div class="card-title">Robot Status</div>
+              <div id="robot-status-badge" class="badge normal">Normal</div>
+            </div>
+            
+            <div class="card-content">
+              <div id="robot-model" class="robot-model">
+                <!-- Add video element -->
+                <video class="robot-video" autoplay loop muted playsinline>
+                  <source src="../Video/Robot.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <div class="robot-stats-grid">
+                <div class="robot-stat">
+                  <div class="robot-stat-label">Run Status</div>
+                  <div class="badge cyan">Running</div>
+                </div>
+                
+                <div class="robot-stat">
+                  <div class="robot-stat-label">LED Status</div>
+                  <div class="led-indicators">
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                  </div>
+                </div>
+                
+                <div class="robot-stat">
+                  <div class="robot-stat-label">Leak Status</div>
+                  <div id="leak-status-badge" class="badge cyan">None</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="power-status">
+            <div class="card-header">
+              <div class="card-title">Power Status</div>
+            </div>
+            
+            <div class="card-content">
+              <div class="stat-progress">
+                <div class="stat-label">
+                  <svg class="icon yellow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span>Thrust Percent</span>
+                  <span class="stat-value-inline">65%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill yellow" style="width: 65%"></div>
+                </div>
+              </div>
+              
+              <div class="stat-progress">
+                <div class="stat-label">
+                  <svg class="icon green" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="7" width="12" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 4H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M7 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span>Battery</span>
+                  <span class="stat-value-inline">78%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill green" style="width: 78%"></div>
+                </div>
+              </div>
+              
+              <div class="power-stats-grid">
+                <div class="power-stat">
+                  <div class="power-stat-label">Power Draw</div>
+                  <div class="power-stat-value">450W</div>
+                </div>
+                
+                <div class="power-stat">
+                  <div class="power-stat-label">Speed</div>
+                  <div class="power-stat-value">1.2 m/s</div>
+                </div>
+                
+                <div class="power-stat">
+                  <div class="power-stat-label">Runtime</div>
+                  <div class="power-stat-value">4h 12m</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Camera Section -->
+        <div class="camera-section">
+          <div class="camera-header">
+            <div class="camera-title">
+              <svg class="camera-title-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 10L19.5528 7.72361C20.2177 7.39116 21 7.87465 21 8.61803V15.382C21 16.1253 20.2177 16.6088 19.5528 16.2764L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="3" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              Camera Feed
+            </div>
+            <button class="camera-expand-btn">
+              <svg class="camera-expand-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 3H21V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 21H3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21 3L14 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 21L10 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="camera-view with-bg-image">
+            <div class="camera-ui-element top-left">
+              <div class="recording-indicator"></div>
+              <span>REC 01:45:22</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expanded Camera View (hidden by default) -->
+    <div id="expanded-camera" class="expanded-camera hidden">
+      <div class="card camera-feed expanded">
+        <div class="card-header">
+          <div class="card-title">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 10L19.5528 7.72361C20.2177 7.39116 21 7.87465 21 8.61803V15.382C21 16.1253 20.2177 16.6088 19.5528 16.2764L15 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="3" y="6" width="12" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Camera Feed</span>
+          </div>
+          <button id="camera-minimize" class="btn-icon">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 3V8H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 3V8H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 21V16H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 21V16H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="card-content">
+          <div class="camera-view with-bg-image">
+            <!-- Only keep recording indicator UI element -->
+            <div class="camera-ui-element top-left">
+              <div class="recording-indicator"></div>
+              <span>REC 01:45:22</span>
+            </div>
+            
+            <!-- Removed the resolution/FPS element -->
+          </div>
+          
+          <div class="expanded-camera-settings">
+            <div class="settings-card">
+              <div class="settings-card-title">Camera Settings</div>
+              <div class="settings-content">
+                <div class="settings-row">
+                  <div class="settings-label">Exposure</div>
+                  <select class="settings-select">
+                    <option>Low</option>
+                    <option selected>Medium</option>
+                    <option>High</option>
+                  </select>
+                </div>
+                <div class="settings-row">
+                  <div class="settings-label">White Balance</div>
+                  <select class="settings-select">
+                    <option>Auto</option>
+                    <option selected>Underwater</option>
+                    <option>Custom</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-card">
+              <div class="settings-card-title">Visibility</div>
+              <div class="settings-content">
+                <div class="settings-row">
+                  <span class="settings-label">Water Clarity</span>
+                  <div class="settings-value">
+                    <span class="indicator cyan"></span>
+                    <span>Good</span>
+                  </div>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-label">Light Level</span>
+                  <div class="settings-value">
+                    <span class="indicator yellow"></span>
+                    <span>Medium</span>
+                  </div>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-label">Turbidity</span>
+                  <div class="settings-value">
+                    <span class="indicator cyan"></span>
+                    <span>Low</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="settings-card">
+              <div class="settings-card-title">Recording</div>
+              <div class="settings-content">
+                <div class="settings-row">
+                  <span class="settings-label">Status</span>
+                  <div class="badge red">Recording</div>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-label">Duration</span>
+                  <span>01:45:22</span>
+                </div>
+                <div class="settings-row">
+                  <span class="settings-label">Storage</span>
+                  <span>64% Free</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

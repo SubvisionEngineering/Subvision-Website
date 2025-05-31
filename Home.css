@@ -1,3 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
 /* Stars Background Animation */
 .stars-background {
     position: absolute;
@@ -14,6 +22,133 @@
     50% { opacity: 0.7; }
 }
 
+/* GUI Dashboard Section */
+.gui-dashboard {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, #000000, #07132A);
+    color: #fff;
+}
+
+.container {
+   display: flex;
+   align-items: center; 
+}
+
+.gui-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.gui-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.gui-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #FF9EC1;
+    font-weight: 600;
+}
+
+.gui-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.gui-btn {
+    display: inline-flex;
+    align-items: center;
+    background: #FF9EC1;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.gui-btn i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.gui-btn:hover {
+    background: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gui-btn:hover i {
+    transform: translateX(5px);
+}
+
+.gui-image {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+}
+
+.gui-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gui-image:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.5);
+}
+
+.gui-image:hover img {
+    transform: scale(1.03);
+}
+
+@media (max-width: 992px) {
+    .gui-content {
+        flex-direction: column-reverse;
+    }
+    
+    .gui-text {
+        padding-right: 0;
+    }
+    
+    .gui-image {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .gui-dashboard {
+        padding: 4rem 1.5rem;
+    }
+    
+    .gui-text h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gui-dashboard {
+        padding: 3rem 1rem;
+    }
+    
+    .gui-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .gui-text p {
+        font-size: 1rem;
+    }
+}
+
 /* Sponsors Section */
 .sponsors-section {
     padding: 6rem 2rem;
@@ -22,7 +157,6 @@
 
 .sponsors-section h2 {
     text-align: center;
-    font-size: clamp(2rem, 5vw, 3.5rem);
     color: #FF9EC1;
     margin-bottom: 4rem;
     font-weight: 600;
@@ -86,7 +220,7 @@
 /* Update info panel styling */
 .sponsor-info {
     position: absolute;
-    bottom: -100%;
+    bottom: -300%;
     left: 0;
     width: 100%;
     padding: 1.5rem;
@@ -99,7 +233,6 @@
 .sponsor-info h3 {
     color: #FF9EC1; /* Theme color for headings */
     margin-bottom: 0.5rem;
-    font-size: 1.25rem;
     font-weight: 600;
 }
 
@@ -112,10 +245,34 @@
 /* Hover effects */
 .sponsor-card-large:hover,
 .sponsor-card-medium:hover {
-    transform: translateY(-10px);
+    transform: translateY(0);
     background: white;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
+
+/* Media queries for responsiveness */
+    @media (max-width: 768px) {
+    .sponsor-card-large:hover,
+    .sponsor-card-medium:hover {
+    transform: translateY(0);
+    background: white;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+    .sponsor-info h3{
+        margin-bottom: 0.25rem;
+    }
+    .sponsor-info p{
+        line-height: 1.25;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsors-section{
+        padding: 4rem 0;
+    }
+}
+
 
 /* Optional: Add subtle gradient to cards */
 .sponsor-card-large::before,
@@ -152,6 +309,7 @@
     transition: bottom 0.3s ease-in-out;
 }
 
+
 /* Responsive layout */
 @media (max-width: 1024px) {
     .sponsor-card-large {
@@ -166,6 +324,7 @@
 @media (max-width: 768px) {
     .sponsors-grid {
         gap: 1rem;
+        padding: 1rem;
     }
     
     .sponsor-card-medium {

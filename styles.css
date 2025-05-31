@@ -18,6 +18,71 @@ body {
   padding: 0 2rem; /* Consistent gap on both sides */
 }
 
+h1{
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+h2{
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+h3{
+  font-size: 2.5rem;
+}
+
+h4{
+  font-size: 1.2rem;
+}
+
+p{
+  font-size: 1rem;
+}
+
+@media (max-width: 850px) {
+  h1{
+    font-size: 3rem;
+  }
+
+  h2{
+    font-size: 2.5rem;
+  }
+
+  h3{
+    font-size: 2rem;
+  }
+
+  h4{
+    font-size: 1rem;
+  }
+
+  p{
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 550px) {
+  h1{
+    font-size: 2.5rem;
+  }
+
+  h2{
+    font-size: 2rem;
+  }
+
+  h3{
+    font-size: 1.5rem;
+  }
+
+  h4{
+    font-size: 0.9rem;
+  }
+
+  p{
+    font-size: 0.8rem;
+  }
+}
+
 /* Sticky Navigation */
 .main-nav {
   position: sticky;
@@ -134,19 +199,17 @@ body {
   display: flex;
   justify-content: space-between; /* Content on the left, icons on the right */
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
   height: 100vh; /* Full viewport height */
   background: #1a1a1a;
 }
 
 .hero-content {
   text-align: left;
-  max-width: 50%;;
+  max-width: 70%;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -180,7 +243,7 @@ body {
   position: absolute;
   top: 50%;
   right: 2rem;
-  transform: translateY(-50%);
+  transform: translateY(-44%);
   display: flex;
   flex-direction: column; /* Vertical layout */
   align-items: center;
@@ -330,7 +393,7 @@ body {
 }
 
 /* Responsive Adjustments */
-  @media (max-width: 768px) {
+  @media (max-width: 865px) {
     .social-wrapper {
       position: absolute;
       top: 50%;
@@ -405,14 +468,6 @@ body {
   
 
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
   .social-icons a {
     width: 2.5rem;
     height: 2.5rem;

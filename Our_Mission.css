@@ -15,8 +15,6 @@
   background-color: #f5f5f5;
 }
 .industry-issues-header h2{
-  font-size: 60px;
-  font-weight: 600;
   padding-top: 50px;
 }
 
@@ -41,8 +39,6 @@
 
 .industry-issues h2{
   text-align: center;        /* Center the text horizontally */
-  font-size: 60px;           /* Increase the font size */
-  font-weight: 600;          /* Make the font weight bold */
   color: #16475a;    
 }
 
@@ -61,8 +57,6 @@
 /* Timeline Title Styling */
 .timeline-title h2 {
   text-align: center;        /* Center the text horizontally */
-  font-size: 60px;           /* Increase the font size */
-  font-weight: 600;          /* Make the font weight bold */
   color: #16475a;            /* Use a text color that matches the theme */
   margin-top: 50px;          /* Add some space above the title */
   margin-bottom: 30px;       /* Add some space below the title */
@@ -183,7 +177,7 @@
 .timeline-content.left {
   margin-right: auto;
   padding-right: 4rem;
-  text-align: right;
+  text-align: left;
 }
 
 .timeline-content.right {
@@ -194,7 +188,7 @@
 
 .timeline-details {
   background: white;
-  padding: clamp(1rem, 2vw, 1.5rem);
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -202,7 +196,6 @@
 
 .timeline-details h4 {
   color: #16475a;
-  font-size: clamp(1.1rem, 2vw, 1.25rem);
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
@@ -211,7 +204,6 @@
   color: #666;
   line-height: 1.5;
   margin: 0;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 /* Responsive Design */
@@ -249,10 +241,12 @@
     left: 2rem;
     left: 0;
   }
+  .timeline-content{
+    width: 100%;
+  }
 
   .timeline-content.left,
   .timeline-content.right {
-    width: calc(100% - 5rem);
     margin-left: 4rem;
     padding: 0;
     text-align: left;
@@ -260,13 +254,12 @@
 
   .timeline-item {
     margin: 3rem 0;
-    padding-left: 1rem;
+    padding-left: 0;
   }
 
   .timeline-line::after {
-    left: 0;
     transform: none;
-    bottom: -1.5rem;
+    bottom: -2.5rem;
   }
 }
 
@@ -282,8 +275,6 @@
 }
 
 .zima h2{
-  font-size: 60px;
-  font-weight: 600;
   color: #16475a;
   text-align: center;
 }
@@ -618,7 +609,7 @@ html {
   }
 
   .timeline-line::after {
-    left: 0;
+    left: -1rem;
     transform: none;
   }
 }
@@ -703,10 +694,8 @@ html {
 }
 
 .mission-cards-section h2 {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
   color: #fff;
-    margin-bottom: 2rem;
-  font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 /* Add subtle animation for cards */
@@ -720,10 +709,6 @@ html {
   100% {
     transform: translateY(0);
   }
-}
-
-.ui-card:hover {
-  animation: cardFloat 3s ease-in-out infinite;
 }
 
 /* Add these styles to your existing CSS */
