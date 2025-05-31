@@ -1,535 +1,233 @@
-/* Our Contributors Page Styling */
-
-/* -------------------- Hero Section -------------------- */
-
-  
-  /* -------------------- Impact Stats Section -------------------- */
-  .impact-stats {
-    padding: 5rem 2rem;
-    background-color: #16475a;
+/* Hero Section */
+.contributor-hero {
+    min-height: 80vh;
+    background: linear-gradient(to bottom right, #000000, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    color: #fff;
-  }
-  
-  .impact-stats-header h2 {
-    font-size: 3rem;
-    font-weight: 600;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    color: #FF9EC1;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: white;
     margin-bottom: 3rem;
-  }
-  
-  .stats-container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
+
+/* Stats Container */
+.stats-container {
     display: flex;
     justify-content: center;
-    gap: 6rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
-  }
-  
-  .stat-card {
-    position: relative;
-    padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    width: 220px;
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .stat-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .stat-number {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #fff;
-  }
-  
-  .stat-card p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-  }
-  
-  .impact-message {
-    margin-top: 4rem;
-    font-size: 1.5rem;
-    font-weight: 500;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  /* -------------------- Contributor Stories Section -------------------- */
-  .contributor-stories {
-    padding: 5rem 2rem;
-    background-color: #f5f5f5;
-  }
-  
-  .contributor-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 4rem;
-  }
-  
-  .contributor-header h2 {
-    font-size: 3rem;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.stat-number {
+    font-size: 2.5rem;
     font-weight: 600;
-    color: #16475a;
-    margin-bottom: 1rem;
-  }
-  
-  .contributor-header p {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  .story-container {
+    color: #FF9EC1;
+}
+
+.stat-label {
+    color: white;
+    margin-top: 0.5rem;
+}
+
+/* Stories Section */
+.stories-section {
+    padding: 6rem 2rem;
+    background: #000;
+}
+
+.stories-section h2 {
+    text-align: center;
+    color: #FF9EC1;
+    margin-bottom: 4rem;
+}
+
+.story-card {
     display: flex;
     max-width: 1200px;
     margin: 0 auto 6rem;
-    align-items: center;
     gap: 4rem;
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
     transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  
-  .story-container.visible {
+}
+
+.story-card.visible {
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  .story-container:last-child {
-    margin-bottom: 0;
-  }
-  
-  .story-image-container {
+}
+
+.story-card.right {
+    flex-direction: row-reverse;
+}
+
+.story-image {
     flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .story-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 20px;
-    background-color: #fff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    min-width: 200px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-  }
-  
-  /* Placeholder styling for contributor logos */
-  .story-image::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: rgba(22, 71, 90, 0.05);
-    border-radius: 20px;
-  }
-  
-  .story-image.ocean-wise {
-    background-color: #e6f7ff;
-  }
-  
-  .story-image.sfu-eng {
-    background-color: #f0f0f0;
-  }
-  
-  .story-image.seymour {
-    background-color: #e6f7ff;
-  }
-  
-  .story-image.chang {
-    background-color: #f0f0f0;
-  }
-  
-  .story-image.materov {
-    background-color: #e6f7ff;
-  }
-  
-  .story-content {
-    flex: 2;
-  }
-  
-  .story-content h3 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #16475a;
-    margin-bottom: 0.5rem;
-  }
-  
-  .story-highlight {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #16475a;
-    color: #fff;
-    border-radius: 30px;
-    font-weight: 500;
-    margin-bottom: 1.5rem;
-  }
-  
-  .story-content p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #444;
-  }
-  
-  .shared-goals {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  }
-  
-  .shared-goals h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #16475a;
+}
+
+.story-content {
+    flex: 1;
+    padding: 0rem;
+}
+
+.story-content h3 {
+    color: #FF9EC1;
     margin-bottom: 1rem;
-  }
-  
-  .shared-goals ul {
+}
+
+.highlight {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .story-content h3 {
+        font-size: 1.5rem;
+    }
+    .story-content p {
+        font-size: 1rem;
+    }
+    .goal-tag{
+        font-size: 1rem;
+    }
+}
+
+.story-goals {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .shared-goals li {
+    margin-top: 2rem;
+}
+
+.goal-tag {
+    background: rgba(255, 158, 193, 0.1);
+    color: #FF9EC1;
     padding: 0.5rem 1rem;
-    background-color: rgba(22, 71, 90, 0.1);
-    border-radius: 30px;
-    font-size: 0.9rem;
-    color: #16475a;
-  }
-  
-  /* Responsive layout for stories */
-  @media (max-width: 1024px) {
-    .story-container {
-      flex-direction: column;
-      gap: 2rem;
-    }
-    
-    .story-container.right-image {
-      flex-direction: column;
-    }
-    
-    .story-image {
-      width: 250px;
-      height: 250px;
-    }
-  }
-  
-  /* -------------------- Become a Contributor Section -------------------- */
-  .become-contributor {
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+/* Contribute Section */
+.contribute-section {
     padding: 6rem 2rem;
-    background-color: #000;
-    color: #fff;
+    background: linear-gradient(to top, #000000, #1a1a1a);
     text-align: center;
-  }
-  
-  .contributor-cta {
+}
+
+.contribute-content {
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  .contributor-cta h2 {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  .contributor-cta > p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto 4rem;
-    opacity: 0.9;
-  }
-  
-  .contribution-levels {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 4rem;
-    flex-wrap: wrap;
-  }
-  
-  .level-card {
-    background-color: #111;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 300px;
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px dashed #555;
-    position: relative;
-    transition: transform 0.3s ease;
-  }
-  
-  .level-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  /* L-shaped corners similar to mission cards */
-  .level-card::before,
-  .level-card::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #4a90e2;
-    transition: all 0.3s ease;
-  }
-  
-  .level-card::before {
-    top: 0;
-    left: 0;
-    border-right: none;
-    border-bottom: none;
-  }
-  
-  .level-card::after {
-    bottom: 0;
-    right: 0;
-    border-top: none;
-    border-left: none;
-  }
-  
-  .level-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #4a90e2;
-  }
-  
-  .level-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    opacity: 0.8;
-  }
-  
-  .level-icon {
-    margin-top: 2rem;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.5;
-  }
-  
-  .connect-wrapper {
-    margin-top: 4rem;
-  }
-  
-  .connect-wrapper h3 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-  
-  .connect-btn {
-    position: relative;
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 500;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-  }
-  
-  .connect-btn .btn-text {
-    position: relative;
-    z-index: 3;
-    transition: color 0.3s ease;
-  }
-  
-  .connect-btn::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border: 1px solid #fff;
-    transition: transform 0.3s ease;
-    z-index: 1;
-  }
-  
-  .connect-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -10px;
-    width: 0;
-    height: 100%;
-    background: #fff;
-    transform: skewX(-20deg);
-    transition: width 0.4s ease;
-    z-index: 2;
-  }
-  
-  .connect-btn:hover::before {
-    width: calc(100% + 20px);
-  }
-  
-  .connect-btn:hover .btn-text {
-    color: #000;
-  }
-  
-  .connect-btn:hover::after {
-    transform: scale(1.1);
-    opacity: 0;
-  }
-  
-  /* -------------------- Contact Form Section -------------------- */
-  .contact-section {
-    padding: 5rem 2rem;
-    background-color: #f5f5f5;
-  }
-  
-  .contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .contact-container h2 {
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #16475a;
-    margin-bottom: 1rem;
-  }
-  
-  .contact-container > p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 3rem;
-  }
-  
-  .contact-form {
+}
+
+.contribution-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    text-align: left;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group:nth-child(5) {
-    grid-column: span 2;
-  }
-  
-  .form-group label {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #16475a;
-  }
-  
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    outline: none;
-    border-color: #16475a;
-  }
-  
-  .submit-btn {
-    grid-column: span 2;
-    background-color: #16475a;
-    color: #fff;
-    border: none;
-    padding: 1rem;
-    font-size: 1.1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: #0e3445;
-  }
-  
-  /* -------------------- Animation Classes -------------------- */
-  @keyframes fadeIn {
+    margin: 4rem 0;
+}
+
+.contribution-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-10px);
+}
+
+.contribution-card i {
+    font-size: 2.5rem;
+    color: #FF9EC1;
+    margin-bottom: 1.5rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #FF9EC1;
+    color: black;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 158, 193, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  .fade-in {
-    animation: fadeIn 0.8s ease forwards;
-  }
-  
-  /* -------------------- Responsive Design -------------------- */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .story-card {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .story-card.right {
+        flex-direction: column;
+    }
+
     .stats-container {
-      gap: 2rem;
+        gap: 2rem;
     }
-    
-    .stat-card {
-      width: 100%;
-      max-width: 300px;
+
+    .contribution-cards {
+        grid-template-columns: 1fr;
     }
-    
-    .story-image {
-      width: 200px;
-      height: 200px;
-    }
-    
-    .level-card {
-      width: 100%;
-    }
-    
-    .contact-form {
-      grid-template-columns: 1fr;
-    }
-    
-    .form-group:nth-child(5) {
-      grid-column: span 1;
-    }
-    
-    .submit-btn {
-      grid-column: span 1;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .hero-content h1 {
-      font-size: 3rem;
-    }
-    
-    .impact-stats-header h2,
-    .contributor-header h2,
-    .contributor-cta h2 {
-      font-size: 2.5rem;
-    }
-  }
+} 
