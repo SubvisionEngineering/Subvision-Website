@@ -201,7 +201,7 @@ p{
   align-items: center;
   padding: 6rem 2rem;
   height: 100vh; /* Full viewport height */
-  background: #1a1a1a;
+  background: blueviolet;
 }
 
 .hero-content {
