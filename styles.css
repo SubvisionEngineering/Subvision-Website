@@ -250,7 +250,7 @@ p{
 
 .contact-grid{
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1.3fr 1fr;
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -309,7 +309,7 @@ p{
 /* Contact Form */
 .contact-form {
   text-align: left;
-  margin: 2rem 12rem;
+  margin-left: 2rem;
   margin-bottom: 2rem;
   padding: 2rem;
   background: #2a2a2a;
