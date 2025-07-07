@@ -92,7 +92,7 @@ p{
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.8);
   box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.1);
 }
 
@@ -201,12 +201,22 @@ p{
   align-items: center;
   padding: 6rem 2rem;
   height: 100vh; /* Full viewport height */
-  background: #1a1a1a;
+  background: blueviolet;
+}
+
+.hero-contact{
+  padding: 2rem 2rem;
+  height: auto;
+  background: blueviolet;
 }
 
 .hero-content {
   text-align: left;
   max-width: 70%;
+}
+
+.hero-content-contact{
+  text-align: center;
 }
 
 .hero h1 {
@@ -238,16 +248,24 @@ p{
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 }
 
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 /* Social Wrapper (Vertical Layout) */
 .social-wrapper {
   position: absolute;
-  top: 50%;
+  top: 57%;
   right: 2rem;
   transform: translateY(-44%);
   display: flex;
   flex-direction: column; /* Vertical layout */
   align-items: center;
   gap: 1rem;
+
 }
 
 .divider {
@@ -290,8 +308,9 @@ p{
 
 /* Contact Form */
 .contact-form {
-  max-width: 600px;
-  margin: 2rem auto;
+  text-align: left;
+  margin: 2rem 12rem;
+  margin-bottom: 2rem;
   padding: 2rem;
   background: #2a2a2a;
   border: 1px solid #444;

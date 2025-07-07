@@ -629,56 +629,6 @@ html {
   flex-wrap: wrap;
 }
 
-/* Team member cards */
-.member-card {
-  /* Delete all these styles */
-}
-
-/* Avatar container */
-.member-avatar-container {
-  /* Delete all these styles */
-}
-
-/* Member info */
-.member-name {
-  /* Delete all these styles */
-}
-
-.member-title {
-  /* Delete all these styles */
-}
-
-/* Animation for card appearance */
-.animate-fadeInUp {
-  /* Delete all these styles */
-}
-
-@keyframes fadeInUp {
-  /* Delete all these styles */
-}
-
-/* Layout */
-.members-row {
-  /* Delete all these styles */
-}
-
-/* Leader card slightly larger */
-.leader-section .member-card {
-  /* Delete all these styles */
-}
-
-.leader-section .member-avatar-container {
-  /* Delete all these styles */
-}
-
-.leader-section .member-name {
-  /* Delete all these styles */
-}
-
-.leader-section .member-title {
-  /* Delete all these styles */
-}
-
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .team-member-grid {
@@ -725,7 +675,8 @@ html {
 .team-title {
   font-size: 2.5rem;
   background: linear-gradient(90deg, #60a5fa, #93c5fd);
-  -webkit-background-clip: text;
+  /*-webkit-background-clip: text;*/
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
@@ -916,36 +867,7 @@ html {
 .team-member-card:nth-child(2) { animation-delay: 0.2s; }
 .team-member-card:nth-child(3) { animation-delay: 0.3s; }
 
-/* Animation for card appearance */
-.animate-fadeInUp {
-  /* Delete all these styles */
-}
 
-@keyframes fadeInUp {
-  /* Delete all these styles */
-}
-
-/* Layout */
-.members-row {
-  /* Delete all these styles */
-}
-
-/* Leader card slightly larger */
-.leader-section .member-card {
-  /* Delete all these styles */
-}
-
-.leader-section .member-avatar-container {
-  /* Delete all these styles */
-}
-
-.leader-section .member-name {
-  /* Delete all these styles */
-}
-
-.leader-section .member-title {
-  /* Delete all these styles */
-}
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
@@ -993,7 +915,8 @@ html {
 .team-title {
   font-size: 2.5rem;
   background: linear-gradient(90deg, #60a5fa, #93c5fd);
-  -webkit-background-clip: text;
+  /*-webkit-background-clip: text; */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
