@@ -13,6 +13,11 @@ body {
   overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+body{
+    background: #B0DEF0;
+background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(49, 135, 145, 1) 23%, rgba(1, 74, 96, 1) 58%, rgba(1, 45, 62, 1) 72%, rgba(0, 7, 16, 1) 92%);
+}
+
 /* Container Padding */
 .container {
   padding: 0 2rem; /* Consistent gap on both sides */
@@ -37,7 +42,7 @@ h4{
 }
 
 p{
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 850px) {
@@ -201,13 +206,22 @@ p{
   align-items: center;
   padding: 6rem 2rem;
   height: 100vh; /* Full viewport height */
-  background: blueviolet;
+  background: #B0DEF0;
+  background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(168, 220, 239, 1) 50%, rgba(193, 219, 226, 1) 100%, rgba(119, 211, 234, 1) 100%);
 }
 
 .hero-contact{
   padding: 2rem 2rem;
+  padding-left: 4rem;
   height: auto;
-  background: blueviolet;
+  background: #B0DEF0;
+  background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(168, 220, 239, 1) 50%, rgba(193, 219, 226, 1) 100%, rgba(119, 211, 234, 1) 100%);
+}
+.hero-contact h1{
+  margin-bottom: 1rem;
+}
+.hero-contact p{
+  margin-bottom: 2rem;
 }
 
 .hero-content {
@@ -216,7 +230,7 @@ p{
 }
 
 .hero-content-contact{
-  text-align: center;
+  text-align: left;
 }
 
 .hero h1 {
@@ -250,9 +264,24 @@ p{
 
 .contact-grid{
   display: grid;
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1100px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+  .hero-contact{
+    text-align: center;
+  }
+  .hero-content-contact {
+    text-align: center;
+  }
 }
 
 /* Social Wrapper (Vertical Layout) */
@@ -311,7 +340,10 @@ p{
   text-align: left;
   margin-left: 2rem;
   margin-bottom: 2rem;
+  margin: auto;
   padding: 2rem;
+  width: 80%;
+  max-width: 800px;
   background: #2a2a2a;
   border: 1px solid #444;
   border-radius: 8px;

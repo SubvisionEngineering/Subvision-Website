@@ -5,7 +5,6 @@
 }
 
 
-
 /* Stars Background Animation */
 .stars-background {
     position: absolute;
@@ -24,14 +23,14 @@
 
 .about-section {
     padding: 6rem 2rem;
-    background: linear-gradient(to bottom, #000000, #07132A);
+    background: transparent;
     color: #fff;
 }
 
 /* GUI Dashboard Section */
 .gui-dashboard {
     padding: 6rem 2rem;
-    background: linear-gradient(to bottom, #000000, #07132A);
+    background: transparent;
     color: #fff;
 }
 
@@ -53,7 +52,7 @@
 }
 
 .story-content h2 {
-    color: #FF9EC1;
+    color: rgb(52, 0, 112);
     margin-bottom: 1rem;
     font-size: 2.5rem;
     font-weight: 600;
@@ -169,7 +168,7 @@
 /* Sponsors Section */
 .sponsors-section {
     padding: 6rem 2rem;
-    background: #000;
+    background: transparent;
 }
 
 .sponsors-section h2 {
