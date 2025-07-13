@@ -15,7 +15,7 @@ body {
 
 body{
     background: #B0DEF0;
-background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(49, 135, 145, 1) 23%, rgba(1, 74, 96, 1) 58%, rgba(1, 45, 62, 1) 72%, rgba(0, 7, 16, 1) 92%);
+background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(49, 135, 145, 1) 23%, rgb(1, 98, 127) 58%, rgb(1, 86, 120) 72%, rgb(0, 36, 82) 92%);
 }
 
 /* Container Padding */
@@ -26,15 +26,18 @@ background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(49, 135, 145, 1) 23%
 h1{
   font-size: 4rem;
   font-weight: 600;
+  color:rgb(52, 0, 112);
 }
 
 h2{
   font-size: 3rem;
   font-weight: 600;
+  color: #3ec6fc;
 }
 
 h3{
   font-size: 2.5rem;
+  color: #3ec6fc;
 }
 
 h4{
@@ -97,7 +100,7 @@ p{
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0,0,0,0.6);
   box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.1);
 }
 
@@ -218,6 +221,7 @@ p{
   background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(168, 220, 239, 1) 50%, rgba(193, 219, 226, 1) 100%, rgba(119, 211, 234, 1) 100%);
 }
 .hero-contact h1{
+  color: rgb(52, 0, 112);
   margin-bottom: 1rem;
 }
 .hero-contact p{
@@ -234,13 +238,8 @@ p{
 }
 
 .hero h1 {
+  color: rgb(52, 0, 112);
   margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #dcdcdc;
 }
 
 .contact-us-btn {

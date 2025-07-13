@@ -52,7 +52,7 @@
 }
 
 .story-content h2 {
-    color: rgb(52, 0, 112);
+    color: #3ec6fc;
     margin-bottom: 1rem;
     font-size: 2.5rem;
     font-weight: 600;
@@ -65,7 +65,7 @@
 .gui-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #FF9EC1;
+    color: #3ec6fc;
     font-weight: 600;
 }
 
@@ -168,14 +168,14 @@
 /* Sponsors Section */
 .sponsors-section {
     padding: 6rem 2rem;
+    padding-top: 0;
     background: transparent;
 }
 
 .sponsors-section h2 {
     text-align: center;
-    color: #FF9EC1;
-    margin-bottom: 4rem;
     font-weight: 600;
+    color: #3ec6fc;
 }
 
 .sponsors-grid {
@@ -217,6 +217,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 1rem;
     padding: 2rem;
     cursor: pointer;
     position: relative;
@@ -227,7 +228,7 @@
 
 /* Card content */
 .sponsor-logo {
-    width: 80%;
+    width: 70%;
     height: auto;
     object-fit: contain;
     transition: all 0.4s ease;
@@ -247,7 +248,7 @@
 }
 
 .sponsor-info h3 {
-    color: #FF9EC1; /* Theme color for headings */
+    color: #3ec6fc;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
@@ -326,22 +327,17 @@
 }
 
 
-/* Responsive layout */
-@media (max-width: 1024px) {
-    .sponsor-card-large {
-        grid-column: span 12;
-    }
-    
-    .sponsor-card-medium {
-        grid-column: span 6;
-    }
-}
+
 
 @media (max-width: 768px) {
     .sponsors-grid {
         gap: 1rem;
         padding: 1rem;
     }
+    .sponsor-card-large {
+        grid-column: span 12;
+    }
+
     
     .sponsor-card-medium {
         grid-column: span 12;

@@ -1,6 +1,6 @@
 /* Hero Section */
 .contributor-hero {
-    min-height: 92vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@
 
 .hero-content p {
     font-size: clamp(1rem, 2vw, 1.5rem);
-    color: white;
+    color: black;
     margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(20px);
@@ -56,7 +56,7 @@
 }
 
 .stat-label {
-    color: white;
+    color: black;
     margin-top: 0.5rem;
 }
 
@@ -68,7 +68,7 @@
 
 .stories-section h2 {
     text-align: center;
-    color: rgb(52, 0, 112);
+    color: #3ec6fc;
     margin-bottom: 4rem;
 }
 
@@ -81,6 +81,7 @@
     transform: translateY(40px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 
 .story-card.visible {
     opacity: 1;
@@ -111,7 +112,7 @@
 }
 
 .story-content h3 {
-    color: rgb(52, 0, 112);
+    color: #3ec6fc;
     margin-bottom: 1rem;
 }
 
@@ -181,13 +182,13 @@
 
 .contribution-card i {
     font-size: 2.5rem;
-    color: rgb(52, 0, 112);
+    color: #50cdff;
     margin-bottom: 1.5rem;
 }
 
 .cta-button {
     display: inline-block;
-    background: rgb(52, 0, 112);
+    background: #50cdff;
     color: black;
     padding: 1rem 2rem;
     border-radius: 30px;

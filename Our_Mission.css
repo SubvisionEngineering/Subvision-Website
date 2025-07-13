@@ -11,7 +11,7 @@
 .industry-issues-header{
   text-align: center;
   font-weight: 600;
-  color: #16475a;
+  color: #50cdff;
 }
 .industry-issues-header h2{
   padding-top: 50px;
@@ -38,17 +38,17 @@
 
 .industry-issues h2{
   text-align: center;        /* Center the text horizontally */
-  color: #16475a;    
+  color: #3ec6fc;    
 }
 
 .industry-issues h3{
   margin-top: 1rem;
-  color: #16475a;
+  color: #3ec6fc;
   z-index: 1;
 }
 
 .industry-issues p{
-  color: #16475a;
+  color: #ffffff;
 }
 
 
@@ -56,7 +56,7 @@
 /* Timeline Title Styling */
 .timeline-title h2 {
   text-align: center;        /* Center the text horizontally */
-  color: #16475a;            /* Use a text color that matches the theme */
+  color: #3ec6fc;            /* Use a text color that matches the theme */
   margin-top: 50px;          /* Add some space above the title */
   margin-bottom: 30px;       /* Add some space below the title */
 }
@@ -69,7 +69,7 @@
   text-align: center;
   font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 600;
-  color: #16475a;
+  color: #50cdff;
   margin-bottom: clamp(2rem, 4vw, 4rem);
 }
 
@@ -92,12 +92,11 @@
 }
 
 .timeline-line::after {
-  content: 'Now';
   position: absolute;
   bottom: -2rem;
   left: 50%;
   transform: translateX(-50%);
-  color: #16475a;
+  color: #50cdff;
   font-size: 1.2rem;
   font-weight: 500;
   opacity: 0;
@@ -114,7 +113,7 @@
   text-align: center;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 600;
-  color: #16475a;
+  color: #50cdff;
   margin: 3rem 0;
   position: relative;
   padding: 0.5rem 2rem;
@@ -138,7 +137,7 @@
   position: absolute;
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   font-weight: 500;
-  color: #16475a;
+  color: #50cdff;
   width: auto;
   min-width: 80px;
   text-align: right;
@@ -157,7 +156,7 @@
 .timeline-dot {
   width: 12px;
   height: 12px;
-  background: #16475a;
+  background: #50cdff;
   border-radius: 50%;
   position: absolute;
   left: 50%;
@@ -184,21 +183,18 @@
 }
 
 .timeline-details {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent;
   transition: all 0.3s ease;
 }
 
 .timeline-details h4 {
-  color: #16475a;
+  color: #50cdff;
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
 .timeline-details p {
-  color: #666;
+  color: #ffffff;
   line-height: 1.5;
   margin: 0;
 }
@@ -271,12 +267,15 @@
 }
 
 .zima h2{
-  color: #16475a;
+  color: #3ec6fc;
   text-align: center;
 }
 
-.zima h3, .zima p{
-  color: #16475a;
+.zima h3{
+  color: #3ec6fc;
+}
+.zima p{
+  color: #ffffff;
 }
 
 .zima-img{
@@ -687,7 +686,7 @@ html {
 }
 
 .mission-cards-section h2 {
-  color: #fff;
+  color: #3ec6fc;
   margin-bottom: 2rem;
 }
 
@@ -724,7 +723,7 @@ html {
 }
 
 .mission-subtitle {
-  color: #bbb;
+  color: #ffffff;
   font-size: 1.25rem;
   margin: 1.5rem auto 1rem;
   line-height: 1.6;

@@ -47,7 +47,7 @@
   color: #007bff;
 }
 .applications-section h2{
-  color: #fff;
+  color: #3ec6fc;
 }
 
 .questions-section{
@@ -92,7 +92,7 @@
 }
 
 .section-header h2 {
-  color: #fff;
+  color: #3ec6fc;
   margin-bottom: 1rem;
 }
 
@@ -448,6 +448,7 @@
 
 /* Text elements */
 .slot-text {
+  color: #3ec6fc;
   position: absolute;
   width: 100%;
   text-align: center;
@@ -1178,7 +1179,6 @@ html {
 /* Join Us Section Styles */
 .join-us-section {
   padding: 6rem 4rem;
-  background-color: #0a0e17;
 }
 
 .join-container {
@@ -1208,7 +1208,7 @@ html {
 
 .join-text h3 {
   font-size: 2.5rem;
-  color: #fff;
+  color: #3ec6fc;
   margin-bottom: 1.5rem;
 }
 
@@ -1323,7 +1323,6 @@ html {
 /* Update contact support section styles */
 .contact-support-section {
   padding: 6rem 4rem;
-  background-color: var(--bg-color);
 }
 
 .support-container {
@@ -1367,7 +1366,7 @@ html {
 }
 
 .support-text h3 {
-  color: #fff;
+  color: #3ec6fc;
   margin-bottom: 1.5rem;
 }
 
@@ -1380,6 +1379,7 @@ html {
 
 .contact-points {
   display: flex;
+  margin-top: 2rem;
   flex-direction: column;
   gap: 1.5rem;
   margin-bottom: 3rem;
@@ -1529,7 +1529,7 @@ html {
 
 .contact-icon i {
     font-size: 24px; /* Consistent icon size */
-    color: white;
+    color: black;
 }
 
 /* Specific icon adjustments */
