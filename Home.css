@@ -51,6 +51,15 @@
     padding-right: 2rem;
 }
 
+.vision-statement h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.vision-statement p {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
 .story-content h2 {
     color: #3ec6fc;
     margin-bottom: 1rem;
