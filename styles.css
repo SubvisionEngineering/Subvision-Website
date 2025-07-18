@@ -443,6 +443,22 @@ p{
   transform: scale(1.1);
 }
 
+.cta-button {
+    display: inline-block;
+    background: #50cdff;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 158, 193, 0.2);
+}
+
 /* Responsive Adjustments */
   @media (max-width: 865px) {
     .social-wrapper {
