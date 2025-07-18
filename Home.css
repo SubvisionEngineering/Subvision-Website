@@ -27,6 +27,29 @@
     color: #fff;
 }
 
+.company-name {
+    display: flex;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.company-name h1 {
+    font-size: 6rem;
+    color: #07314a;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .company-name h1 {
+        font-size: 4rem;       
+    }
+    .company-name {
+        top: 94%;
+    }
+}
 /* GUI Dashboard Section */
 .gui-dashboard {
     padding: 6rem 2rem;
@@ -56,12 +79,27 @@
     margin-bottom: 1rem;
 }
 .vision-statement p {
+    text-align: center;
     margin-left: 4rem;
     margin-right: 4rem;
 }
 
+@media (max-width: 850px) {
+    .vision-statement p{
+        margin: 0;
+    }
+    .stories-section {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .stories-section {
+        padding: 2rem 1rem;
+    }
+}
+
 .story-content h2 {
-    color: #3ec6fc;
     margin-bottom: 1rem;
     font-size: 2.5rem;
     font-weight: 600;
@@ -74,7 +112,6 @@
 .gui-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #3ec6fc;
     font-weight: 600;
 }
 
@@ -184,7 +221,7 @@
 .sponsors-section h2 {
     text-align: center;
     font-weight: 600;
-    color: #3ec6fc;
+    margin-top: 2rem;
 }
 
 .sponsors-grid {
@@ -257,9 +294,9 @@
 }
 
 .sponsor-info h3 {
-    color: #3ec6fc;
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: #3ec6fc;
 }
 
 .sponsor-info p {

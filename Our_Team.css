@@ -46,9 +46,6 @@
 .apply-text a:hover{
   color: #007bff;
 }
-.applications-section h2{
-  color: #3ec6fc;
-}
 
 .questions-section{
   padding: 4rem;
@@ -92,7 +89,6 @@
 }
 
 .section-header h2 {
-  color: #3ec6fc;
   margin-bottom: 1rem;
 }
 
@@ -1208,7 +1204,6 @@ html {
 
 .join-text h3 {
   font-size: 2.5rem;
-  color: #3ec6fc;
   margin-bottom: 1.5rem;
 }
 
@@ -1366,7 +1361,6 @@ html {
 }
 
 .support-text h3 {
-  color: #3ec6fc;
   margin-bottom: 1.5rem;
 }
 
@@ -1560,7 +1554,7 @@ html {
 
 .contact-info a,
 .contact-info span {
-    color: #8B8B8B;
+    color: ##0aaced;
     text-decoration: none;
 }
 

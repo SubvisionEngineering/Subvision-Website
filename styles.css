@@ -26,18 +26,18 @@ background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(49, 135, 145, 1) 23%
 h1{
   font-size: 4rem;
   font-weight: 600;
-  color:rgb(52, 0, 112);
+  color:#07314a;
 }
 
 h2{
   font-size: 3rem;
   font-weight: 600;
-  color: #3ec6fc;
+  color: #b9e8fe;
 }
 
 h3{
   font-size: 2.5rem;
-  color: #3ec6fc;
+  color: #b9e8fe;
 }
 
 h4{
@@ -208,7 +208,7 @@ p{
   justify-content: space-between; /* Content on the left, icons on the right */
   align-items: center;
   padding: 6rem 2rem;
-  height: 100vh; /* Full viewport height */
+  height: 90vh; /* Full viewport height */
   background: #B0DEF0;
   background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(168, 220, 239, 1) 50%, rgba(193, 219, 226, 1) 100%, rgba(119, 211, 234, 1) 100%);
 }
@@ -221,7 +221,7 @@ p{
   background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(168, 220, 239, 1) 50%, rgba(193, 219, 226, 1) 100%, rgba(119, 211, 234, 1) 100%);
 }
 .hero-contact h1{
-  color: rgb(52, 0, 112);
+  color: #07314a;
   margin-bottom: 1rem;
 }
 .hero-contact p{
@@ -238,9 +238,10 @@ p{
 }
 
 .hero h1 {
-  color: rgb(52, 0, 112);
+  color: #07314a;
   margin-bottom: 1rem;
 }
+
 
 .contact-us-btn {
   font-weight: 600;
@@ -286,7 +287,7 @@ p{
 /* Social Wrapper (Vertical Layout) */
 .social-wrapper {
   position: absolute;
-  top: 57%;
+  top: 52%;
   right: 2rem;
   transform: translateY(-44%);
   display: flex;

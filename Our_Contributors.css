@@ -16,7 +16,7 @@
 }
 
 .hero-content h1 {
-    color: rgb(52, 0, 112);
+    color: #07314a;
     margin-bottom: 1rem;
     opacity: 0;
     transform: translateY(20px);
@@ -25,7 +25,7 @@
 
 .hero-content p {
     font-size: clamp(1rem, 2vw, 1.5rem);
-    color: black;
+    color: #0a4d70;
     margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(20px);
@@ -52,11 +52,11 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: 600;
-    color:rgb(52, 0, 112);
+    color:#07314a;
 }
 
 .stat-label {
-    color: black;
+    color: #0a4d70
     margin-top: 0.5rem;
 }
 
@@ -68,7 +68,6 @@
 
 .stories-section h2 {
     text-align: center;
-    color: #3ec6fc;
     margin-bottom: 4rem;
 }
 
@@ -112,7 +111,6 @@
 }
 
 .story-content h3 {
-    color: #3ec6fc;
     margin-bottom: 1rem;
 }
 
@@ -144,7 +142,7 @@
 
 .goal-tag {
     background: rgba(255, 158, 193, 0.1);
-    color: rgb(52, 0, 112);
+    color: #07314a;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.875rem;
