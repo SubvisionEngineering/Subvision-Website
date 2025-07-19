@@ -5,7 +5,6 @@
 }
 
 
-
 /* Stars Background Animation */
 .stars-background {
     position: absolute;
@@ -24,14 +23,37 @@
 
 .about-section {
     padding: 6rem 2rem;
-    background: linear-gradient(to bottom, #000000, #07132A);
+    background: transparent;
     color: #fff;
 }
 
+.company-name {
+    display: flex;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.company-name h1 {
+    font-size: 6rem;
+    color: #07314a;
+    font-weight: 600;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .company-name h1 {
+        font-size: 4rem;       
+    }
+    .company-name {
+        top: 94%;
+    }
+}
 /* GUI Dashboard Section */
 .gui-dashboard {
     padding: 6rem 2rem;
-    background: linear-gradient(to bottom, #000000, #07132A);
+    background: transparent;
     color: #fff;
 }
 
@@ -52,8 +74,32 @@
     padding-right: 2rem;
 }
 
+.vision-statement h2{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.vision-statement p {
+    text-align: center;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+@media (max-width: 850px) {
+    .vision-statement p{
+        margin: 0;
+    }
+    .stories-section {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .stories-section {
+        padding: 2rem 1rem;
+    }
+}
+
 .story-content h2 {
-    color: #FF9EC1;
     margin-bottom: 1rem;
     font-size: 2.5rem;
     font-weight: 600;
@@ -66,7 +112,6 @@
 .gui-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #FF9EC1;
     font-weight: 600;
 }
 
@@ -169,14 +214,14 @@
 /* Sponsors Section */
 .sponsors-section {
     padding: 6rem 2rem;
-    background: #000;
+    padding-top: 0;
+    background: transparent;
 }
 
 .sponsors-section h2 {
     text-align: center;
-    color: #FF9EC1;
-    margin-bottom: 4rem;
     font-weight: 600;
+    margin-top: 2rem;
 }
 
 .sponsors-grid {
@@ -218,6 +263,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 1rem;
     padding: 2rem;
     cursor: pointer;
     position: relative;
@@ -228,7 +274,7 @@
 
 /* Card content */
 .sponsor-logo {
-    width: 80%;
+    width: 70%;
     height: auto;
     object-fit: contain;
     transition: all 0.4s ease;
@@ -248,9 +294,9 @@
 }
 
 .sponsor-info h3 {
-    color: #FF9EC1; /* Theme color for headings */
     margin-bottom: 0.5rem;
     font-weight: 600;
+    color: #3ec6fc;
 }
 
 .sponsor-info p {
@@ -327,22 +373,17 @@
 }
 
 
-/* Responsive layout */
-@media (max-width: 1024px) {
-    .sponsor-card-large {
-        grid-column: span 12;
-    }
-    
-    .sponsor-card-medium {
-        grid-column: span 6;
-    }
-}
+
 
 @media (max-width: 768px) {
     .sponsors-grid {
         gap: 1rem;
         padding: 1rem;
     }
+    .sponsor-card-large {
+        grid-column: span 12;
+    }
+
     
     .sponsor-card-medium {
         grid-column: span 12;

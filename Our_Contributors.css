@@ -1,12 +1,14 @@
 /* Hero Section */
 .contributor-hero {
-    min-height: 92vh;
-    background: blueviolet;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 2rem;
+    background: #B0DEF0;
+  background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(168, 220, 239, 1) 50%, rgba(193, 219, 226, 1) 100%, rgba(119, 211, 234, 1) 100%);
+
 }
 
 .hero-content {
@@ -14,7 +16,7 @@
 }
 
 .hero-content h1 {
-    color: #FF9EC1;
+    color: #07314a;
     margin-bottom: 1rem;
     opacity: 0;
     transform: translateY(20px);
@@ -23,7 +25,7 @@
 
 .hero-content p {
     font-size: clamp(1rem, 2vw, 1.5rem);
-    color: white;
+    color: #0a4d70;
     margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(20px);
@@ -50,35 +52,35 @@
 .stat-number {
     font-size: 2.5rem;
     font-weight: 600;
-    color: #FF9EC1;
+    color:#07314a;
 }
 
 .stat-label {
-    color: white;
+    color: #0a4d70
     margin-top: 0.5rem;
 }
 
 /* Stories Section */
 .stories-section {
-    padding: 6rem 2rem;
-    background: #000;
+    padding: 6rem 4rem;
+    background: transparent;
 }
 
 .stories-section h2 {
     text-align: center;
-    color: #FF9EC1;
     margin-bottom: 4rem;
 }
 
 .story-card {
     display: flex;
-    max-width: 1200px;
     margin: 0 auto 6rem;
+    height: 50vh;
     gap: 4rem;
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 
 .story-card.visible {
     opacity: 1;
@@ -106,11 +108,9 @@
 
 .story-content {
     flex: 1;
-    padding: 0rem;
 }
 
 .story-content h3 {
-    color: #FF9EC1;
     margin-bottom: 1rem;
 }
 
@@ -142,7 +142,7 @@
 
 .goal-tag {
     background: rgba(255, 158, 193, 0.1);
-    color: #FF9EC1;
+    color: #07314a;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.875rem;
@@ -151,7 +151,7 @@
 /* Contribute Section */
 .contribute-section {
     padding: 6rem 2rem;
-    background: linear-gradient(to top, #000000, #1a1a1a);
+    background: transparent;
     text-align: center;
 }
 
@@ -180,14 +180,14 @@
 
 .contribution-card i {
     font-size: 2.5rem;
-    color: #FF9EC1;
+    color: #50cdff;
     margin-bottom: 1.5rem;
 }
 
 .cta-button {
     display: inline-block;
-    background: #FF9EC1;
-    color: black;
+    background: #50cdff;
+    color: white;
     padding: 1rem 2rem;
     border-radius: 30px;
     font-weight: 600;
