@@ -1542,14 +1542,9 @@ html {
     margin-bottom: 1.5rem;
 }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-}
-
 .contact-info .label {
     font-weight: 600;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
 }
 
 .contact-info a,
