@@ -59,9 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNav = document.querySelector('.nav-links-mobile');
     
     hamburger.addEventListener('click', function() {
+      setTimeout(() => {
       hamburger.classList.toggle('active');
       mobileNav.classList.toggle('active');
       document.body.classList.toggle('no-scroll');
+      }, 200); // Delay to allow CSS transition
     });
     
     // Smooth scrolling for anchor links
