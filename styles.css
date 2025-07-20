@@ -299,7 +299,7 @@ p{
 
 .divider {
   width: 2px; /* Vertical divider */
-  height: 250px; /* Divider height */
+  height: 30vh; /* Divider height */
   background-color: white;
 }
 
