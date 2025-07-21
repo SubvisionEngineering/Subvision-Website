@@ -32,13 +32,6 @@
     animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
-@media( max-width: 650px){
-    .hero-content{
-        text-align: center;
-        padding: 1rem;
-    }
-}
-
 /* Stats Container */
 .stats-container {
     display: flex;
@@ -71,6 +64,17 @@
 .stories-section {
     padding: 6rem 4rem;
     background: transparent;
+}
+
+@media (max-width: 1000px) {
+    .stories-section {
+        padding: 3rem 2rem;
+    }
+}
+@media (max-width: 500px) {
+    .stories-section {
+        padding: 1rem;
+    }
 }
 
 .stories-section h2 {
@@ -226,6 +230,10 @@
         gap: 2rem;
     }
 
+    .contribute-section {
+        padding: 3rem 2rem;
+    }
+
     .story-card.right {
         flex-direction: column;
     }
@@ -238,3 +246,12 @@
         grid-template-columns: 1fr;
     }
 } 
+
+@media (max-width: 500px) {
+    .contribute-section {
+        padding: 1rem;
+    }
+    .contribution-card {
+        padding: 1rem;
+    }
+}

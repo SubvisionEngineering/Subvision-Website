@@ -535,6 +535,21 @@ p{
     }
 
   }
+
+  @media( max-width: 650px){
+    .hero-content{
+        text-align: center;
+        padding: 0;
+    }
+    .hero{
+      padding: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .container{
+      padding: 0 1rem;
+    }
+}
   
 
 @media (max-width: 480px) {
@@ -560,11 +575,20 @@ button{
   margin: 0;
   padding: 0;
 }
+
+
 #email-1{
   color: white;
   margin-bottom: 0;
   margin: 0;
   padding: 0;
+}
+
+@media(max-width: 650px){
+  #email, #email-1{
+    font-size: 0.8rem;
+  }
+
 }
 
 /* Industry Issues Styling */
@@ -607,6 +631,12 @@ button{
   .industry-container-right, .industry-container-left {
     margin-bottom: 2rem;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .industry-section{
+    padding: 1rem;
   }
 }
 
@@ -791,6 +821,10 @@ button{
     padding: 0 1rem;
   }
 
+  .timeline{
+    padding: 3rem 1rem;
+  }
+
   .timeline-line,
   .timeline-progress {
     left: 2rem;
@@ -839,6 +873,12 @@ button{
   .timeline-line::after {
     transform: none;
     bottom: -2.5rem;
+  }
+}
+
+@media(max-width: 500px) {
+  .timeline{
+    padding: 1rem;
   }
 }
 
@@ -910,6 +950,12 @@ button{
 
   .zima{
     padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 500px){
+  .zima{
+    padding: 1rem;
   }
 }
 

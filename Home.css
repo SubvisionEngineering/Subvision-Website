@@ -50,6 +50,14 @@
         top: 94%;
     }
 }
+@media (max-width: 480px) {
+    .company-name h1 {
+        font-size: 3rem;
+    }
+    .company-name {
+        top: 95.5%;
+    }
+}
 /* GUI Dashboard Section */
 .gui-dashboard {
     padding: 6rem 2rem;

@@ -376,6 +376,17 @@
   }
 }
 
+@media (max-width: 500px) {
+  .tab-row{
+    gap: 8px;
+  }
+  .tab-button {
+    width: 60px;
+    height: 60px;
+    padding: 8px;
+  }
+}
+
 /* Accessibility */
 .sr-only {
   position: absolute;
@@ -427,7 +438,6 @@
   font-size: 1.75rem;
   text-align: center;
   width: auto;
-  min-width: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -644,6 +654,7 @@ html {
   }
 }
 
+
 /* Team Sections Container */
 .team-sections-container {
   margin-top: 2rem;
@@ -735,7 +746,6 @@ html {
 .selected-team-container {
   position: relative;
   height: 5rem;
-  min-width: 350px;
   background-color: rgba(17, 17, 17, 0.95);
   border-radius: 12px;
   display: flex;
@@ -791,7 +801,7 @@ html {
 /* Team member card with hover effects */
 .team-member-card {
   width: calc(33.333% - 1.35rem);
-  min-width: 280px;
+  min-width: 160px;
   max-width: 320px;
   background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -883,11 +893,10 @@ html {
     max-width: 280px;
   }
 }
-
-/* Team Sections Container */
-.team-sections-container {
-  margin-top: 2rem;
-  padding: 0 2rem;
+@media (max-width: 500px) {
+  .team-sections-container {
+    padding: 0 1rem;
+  }
 }
 
 /* Team Section */
@@ -968,7 +977,6 @@ html {
 .selected-team-container {
   position: relative;
   height: 5rem;
-  min-width: 350px;
   background-color: rgba(17, 17, 17, 0.95);
   border-radius: 12px;
   display: flex;
@@ -1134,7 +1142,7 @@ html {
 .team-member-card {
   width: 100%;
   max-width: 320px;
-  min-width: 280px;
+  min-width: 160px;
   background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -1169,6 +1177,23 @@ html {
   
   .team-grid {
     padding: 1rem;
+  }
+}
+
+@media(max-width: 480px) {
+  .team-member-card {
+    width: 100%; /* Full width on small screens */
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .team-grid {
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
@@ -1309,9 +1334,18 @@ html {
   .join-content {
     padding: 1.5rem;
   }
+  .join-us-section {
+    padding: 3rem 1.5rem;
+  }
 
   .opportunity-points {
     gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .join-content {
+    padding: 1rem;
   }
 }
 
