@@ -32,6 +32,13 @@
     animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
+@media( max-width: 650px){
+    .hero-content{
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
 /* Stats Container */
 .stats-container {
     display: flex;
