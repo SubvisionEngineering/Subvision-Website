@@ -1,9 +1,9 @@
 /* Industry Issues Styling */
-.industry-section{
+/* .industry-section{
   padding: 6rem 4rem;
   background: transparent;
-}
-
+} */
+/* 
 .industry-section h2{
   text-align: center;
   margin-bottom: 4rem;
@@ -25,13 +25,13 @@
 
 @media (max-width: 1000px) {
   .industry-container-right, .industry-container-left {
-    grid-template-columns: 1fr; /* Single column on smaller screens */
+    grid-template-columns: 1fr; 
     margin-bottom: 4rem;
     gap: 3rem;
   }
-}
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .industry-section {
     padding: 3rem 2rem;
   }
@@ -71,8 +71,92 @@
   max-width: 100%;
   height: auto;
   border-radius: 1rem;
+} */
+
+/* Industry Issues Styling */
+.industry-section {
+  padding: 6rem 4rem;
+  background: transparent;
 }
 
+.industry-section h2 {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.industry-container-right {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+.industry-container-left {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 1000px) {
+  .industry-container-right,
+  .industry-container-left {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+    margin-bottom: 4rem;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .industry-section {
+    padding: 3rem 2rem;
+  }
+  .industry-container-right,
+  .industry-container-left {
+    margin-bottom: 2rem;
+    gap: 1rem;
+  }
+}
+
+.industry-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.industry-content h3 {
+  margin-bottom: 1rem;
+}
+
+.industry-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Ensure consistent sizing */
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.industry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fill the area while keeping proportions */
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.industry-image img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .industry-image {
+    aspect-ratio: 4 / 3;
+  }
+}
 
 
 
