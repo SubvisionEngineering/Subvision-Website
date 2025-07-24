@@ -15,22 +15,22 @@
     max-width: 800px;
 }
 
-.hero-content h1 {
+/* .hero-content h1 {
     color: #07314a;
     margin-bottom: 1rem;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards;
-}
+} */
 
-.hero-content p {
+/* .hero-content p {
     font-size: clamp(1rem, 2vw, 1.5rem);
     color: #0a4d70;
     margin-bottom: 3rem;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease 0.2s forwards;
-}
+} */
 
 /* Stats Container */
 .stats-container {
@@ -231,3 +231,173 @@
         grid-template-columns: 1fr;
     }
 } 
+
+
+/* Partnerships Section */
+.partnerships-section {
+  padding: 6rem 4rem;
+  background: transparent;
+}
+
+.partnerships-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.partnerships-section .subheading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 4rem;
+  line-height: 1.6;
+}
+
+/* Container for each partner */
+.partnership-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.partnership-container.left {
+  flex-direction: row;
+}
+
+.partnership-container.right {
+  flex-direction: row-reverse;
+}
+
+/* Visual Section (Image) */
+.partnership-visual {
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.partnership-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.partnership-visual img:hover {
+  transform: scale(1.02);
+}
+
+/* Textual Details */
+.partnership-details {
+  flex: 1;
+}
+
+.partnership-details h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.partnership-details .amount {
+  color: #2ecc71;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.partnership-details p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* CTA Link Button */
+.partner-link {
+  display: inline-block;
+  color: #fff;
+  background-color: #50cdff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.partner-link:hover {
+  background-color: #3ab0e2;
+  transform: translateY(-3px);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 992px) {
+  .partnership-container {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .partnership-details {
+    margin-top: 2rem;
+  }
+
+  .partnership-visual {
+    width: 100%;
+  }
+
+  .partnership-visual img {
+    border-radius: 1rem;
+  }
+}
+
+
+
+/* Final Stats Grid Layout */
+.contributor-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.contributor-stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #07314a;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #0a4d70;
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+
+/* Make last stat span full row if needed */
+.contributor-stat.wide {
+  grid-column: auto; /* or just remove .wide entirely */
+}
+
+
+.contributors-container p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #0a4d70;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+}
