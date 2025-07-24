@@ -41,6 +41,12 @@
   }
 }
 
+@media (max-width: 500px) {
+  .industry-section{
+    padding: 1rem;
+  }
+}
+
 .industry-content {
   display: flex;
   flex-direction: column;
@@ -306,6 +312,10 @@
     padding: 0 1rem;
   }
 
+  .timeline{
+    padding: 3rem 1rem;
+  }
+
   .timeline-line,
   .timeline-progress {
     left: 2rem;
@@ -354,6 +364,12 @@
   .timeline-line::after {
     transform: none;
     bottom: -2.5rem;
+  }
+}
+
+@media(max-width: 500px) {
+  .timeline{
+    padding: 1rem;
   }
 }
 
@@ -425,6 +441,12 @@
 
   .zima{
     padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 500px){
+  .zima{
+    padding: 1rem;
   }
 }
 
