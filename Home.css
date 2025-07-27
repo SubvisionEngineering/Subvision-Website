@@ -30,7 +30,7 @@
 .company-name {
     display: flex;
     position: absolute;
-    top: 90%;
+    top: 92%;
     left: 50%;
     transform: translateX(-50%);
 }
