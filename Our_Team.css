@@ -721,6 +721,12 @@ html {
   margin-bottom: 1rem;
 }
 
+/* .member-avatar img {
+  width: 1005%;
+  height: 105%;
+  object-fit: ;
+} */
+
 /* Clean circle with border only */
 .avatar-circle {
   width: 100%;
@@ -958,7 +964,7 @@ html {
   border-radius: 50%;
   margin: 0 auto 2rem;
   border: 3px solid rgba(147, 197, 253, 0.3);
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 .member-info {
