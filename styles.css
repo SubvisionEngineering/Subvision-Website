@@ -45,7 +45,7 @@ h4{
 }
 
 p{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 @media(max-width: 1300px){
@@ -62,7 +62,7 @@ p{
   }
 
   p{
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 }
 
@@ -85,7 +85,7 @@ p{
   }
 
   p{
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 }
 @media (max-width: 550px) {
@@ -106,7 +106,7 @@ p{
   }
 
   p{
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -124,7 +124,7 @@ p{
 }
 
 .main-nav .logo img {
-  width: 15rem;
+  width: 10rem;
   height: auto;
 }
 
@@ -140,7 +140,7 @@ p{
 .main-nav nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
@@ -248,6 +248,28 @@ p{
   height: 90vh; /* Full viewport height */
   background: #B0DEF0;
   background: linear-gradient(rgba(176, 222, 240, 1) 2%, rgba(168, 220, 239, 1) 50%, rgba(193, 219, 226, 1) 100%, rgba(119, 211, 234, 1) 100%);
+}
+
+.hero p{
+  font-size: 1.5rem;
+}
+
+@media(max-width: 1300px){
+  .hero p{
+    font-size: 1.3rem;
+  }
+}
+
+@media(max-width: 1000px ){
+  .hero p{
+    font-size: 1.2rem;
+  }
+}
+
+@media(max-width: 550px){
+  .hero p{
+    font-size: 1rem;
+  }
 }
 
 .hero-contact{
