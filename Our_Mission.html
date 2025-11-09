@@ -63,10 +63,24 @@
       </div>
       <div class="divider"></div>
     </div>
-        <div class="hero-content">
-            <h1>Our Mission</h1>
-            <p>Subvision's mission is to revolutionize the maritime industry through innovative technology and sustainable practices.</p>
+    <div class="hero-row" style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding-right:2rem;">
+      <div class="hero-content" style="flex:1;min-width:280px;">
+        <h1>Our Mission</h1>
+        <p>Subvision's mission is to revolutionize the maritime industry through innovative technology and sustainable practices.</p>
+      </div>
+
+      <div class="hero-media" style="flex:1;min-width:280px;padding-right:2rem;">
+        <div class="video-wrapper" style="position:relative;">
+          <video id="zimaVideo" class="hero-video" src="GUI/Video/FINAL_ZIMA_ANI.mp4" autoplay muted loop playsinline aria-label="ZIMA animation" style="width:100%;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.15);"></video>
+
+          <!-- Controls: mute/unmute and expand -->
+          <div class="video-controls" style="position:absolute;top:8px;right:8px;display:flex;gap:8px;z-index:5;">
+            <button id="muteToggle" aria-label="Unmute video" style="background:#fff;border:0;padding:8px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);cursor:pointer;font-size:14px;">🔈</button>
+            <button id="expandToggle" aria-label="Expand video" style="background:#fff;border:0;padding:8px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);cursor:pointer;font-size:14px;">⤢</button>
+          </div>
         </div>
+      </div>
+    </div>
         </div>
     </section>
 
@@ -250,6 +264,49 @@
     </footer>
     <script src="contributors.js"></script>
     <script src="Our_Contributors.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('zimaVideo');
+      const muteBtn = document.getElementById('muteToggle');
+      const expandBtn = document.getElementById('expandToggle');
+      if (!video || !muteBtn || !expandBtn) return;
+
+      function updateMuteButton() {
+        if (video.muted) {
+          muteBtn.textContent = '🔈';
+          muteBtn.setAttribute('aria-label', 'Unmute video');
+        } else {
+          muteBtn.textContent = '🔊';
+          muteBtn.setAttribute('aria-label', 'Mute video');
+        }
+      }
+
+      updateMuteButton();
+
+      muteBtn.addEventListener('click', function() {
+        video.muted = !video.muted;
+        if (!video.muted) {
+          // Some browsers require a user gesture to play with sound; try to play and ignore errors
+          video.play().catch(() => {});
+        }
+        updateMuteButton();
+      });
+
+      expandBtn.addEventListener('click', function() {
+        const doc = document;
+        const isFullscreen = doc.fullscreenElement || doc.webkitFullscreenElement || doc.msFullscreenElement;
+        if (!isFullscreen) {
+          const requestFull = video.requestFullscreen || video.webkitRequestFullscreen || video.msRequestFullscreen;
+          if (requestFull) {
+            requestFull.call(video);
+          }
+        } else {
+          const exitFull = doc.exitFullscreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+          if (exitFull) exitFull.call(doc);
+        }
+      });
+    });
+    </script>
 </body>
 
 </html>
