@@ -43,19 +43,11 @@
   </div>
 </header>
 
-<!-- Mobile Navigation -->
-<ul class="nav-links-mobile">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="Our_Mission.html">Our Mission</a></li>
-  <li><a href="Our_Contributors.html">Contributors</a></li>
-  <li><a href="Our_Team.html">Our Team</a></li>
-  <li><a href="Contact.html">Contact Us</a></li>
-</ul>
-
-  <!-- Hero Section -->
-  <section class="hero">
-        <div class="container">
-            <div class="social-wrapper">
+<!-- Hero Section with Proper Placement -->
+<section class="hero">
+  <div class="container">
+    <!-- Social wrapper stays exactly as is -->
+    <div class="social-wrapper">
       <div class="divider"></div>
       <div class="social-icons">
         <a href="https://www.instagram.com/subvision.robotics" target="_blank" aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
@@ -63,26 +55,83 @@
       </div>
       <div class="divider"></div>
     </div>
-    <div class="hero-row" style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;padding-right:2rem;">
-      <div class="hero-content" style="flex:1;min-width:280px;">
-        <h1>Our Mission</h1>
+
+    <!-- Restructured layout: title at top, video centered, description below -->
+    <div class="hero-content">
+      <h1>Our Mission</h1>
+    </div>
+
+      <div class="hero-description">
         <p>Subvision's mission is to revolutionize the maritime industry through innovative technology and sustainable practices.</p>
       </div>
+    <div class="hero-video-wrapper">
+      <div class="hero-video-container">
+        <video 
+          id="heroVideo"
+          class="hero-video-player"
+          controls
+          muted 
+          loop 
+          playsinline
+        >
+          <source src="img/Video/FINAL_ZIMA_ANI_Compressed.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
 
-      <div class="hero-media" style="flex:1;min-width:280px;padding-right:2rem;">
-        <div class="video-wrapper" style="position:relative;">
-          <video id="zimaVideo" class="hero-video" src="GUI/Video/FINAL_ZIMA_ANI.mp4" autoplay muted loop playsinline aria-label="ZIMA animation" style="width:100%;height:auto;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.15);"></video>
-
-          <!-- Controls: mute/unmute and expand -->
-          <div class="video-controls" style="position:absolute;top:8px;right:8px;display:flex;gap:8px;z-index:5;">
-            <button id="muteToggle" aria-label="Unmute video" style="background:#fff;border:0;padding:8px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);cursor:pointer;font-size:14px;">🔈</button>
-            <button id="expandToggle" aria-label="Expand video" style="background:#fff;border:0;padding:8px;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,0.15);cursor:pointer;font-size:14px;">⤢</button>
-          </div>
-        </div>
-      </div>
     </div>
-        </div>
-    </section>
+  </div>
+
+
+
+  <!-- JavaScript -->
+  <script>
+    const heroVideo = document.getElementById('heroVideo');
+    const heroMuteBtn = document.getElementById('heroMuteBtn');
+    const heroExpandBtn = document.getElementById('heroExpandBtn');
+    const heroMuteIcon = document.getElementById('heroMuteIcon');
+    const heroUnmuteIcon = document.getElementById('heroUnmuteIcon');
+
+    // Intersection Observer for autoplay when 50% visible
+    const heroObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          heroVideo.play().catch(err => console.log('[v0] Autoplay prevented:', err));
+        } else {
+          heroVideo.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    heroObserver.observe(heroVideo);
+
+    // Mute/Unmute toggle
+    heroMuteBtn.addEventListener('click', () => {
+      heroVideo.muted = !heroVideo.muted;
+      if (heroVideo.muted) {
+        heroMuteIcon.style.display = 'block';
+        heroUnmuteIcon.style.display = 'none';
+      } else {
+        heroMuteIcon.style.display = 'none';
+        heroUnmuteIcon.style.display = 'block';
+      }
+    });
+
+    // Fullscreen toggle
+    heroExpandBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        heroVideo.requestFullscreen().catch(err => {
+          console.log('[v0] Fullscreen error:', err);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    });
+  </script>
+</section>
+
+
+
+
 
     <!-- Timeline Section -->
   <section class="timeline">
@@ -219,17 +268,17 @@
             <div class="contribution-cards">
                 <div class="contribution-card">
                     <i class="fas fa-handshake"></i>
-                    <h3>INNOVATE</h3>
+                    <h3 class="card-header">INNOVATE</h3>
                     <p class="card-body">We pioneer autonomous robotics to transform marine maintenance into a sustainable, efficient, and eco-friendly process.</p>
                 </div>
                 <div class="contribution-card">
                     <i class="fas fa-gift"></i>
-                    <h3>EFFICIENCY</h3>
+                    <h3 class="card-header">EFFICIENCY</h3>
                     <p class="card-body">Revolutionizing marine maintenance with autonomous, eco-friendly solutions that boost vessel efficiency and protect our oceans</p>
                 </div>
                 <div class="contribution-card">
                     <i class="fas fa-graduation-cap"></i>
-                    <h3>SUSTAINABILITY</h3>
+                    <h3 class="card-header">SUSTAINABILITY</h3>
                     <p class="card-body">Leading the shift toward cleaner hulls and healthier oceans through innovative engineering and sustainable practices</p>
                 </div>
             </div>
@@ -264,49 +313,6 @@
     </footer>
     <script src="contributors.js"></script>
     <script src="Our_Contributors.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const video = document.getElementById('zimaVideo');
-      const muteBtn = document.getElementById('muteToggle');
-      const expandBtn = document.getElementById('expandToggle');
-      if (!video || !muteBtn || !expandBtn) return;
-
-      function updateMuteButton() {
-        if (video.muted) {
-          muteBtn.textContent = '🔈';
-          muteBtn.setAttribute('aria-label', 'Unmute video');
-        } else {
-          muteBtn.textContent = '🔊';
-          muteBtn.setAttribute('aria-label', 'Mute video');
-        }
-      }
-
-      updateMuteButton();
-
-      muteBtn.addEventListener('click', function() {
-        video.muted = !video.muted;
-        if (!video.muted) {
-          // Some browsers require a user gesture to play with sound; try to play and ignore errors
-          video.play().catch(() => {});
-        }
-        updateMuteButton();
-      });
-
-      expandBtn.addEventListener('click', function() {
-        const doc = document;
-        const isFullscreen = doc.fullscreenElement || doc.webkitFullscreenElement || doc.msFullscreenElement;
-        if (!isFullscreen) {
-          const requestFull = video.requestFullscreen || video.webkitRequestFullscreen || video.msRequestFullscreen;
-          if (requestFull) {
-            requestFull.call(video);
-          }
-        } else {
-          const exitFull = doc.exitFullscreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-          if (exitFull) exitFull.call(doc);
-        }
-      });
-    });
-    </script>
 </body>
 
 </html>

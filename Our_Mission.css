@@ -158,7 +158,138 @@
   }
 }
 
+  /* CSS for Video Controls */
+  .hero-video-section {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    
+    .hero-video-wrapper {
+      width: 80%;
+      margin-top: 1rem;
+    }
 
+    .hero-video-container {
+      position: relative;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-video-player {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Video controls positioned above native controls */
+    .hero-video-controls {
+      position: absolute;
+      bottom: 4.5rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.75rem;
+      z-index: 10;
+    }
+
+    .hero-video-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-video-btn:hover {
+      background: rgba(0, 0, 0, 0.9);
+      transform: scale(1.1);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .hero-video-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+
+    @media (max-width: 768px) {
+      .hero-content {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-video-wrapper {
+        margin-bottom: 3rem;
+      }
+
+      .hero-video-container {
+        border-radius: 0.75rem;
+        aspect-ratio: 16 / 10;
+      }
+
+      .hero-video-controls {
+        bottom: 4rem;
+        gap: 0.5rem;
+      }
+
+      .hero-video-btn {
+        width: 44px;
+        height: 44px;
+      }
+
+      .hero-video-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .hero-description p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero-video-container {
+        border-radius: 0.5rem;
+        aspect-ratio: 4 / 3;
+      }
+
+      .hero-video-controls {
+        bottom: 3.5rem;
+      }
+
+      .hero-video-btn {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero-video-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
 
 
 /* Timeline Title Styling */
