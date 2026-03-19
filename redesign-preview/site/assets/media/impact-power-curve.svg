@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 920" role="img" aria-labelledby="title desc">
+  <title id="title">Power increase over operation time</title>
+  <desc id="desc">A line graph showing power increase over five years, where no cleaning steadily rises while proactive cleaning repeatedly resets and stays lower.</desc>
+  <rect width="920" height="920" fill="#8b96ae"/>
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif">
+    <text x="180" y="96" font-size="24">No cleaning</text>
+    <text x="476" y="96" font-size="24">Pro-active cleaning (hull + prop.)</text>
+    <text x="55" y="560" transform="rotate(-90 55 560)" font-size="54" font-weight="700">Power increase</text>
+    <text x="320" y="835" font-size="54" font-weight="700">Operation time (years)</text>
+  </g>
+  <g stroke="#7a8294" stroke-width="3">
+    <line x1="150" y1="150" x2="150" y2="760"/>
+    <line x1="150" y1="760" x2="840" y2="760"/>
+    <line x1="150" y1="640" x2="840" y2="640"/>
+    <line x1="150" y1="520" x2="840" y2="520"/>
+    <line x1="150" y1="400" x2="840" y2="400"/>
+    <line x1="150" y1="280" x2="840" y2="280"/>
+    <line x1="150" y1="150" x2="840" y2="150"/>
+    <line x1="270" y1="150" x2="270" y2="760"/>
+    <line x1="390" y1="150" x2="390" y2="760"/>
+    <line x1="510" y1="150" x2="510" y2="760"/>
+    <line x1="630" y1="150" x2="630" y2="760"/>
+    <line x1="750" y1="150" x2="750" y2="760"/>
+  </g>
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="24">
+    <text x="112" y="768">0</text>
+    <text x="87" y="648">20%</text>
+    <text x="87" y="528">40%</text>
+    <text x="87" y="408">60%</text>
+    <text x="87" y="288">80%</text>
+    <text x="74" y="158">100%</text>
+    <text x="142" y="800">0</text>
+    <text x="262" y="800">1</text>
+    <text x="382" y="800">2</text>
+    <text x="502" y="800">3</text>
+    <text x="622" y="800">4</text>
+    <text x="742" y="800">5</text>
+  </g>
+  <polyline fill="none" stroke="#ff2a2a" stroke-width="7" points="160,756 200,748 238,732 270,705 300,640 332,605 364,602 390,585 420,560 452,520 480,500 520,490 560,490 600,490 630,490 660,488 690,482 710,470 730,445 746,410 760,320 776,280 792,230 808,205 824,185 840,178"/>
+  <polyline fill="none" stroke="#f9ff26" stroke-width="7" points="160,756 180,748 204,735 226,720 248,700 270,650 290,618 312,606 336,602 350,602 350,758 374,730 392,700 410,650 430,620 430,758 452,724 470,694 490,660 510,640 510,758 532,724 552,700 574,680 590,665 590,758 612,724 632,700 652,670 668,648 668,758 690,726 710,700 730,674 746,655 746,758 770,736 794,718 818,706 840,678"/>
+  <g stroke="#ff2a2a" stroke-width="7">
+    <line x1="152" y1="84" x2="178" y2="84"/>
+  </g>
+  <g stroke="#f9ff26" stroke-width="7">
+    <line x1="430" y1="84" x2="456" y2="84"/>
+  </g>
+</svg>

@@ -1,0 +1,37 @@
+{
+  "pages": {
+    "index.html": {
+      "desktop": {
+        "home-hero-proof-title": {
+          "text": "Biofouling slows "
+        }
+      },
+      "tablet": {},
+      "mobile": {}
+    },
+    "technology.html": {
+      "desktop": {},
+      "tablet": {},
+      "mobile": {}
+    },
+    "impact.html": {
+      "desktop": {},
+      "tablet": {},
+      "mobile": {}
+    },
+    "team.html": {
+      "desktop": {},
+      "tablet": {},
+      "mobile": {}
+    },
+    "contact.html": {
+      "desktop": {
+        "contact-cta-title-1": {
+          "text": "Talk to Us"
+        }
+      },
+      "tablet": {},
+      "mobile": {}
+    }
+  }
+}

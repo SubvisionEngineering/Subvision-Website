@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subvision Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/studio.css">
+  <script src="assets/js/studio.js" defer></script>
+</head>
+<body>
+  <div class="studio-shell">
+    <aside class="studio-sidebar">
+      <div class="studio-brand">
+        <p class="studio-kicker">Local-only editor</p>
+        <h1>Subvision Studio</h1>
+        <p>Edit layout, spacing, card size, and copy against the real page preview. Saved changes write to <code>layout-overrides.json</code>.</p>
+      </div>
+
+      <section class="studio-panel">
+        <label class="studio-field">
+          <span>Page</span>
+          <select id="studio-page"></select>
+        </label>
+
+        <div class="studio-breakpoints" id="studio-breakpoints" aria-label="Breakpoint selector"></div>
+      </section>
+
+      <section class="studio-panel">
+        <div class="studio-actions">
+          <button class="studio-button studio-button--secondary" type="button" id="studio-undo">Undo</button>
+          <button class="studio-button studio-button--secondary" type="button" id="studio-reset">Reset selected</button>
+          <button class="studio-button studio-button--secondary" type="button" id="studio-export">Export JSON</button>
+          <button class="studio-button studio-button--primary" type="button" id="studio-save">Save JSON</button>
+        </div>
+        <p class="studio-status" id="studio-status">Loading preview...</p>
+      </section>
+
+      <section class="studio-panel">
+        <div class="studio-selection-meta">
+          <div>
+            <span class="studio-label">Selected ID</span>
+            <strong id="studio-selected-id">None</strong>
+          </div>
+          <div>
+            <span class="studio-label">Type</span>
+            <strong id="studio-selected-type">-</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="studio-panel">
+        <div class="studio-panel__header">
+          <h2>Inspector</h2>
+          <p>Drag to move. Use the handles to resize. Text edits update live.</p>
+        </div>
+
+        <div class="studio-inspector" id="studio-inspector">
+          <label class="studio-field studio-field--full">
+            <span>Text content</span>
+            <textarea id="field-text" rows="5" placeholder="Select a text element to edit copy."></textarea>
+          </label>
+
+          <label class="studio-field">
+            <span>X offset</span>
+            <input id="field-x" type="number" step="1">
+          </label>
+          <label class="studio-field">
+            <span>Y offset</span>
+            <input id="field-y" type="number" step="1">
+          </label>
+          <label class="studio-field">
+            <span>Width</span>
+            <input id="field-width" type="number" step="1">
+          </label>
+          <label class="studio-field">
+            <span>Max width</span>
+            <input id="field-maxWidth" type="number" step="1">
+          </label>
+          <label class="studio-field">
+            <span>Min height</span>
+            <input id="field-minHeight" type="number" step="1">
+          </label>
+          <label class="studio-field">
+            <span>Font size</span>
+            <input id="field-fontSize" type="number" step="1">
+          </label>
+          <label class="studio-field">
+            <span>Line height</span>
+            <input id="field-lineHeight" type="number" step="0.05">
+          </label>
+          <label class="studio-field">
+            <span>Padding</span>
+            <input id="field-padding" type="text" placeholder="24 or 24px 32px">
+          </label>
+          <label class="studio-field">
+            <span>Gap</span>
+            <input id="field-gap" type="text" placeholder="20">
+          </label>
+          <label class="studio-field">
+            <span>Text align</span>
+            <select id="field-textAlign">
+              <option value="">Default</option>
+              <option value="left">Left</option>
+              <option value="center">Center</option>
+              <option value="right">Right</option>
+              <option value="justify">Justify</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="studio-panel studio-panel--grow">
+        <div class="studio-panel__header">
+          <h2>Editable elements</h2>
+          <p>Click in the preview or choose an element from the list.</p>
+        </div>
+        <div class="studio-element-list" id="studio-element-list"></div>
+      </section>
+    </aside>
+
+    <main class="studio-main">
+      <div class="studio-topbar">
+        <div>
+          <p class="studio-kicker">Preview</p>
+          <h2 id="studio-preview-label">Home</h2>
+        </div>
+        <p class="studio-note">This page is local-only and is excluded from the publish script.</p>
+      </div>
+
+      <div class="studio-preview-stage">
+        <div class="studio-frame-shell" id="studio-frame-shell">
+          <iframe id="studio-frame" title="Subvision page preview"></iframe>
+          <div class="studio-overlay" id="studio-overlay" hidden>
+            <div class="studio-selection-box" id="studio-selection-box">
+              <div class="studio-selection-bar">
+                <span id="studio-selection-label">No selection</span>
+              </div>
+              <button class="studio-handle studio-handle--e" type="button" data-resize-handle="e" aria-label="Resize width"></button>
+              <button class="studio-handle studio-handle--s" type="button" data-resize-handle="s" aria-label="Resize height"></button>
+              <button class="studio-handle studio-handle--se" type="button" data-resize-handle="se" aria-label="Resize width and height"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

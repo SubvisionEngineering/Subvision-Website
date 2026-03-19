@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">Five year total fuel cost comparison</title>
+  <desc id="desc">A bar chart comparing no cleaning, industry-standard cleaning, and proactive cleaning scenarios over five years, with the always-clean case showing the lowest total fuel cost and a highlighted potential savings band.</desc>
+  <rect width="1280" height="760" fill="#f5f5f5"/>
+  <text x="640" y="74" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#1d1d1d">Total fuel cost over five years</text>
+  <g stroke="#bdbdbd" stroke-width="2">
+    <line x1="110" y1="130" x2="1190" y2="130"/>
+    <line x1="110" y1="250" x2="1190" y2="250"/>
+    <line x1="110" y1="370" x2="1190" y2="370"/>
+    <line x1="110" y1="490" x2="1190" y2="490"/>
+    <line x1="110" y1="610" x2="1190" y2="610"/>
+  </g>
+  <g fill="#303030" font-family="Arial, Helvetica, sans-serif" font-size="26">
+    <text x="52" y="620">$20M</text>
+    <text x="52" y="500">$22M</text>
+    <text x="52" y="380">$24M</text>
+    <text x="52" y="260">$26M</text>
+    <text x="52" y="140">$28M</text>
+  </g>
+  <g>
+    <rect x="160" y="175" width="68" height="435" fill="#2e6d99"/>
+    <rect x="300" y="345" width="68" height="265" fill="#f05a28"/>
+    <rect x="440" y="188" width="68" height="422" fill="#ff2a2a"/>
+    <rect x="580" y="350" width="68" height="260" fill="#5dbb43"/>
+    <rect x="720" y="215" width="68" height="395" fill="#58b8c9"/>
+    <rect x="860" y="372" width="68" height="238" fill="#9b5ca5"/>
+    <rect x="1000" y="490" width="68" height="120" fill="#a9acaf"/>
+    <rect x="1140" y="555" width="68" height="55" fill="#ffffff" stroke="#545454" stroke-width="3"/>
+  </g>
+  <g fill="#202020" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">
+    <text x="194" y="160" text-anchor="middle">$29.65M</text>
+    <text x="334" y="330" text-anchor="middle">$25.64M</text>
+    <text x="474" y="173" text-anchor="middle">$29.27M</text>
+    <text x="614" y="335" text-anchor="middle">$25.55M</text>
+    <text x="754" y="200" text-anchor="middle">$28.85M</text>
+    <text x="894" y="357" text-anchor="middle">$25.27M</text>
+    <text x="1034" y="475" text-anchor="middle">$23.07M</text>
+    <text x="1174" y="540" text-anchor="middle">$20.85M</text>
+  </g>
+  <g fill="#202020" font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <text x="194" y="655" text-anchor="middle">No cleaning</text>
+    <text x="334" y="655" text-anchor="middle">Hull cleaning</text>
+    <text x="474" y="655" text-anchor="middle">Prop. cleaning</text>
+    <text x="614" y="655" text-anchor="middle">Hull + prop.</text>
+    <text x="614" y="681" text-anchor="middle">cleaning</text>
+    <text x="754" y="655" text-anchor="middle">Ultrasonic</text>
+    <text x="754" y="681" text-anchor="middle">antifouling</text>
+    <text x="894" y="655" text-anchor="middle">Hull cleaning +</text>
+    <text x="894" y="681" text-anchor="middle">ultrasonic prop.</text>
+    <text x="1034" y="655" text-anchor="middle">Pro-active</text>
+    <text x="1034" y="681" text-anchor="middle">cleaning</text>
+    <text x="1174" y="655" text-anchor="middle">Always clean</text>
+  </g>
+  <g stroke="#ff3b3b" stroke-width="5" fill="none">
+    <line x1="1160" y1="360" x2="1160" y2="545"/>
+    <line x1="1148" y1="360" x2="1172" y2="360"/>
+    <line x1="1148" y1="545" x2="1172" y2="545"/>
+  </g>
+  <text x="1114" y="335" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#ff3b3b">$4.7M est. savings</text>
+</svg>
