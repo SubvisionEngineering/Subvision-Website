@@ -1,0 +1,55 @@
+{
+  "pages": {
+    "index.html": {
+      "desktop": {
+        "home-hero-proof-title": {
+          "text": "Biofouling "
+        },
+        "home-hero-proof-copy": {
+          "text": "is the accumulation of algae, barnacles, and other micro-organisms onto ship hulls.  "
+        },
+        "home-proof-card-4-value": {
+          "text": "$13.5K"
+        },
+        "home-why-copy": {
+          "text": "Biofouling is more than a maintenance issue. It increases fuel use, emissions, coating wear, and environmental risk. Subvision is building a prevention-first approach that helps operators stay ahead of growth early and reduce the need for heavier intervention later.\n            "
+        },
+        "home-why-title": {
+          "text": "Biofouling Prevention can Save $1M per Year per Ship"
+        },
+        "home-issues-support-title": {
+          "text": "Lower drag.   \nLess coatings pressure. \nReduced invasive transfer risk."
+        },
+        "home-issues-support-copy": {
+          "text": "\n          "
+        }
+      },
+      "tablet": {},
+      "mobile": {}
+    },
+    "technology.html": {
+      "desktop": {},
+      "tablet": {},
+      "mobile": {}
+    },
+    "impact.html": {
+      "desktop": {},
+      "tablet": {},
+      "mobile": {}
+    },
+    "team.html": {
+      "desktop": {},
+      "tablet": {},
+      "mobile": {}
+    },
+    "contact.html": {
+      "desktop": {
+        "contact-cta-title-1": {
+          "text": "Talk to Us"
+        }
+      },
+      "tablet": {},
+      "mobile": {}
+    }
+  }
+}

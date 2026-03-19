@@ -1,198 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subvision - Home</title>
-    <link rel="icon" type="image/x-icon" href="img/Logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="Our_Contributors.css">
-    <link rel="stylesheet" href="Home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Subvision is building ZIMA, a subsea rover for prevention-first hull maintenance on container ships.">
+  <meta name="theme-color" content="#07111f">
+  <title>Subvision | Proactive Hull Maintenance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
 <body>
-    <!-- Sticky Navigation -->
-    <header class="main-nav">
-        <div class="logo">
-            <img src="SVG/logo.svg" alt="Subvision Logo">
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Our_Mission.html">Our Mission</a></li>
-                <li><a href="Our_Contributors.html">Contributors</a></li>
-                <li><a href="Our_Team.html">Our Team</a></li>
-                <li><a href="Contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Mobile Navigation -->
-    <ul class="nav-links-mobile">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Our_Mission.html">Our Mission</a></li>
-        <li><a href="Our_Contributors.html">Contributors</a></li>
-        <li><a href="Our_Team.html">Our Team</a></li>
-        <li><a href="Contact.html">Contact Us</a></li>
-    </ul>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Subvision home">
+        <img src="assets/media/logo-mark.png" alt="Subvision logo">
+        <span class="brand__text">
+          <strong>Subvision</strong>
+          <span>Subsea prevention systems</span>
+        </span>
+      </a>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="social-wrapper">
-      <div class="divider"></div>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/subvision.robotics" target="_blank" aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
-        <a href="https://www.linkedin.com/company/subvision-engineering/" aria-label="LinkedIn"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
-      </div>
-      <div class="divider"></div>
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-menu">Menu</button>
+
+      <nav class="nav-panel" id="site-menu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a class="is-active" aria-current="page" href="index.html">Home</a></li>
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="impact.html">Impact &amp; Partners</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-        <div class="hero-content">
-            <h1>Innovating Underwater Robotics</h1>
-            <p>Pioneering the future of autonomous underwater vehicles at Simon Fraser University</p>
+  </header>
+
+  <main id="main">
+    <section class="hero-home">
+      <div class="container">
+        <div class="hero-home__intro reveal" data-edit-id="home-hero-intro" data-edit-type="block">
+          <p class="eyebrow" data-edit-id="home-hero-eyebrow" data-edit-type="text">Prevention-first hull maintenance</p>
+          <h1 class="page-title" data-edit-id="home-hero-title" data-edit-type="text">Keep ship hulls ahead of biofouling.</h1>
+          <p class="lede" data-edit-id="home-hero-lede" data-edit-type="text">
+            Subvision is building ZIMA, a subsea rover designed for container fleets that want a cleaner, more continuous
+            hull-maintenance path before drag, emissions pressure, and invasive transfer become larger operational problems.
+          </p>
         </div>
+
+        <div class="hero-home__grid">
+          <div class="hero-media-stack reveal" data-edit-id="home-hero-media-stack" data-edit-type="block">
+            <article class="media-card media-card--hero" data-edit-id="home-hero-video" data-edit-type="media">
+              <div class="media-card__header">
+                <span class="pill">1 minute animation</span>
+                <div class="media-card__actions">
+                  <button class="video-toggle" type="button" data-audio-toggle aria-label="Enable audio">Audio off</button>
+                  <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
+                </div>
+              </div>
+              <video class="media-video media-video--hero" data-autoplay-video muted loop playsinline preload="auto" poster="assets/media/zima-hero-poster.webp">
+                <source src="assets/media/zima-hero.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <p class="media-caption" data-edit-id="home-hero-video-caption" data-edit-type="text">A quick view of ZIMA, the maintenance logic behind it, and the kind of hull workflow Subvision is building toward.</p>
+            </article>
+          </div>
+
+          <aside class="hero-proof reveal" data-edit-id="home-hero-proof" data-edit-type="block">
+            <strong data-edit-id="home-hero-proof-title" data-edit-type="text">Engineering proof that is easy for partners to trust.</strong>
+            <p data-edit-id="home-hero-proof-copy" data-edit-type="text">
+              Visible hardware, public traction, and a clean product story give ZIMA more credibility in sponsor,
+              operator, and validation conversations.
+            </p>
+          </aside>
         </div>
+
+        <div class="funding-summary reveal" data-edit-id="home-funding-summary" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="home-funding-kicker" data-edit-type="text">Funding sourced</p>
+          <h2 class="funding-summary__title" data-edit-id="home-funding-title" data-edit-type="text">$55K raised</h2>
+          <p class="funding-summary__copy" data-edit-id="home-funding-copy" data-edit-type="text">Total funding sourced across public programs, institutional backing, and awards.</p>
+        </div>
+
+        <ul class="proof-strip proof-strip--hero proof-strip--support stagger" data-edit-id="home-proof-strip" data-edit-type="block">
+          <li data-edit-id="home-proof-card-2" data-edit-type="block">
+            <img class="support-card__logo" src="assets/media/partners/ocean-startup-project.webp" alt="Ocean Startup Project logo" loading="lazy" decoding="async">
+            <strong data-edit-id="home-proof-card-2-value" data-edit-type="text">$32K</strong>
+            <span data-edit-id="home-proof-card-2-copy" data-edit-type="text">Ocean Startup Project support through Ocean Idea Challenge and Ocean Startup Challenge.</span>
+          </li>
+          <li data-edit-id="home-proof-card-3" data-edit-type="block">
+            <img class="support-card__logo" src="assets/media/partners/sfu-engineering-student-society.png" alt="SFU Engineering Student Society logo" loading="lazy" decoding="async">
+            <strong data-edit-id="home-proof-card-3-value" data-edit-type="text">$5K</strong>
+            <span data-edit-id="home-proof-card-3-copy" data-edit-type="text">SFU Engineering Student Society support that helped back the team during early venture and build momentum.</span>
+          </li>
+          <li data-edit-id="home-proof-card-4" data-edit-type="block">
+            <img class="support-card__logo" src="assets/media/partners/chang-institute.webp" alt="Chang Institute logo" loading="lazy" decoding="async">
+            <strong data-edit-id="home-proof-card-4-value" data-edit-type="text">$3.5K</strong>
+            <span data-edit-id="home-proof-card-4-copy" data-edit-type="text">Chang Institute backing that helped push early venture momentum forward.</span>
+          </li>
+          <li data-edit-id="home-proof-card-5" data-edit-type="block">
+            <img class="support-card__logo" src="assets/media/partners/oppfest-logo.svg" alt="Opportunity Fest logo" loading="lazy" decoding="async">
+            <strong data-edit-id="home-proof-card-5-value" data-edit-type="text">$1K</strong>
+            <span data-edit-id="home-proof-card-5-copy" data-edit-type="text">SFU OppFest prize support that added early validation and showcase momentum.</span>
+          </li>
+          <li data-edit-id="home-proof-card-6" data-edit-type="block">
+            <img class="support-card__logo" src="assets/media/partners/environmental-innovation-challenge.webp" alt="Environmental Innovation Challenge logo" loading="lazy" decoding="async">
+            <strong data-edit-id="home-proof-card-6-value" data-edit-type="text">$3.5K</strong>
+            <span data-edit-id="home-proof-card-6-copy" data-edit-type="text">Leo Maddox Prize through the Environmental Innovation Challenge, recognizing the project's ocean and environmental relevance.</span>
+          </li>
+        </ul>
+
+        <div class="hero-home__actions reveal" data-edit-id="home-hero-actions" data-edit-type="button-group">
+          <div class="button-row" data-edit-id="home-hero-button-row" data-edit-type="button-group">
+            <a class="button button--primary" href="technology.html" data-edit-id="home-hero-primary-cta" data-edit-type="text">See how ZIMA works</a>
+            <a class="button button--secondary" href="contact.html" data-edit-id="home-hero-secondary-cta" data-edit-type="text">Start a conversation</a>
+          </div>
+          <div class="hero-signal-list" data-edit-id="home-hero-signals" data-edit-type="block">
+            <span data-edit-id="home-hero-signal-1" data-edit-type="text">Built around visible engineering progress</span>
+            <span data-edit-id="home-hero-signal-2" data-edit-type="text">Framed for partners and pilot conversations</span>
+            <span data-edit-id="home-hero-signal-3" data-edit-type="text">Backed by public funding and awards</span>
+          </div>
+        </div>
+      </div>
     </section>
-        <div class="company-name">
-            <h1>SUBVISION</h1>
+
+    <section class="section">
+      <div class="container split-grid split-grid--balanced">
+        <div class="section-heading section-heading--wide reveal" data-edit-id="home-why-heading" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="home-why-kicker" data-edit-type="text">Why this matters</p>
+          <h2 class="section-title" data-edit-id="home-why-title" data-edit-type="text">Biofouling is not just a maintenance problem. It affects fuel burn, coatings, emissions pressure, and ecosystem risk at the same time.</h2>
+          <div class="section-copy" data-edit-id="home-why-copy-block" data-edit-type="block">
+            <p data-edit-id="home-why-copy" data-edit-type="text">
+              Subvision is pursuing a prevention-first maintenance story: stay ahead of growth early, reduce the pressure for
+              heavier intervention later, and give operators a more modern path for keeping hulls clean.
+            </p>
+          </div>
         </div>
 
+        <aside class="support-band reveal" data-edit-id="home-issues-support" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="home-issues-support-kicker" data-edit-type="text">Three connected issues</p>
+          <strong data-edit-id="home-issues-support-title" data-edit-type="text">Lower drag. Less coatings pressure. Reduced invasive transfer risk.</strong>
+          <p data-edit-id="home-issues-support-copy" data-edit-type="text">
+            The full breakdown of toxic antifouling, carbon emissions, and invasive species lives on the Technology page,
+            where the problem framing can go deeper without slowing down the homepage.
+          </p>
+          <div class="button-row" data-edit-id="home-issues-button-row" data-edit-type="button-group">
+            <a class="button button--ghost" href="technology.html#industry-issues" data-edit-id="home-issues-cta" data-edit-type="text">Read the industry issues</a>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <section class="industry-section">
-        <!-- <h2>Industry Issues ZIMA Addresses</h2> -->
-          <div class="industry-container-left">
-            <div class="industry-image">
-                    <img src="./img/Who_We_Are.png"/>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading section-heading--wide reveal" data-edit-id="home-journey-heading" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="home-journey-kicker" data-edit-type="text">Our journey</p>
+          <h2 class="section-title" data-edit-id="home-journey-title" data-edit-type="text">A clear path from early proof-of-concept hardware to the current ZIMA system.</h2>
+          <div class="section-copy" data-edit-id="home-journey-copy-block" data-edit-type="block">
+            <p data-edit-id="home-journey-copy" data-edit-type="text">
+              The story matters because partners do not just evaluate a concept. They evaluate whether a team can move through
+              hardware, testing, iteration, and public proof with focus.
+            </p>
+          </div>
+        </div>
+
+        <div class="journey-track stagger" data-auto-scroll data-edit-id="home-journey-track" data-edit-type="block">
+          <article class="journey-stop" data-edit-id="home-journey-stage-1" data-edit-type="block">
+            <span class="journey-stop__meta">Stage 01</span>
+            <h3 class="journey-stop__title">MOP proof of concept</h3>
+            <div class="journey-stop__media">
+              <img src="assets/media/mop-proof.webp" alt="MOP proof-of-concept build on a workbench" loading="lazy" decoding="async">
             </div>
-            <div class="industry-content">
-                <h3>Who We Are</h3>
-                <p>SubVision Robotics is a student-led startup based at Simon Fraser University, pioneering innovation in the field of underwater robotics. Our interdisciplinary team brings together passionate students from engineering, computer science, business, and design.</p>
+            <p class="journey-stop__copy">An early modular build that helped shape the first mechanical and systems thinking around underwater robotics.</p>
+          </article>
+
+          <article class="journey-stop" data-edit-id="home-journey-stage-2" data-edit-type="block">
+            <span class="journey-stop__meta">Stage 02</span>
+            <h3 class="journey-stop__title">Early robot test</h3>
+            <div class="journey-stop__media">
+              <img src="assets/media/early-robot-test.webp" alt="Early Subvision robot test near a pool" loading="lazy" decoding="async">
+            </div>
+            <p class="journey-stop__copy">Early field testing moved the team from isolated parts into real-world iteration and tighter hardware decisions.</p>
+          </article>
+
+          <article class="journey-stop" data-edit-id="home-journey-stage-3" data-edit-type="block">
+            <span class="journey-stop__meta">Stage 03</span>
+            <h3 class="journey-stop__title">Current ZIMA CAD</h3>
+            <div class="journey-stop__media">
+              <img src="assets/media/zima-cad.webp" alt="Current ZIMA CAD model" loading="lazy" decoding="async">
+            </div>
+            <p class="journey-stop__copy">The current CAD captures the clearest public expression of the rover Subvision is building today.</p>
+          </article>
+
+          <article class="journey-stop" data-edit-id="home-journey-stage-4" data-edit-type="block">
+            <span class="journey-stop__meta">Stage 04</span>
+            <h3 class="journey-stop__title">Build and field demos</h3>
+            <div class="journey-stop__media">
+              <img src="assets/media/frame-build.webp" alt="Large ZIMA frame assembly in progress" loading="lazy" decoding="async">
+            </div>
+            <p class="journey-stop__copy">Structural assembly, printed parts, and hands-on demos show the move from geometry into hull-scale hardware.</p>
+          </article>
+
+          <article class="journey-stop" data-edit-id="home-journey-stage-5" data-edit-type="block">
+            <span class="journey-stop__meta">Stage 05</span>
+            <h3 class="journey-stop__title">Awards and partner traction</h3>
+            <div class="journey-stop__media">
+              <img src="assets/media/award-check.webp" alt="Subvision team with award check" loading="lazy" decoding="async">
+            </div>
+            <p class="journey-stop__copy">Public awards, venture support, and challenge wins help convert a technical story into a partner-readable one.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container editorial-grid">
+        <div class="feature-image reveal">
+          <img src="assets/media/frame-build.webp" alt="Subvision team assembling a rover frame" loading="lazy" decoding="async">
+        </div>
+
+        <div class="reveal">
+          <div class="section-heading">
+            <p class="section-kicker">Built in the open</p>
+            <h2 class="section-title">The strongest proof is still the hardware program.</h2>
+            <div class="section-copy">
+              <p>
+                Subvision becomes more credible when the engineering is visible: structural assembly, printed parts, real test
+                environments, and the public demos that show the team can explain the work as clearly as it can build it.
+              </p>
             </div>
           </div>
-          <div class="industry-container-right">
-            <div class="industry-content">
-                <h3>What We Do</h3>
-                <p>Subvision focuses on solve real-world maritime challenges with cutting-edge technology and hands-on collaboration. For instance, our current Project, ZIMA, which is an advanced Remotely Operated Vehicle (ROV) with a singular mission: to revolutionize hull cleaning in the maritime industry.</p>
-                <p><strong>At SubVision, we’re not just building a robot — we’re building a team, a mission, and a sustainable future for marine innovation.</strong></p>
-            </div>
-            <div class="industry-image">
-                    <img src="./img/What_We_Do.JPG"/>
-            </div>
+
+          <div class="card-grid card-grid--compact stagger">
+            <article class="card">
+              <h3>Visible iteration</h3>
+              <p>Every generation of hardware sharpens both the product and the clarity of the story around it.</p>
+            </article>
+            <article class="card">
+              <h3>Operator relevance</h3>
+              <p>ZIMA is framed around container fleets and the day-to-day reality of keeping hulls ahead of buildup.</p>
+            </article>
+            <article class="card">
+              <h3>Public traction</h3>
+              <p>Funding, awards, and partner programs give the engineering work stronger external validation.</p>
+            </article>
           </div>
+        </div>
+      </div>
     </section>
 
-        <section class="stories-section">
-        
-        <!-- Ocean Wise Story -->
-        <!-- <div class="story-card left">
-            <div class="story-image">
-                <div class="image-placeholder ocean-conservation">
-                    
-                </div>
-            </div>
-            <div class="story-content">
-                <h2>Who We Are</h2>
-                <p>SubVision Robotics is a student-led startup based at Simon Fraser University, pioneering innovation in the field of underwater robotics. Our interdisciplinary team brings together passionate students from engineering, computer science, business, and design.
-                </p>
-                <p><strong>We believe that sustainable innovation starts with bold ideas and fearless execution — and that's exactly what drives our flagship project.</strong></p>
-            </div>
-        </div> -->
-
-        <!-- Seymour Story -->
-        <!-- <div class="story-card right">
-            <div class="story-image">
-                <div class="image-placeholder marine-tech">
-                   
-                </div>
-            </div>
-            <div class="story-content">
-                <h2>What We Do</h2>
-                <p>Subvision focuses on solve real-world maritime challenges with cutting-edge technology and hands-on collaboration. For instance, our current Project, ZIMA, which is an advanced Remotely Operated Vehicle (ROV) with a singular mission: to revolutionize hull cleaning in the maritime industry.</p>
-                <p><strong>At SubVision, we’re not just building a robot — we’re building a team, a mission, and a sustainable future for marine innovation.</strong></p>
-            </div>
-        </div> -->
-        <div class="vision-statement">
-            <h2>Our Vision</h2>
-            <p>We hope to inspire the next generation of innovators and leaders in marine technology, fostering a culture of sustainability and collaboration. Through developing technological solutions for ocean conservation, we aim to create a positive impact on our marine ecosystems.</p>
+    <section class="section">
+      <div class="container cta-panel">
+        <div class="cta-shell reveal" data-edit-id="home-partner-cta" data-edit-type="block">
+          <div>
+            <p class="section-kicker" data-edit-id="home-partner-cta-kicker" data-edit-type="text">Partner conversations</p>
+            <h2 class="cta-title" data-edit-id="home-partner-cta-title" data-edit-type="text">Back the next phase of validation, pilot planning, and operator-facing development.</h2>
+            <p data-edit-id="home-partner-cta-copy" data-edit-type="text">
+              Subvision is looking for technical collaborators, strategic partners, and supporters who can help move ZIMA
+              from visible momentum into real deployment conversations.
+            </p>
+          </div>
+          <div class="button-row" data-edit-id="home-partner-cta-buttons" data-edit-type="button-group">
+            <a class="button button--primary" href="contact.html" data-edit-id="home-partner-cta-primary" data-edit-type="text">Talk to Subvision</a>
+            <a class="button button--secondary" href="impact.html" data-edit-id="home-partner-cta-secondary" data-edit-type="text">See funding and partners</a>
+          </div>
         </div>
+      </div>
     </section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand brand--footer" href="index.html">
+          <img src="assets/media/logo-mark.png" alt="Subvision logo">
+          <span class="brand__text">
+            <strong>Subvision</strong>
+            <span>Burnaby, British Columbia</span>
+          </span>
+        </a>
+        <p class="small-note" style="margin-top: 16px;">Prevention-first hull maintenance, built through visible engineering and partner-facing momentum.</p>
+      </div>
 
-    <!-- Sponsors Section -->
-    <section class="sponsors-section">
-        <h2>Our Sponsors</h2>
-        <div class="sponsors-grid">
-            <!-- Tier 1 Sponsors (Large) -->
-            <div class="sponsor-card-large">
-                <img src="SVG/ocean-wise.svg" alt="Ocean Wise" class="sponsor-logo">
-                <div class="sponsor-info">
-                    <h3>Ocean Wise</h3>
-                    <p>Ocean conservation and education partner</p>
-                    <p>Supporting with $2000 in funding and youth partnership opportunities</p>
-                </div>
-            </div>
-            <div class="sponsor-card-large">
-                <img src="SVG/sfu-engineering.svg" alt="SFU Engineering Science" class="sponsor-logo">
-                <div class="sponsor-info">
-                    <h3>SFU Engineering Science</h3>
-                    <p>Supporting engineering excellence</p>
-                    <p>Provided $8000 in funding to support engineering science students</p>
-                </div>
-            </div>
+      <div>
+        <h3>Explore</h3>
+        <ul class="footer-list">
+          <li><a href="technology.html">Technology</a></li>
+          <li><a href="impact.html">Impact &amp; Partners</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-            <!-- Tier 2 Sponsors (Medium) -->
-            <div class="sponsor-card-large">
-                <img src="SVG/seymor.svg" alt="Seymor" class="sponsor-logo">
-                <div class="sponsor-info">
-                    <h3>Seymor</h3>
-                    <p>Industry partner and mentor</p>
-                    <p>Providing parts and valuable industry mentorship</p>
-                </div>
-            </div>
-            <div class="sponsor-card-large">
-                <img src="SVG/chang-institute.svg" alt="Chang Institute" class="sponsor-logo">
-                <div class="sponsor-info">
-                    <h3>Chang Institute</h3>
-                    <p>Development and mentorship partner</p>
-                    <p>Supporting through co-op opportunities and mentorship</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div>
+        <h3>Reach out</h3>
+        <ul class="footer-list">
+          <li><a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/company/subvision-engineering/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/subvision.robotics" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="SVG/logo.svg" alt="Subvision Footer Logo">
-                <p>Location: 8888 University Dr W, Burnaby, BC V5A 1S6</p>
-                <p>Email: subvisionengineering@gmail.com</p>
-            </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/Our_Mission.html">Mission</a></li>
-                    <li><a href="/Our_Team.html">Team</a></li>
-                    <li><a href="/Our_Contributors.html">Contributors</a></li>
-                </ul>
-            </div>
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <a href="https://www.instagram.com/subvision.robotics" target="_blank" aria-label="Instagram"><img src="img/Instagram.png" alt="Instagram"></a>
-                <a href="https://www.linkedin.com/company/subvision-engineering/" aria-label="LinkedIn"><img src="img/LinkedIn.png" alt="LinkedIn"></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="contributors.js"></script>
-    <script src="Our_Contributors.js"></script>
+    <div class="container footer-bottom">
+      <p>Subvision Robotics. <span data-current-year></span>.</p>
+      <div class="social-links">
+        <a href="technology.html">Technology</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
 </body>
-</html> 
+</html>
