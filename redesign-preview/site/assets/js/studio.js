@@ -14,21 +14,21 @@
   };
 
   const THEME_FIELDS = [
-    { variable: "--bg", label: "Base background" },
-    { variable: "--bg-deep", label: "Deep background" },
-    { variable: "--bg-lower", label: "Lower background" },
+    { variable: "--bg", label: "Base background", picker: true },
+    { variable: "--bg-deep", label: "Deep background", picker: true },
+    { variable: "--bg-lower", label: "Lower background", picker: true },
     { variable: "--bg-panel", label: "Panel background" },
     { variable: "--bg-panel-strong", label: "Panel background strong" },
-    { variable: "--accent", label: "Accent" },
-    { variable: "--accent-bright", label: "Accent bright" },
+    { variable: "--accent", label: "Accent", picker: true },
+    { variable: "--accent-bright", label: "Accent bright", picker: true },
     { variable: "--accent-soft", label: "Accent soft" },
     { variable: "--bg-glow-top-left", label: "Top-left glow" },
     { variable: "--bg-glow-top-right", label: "Top-right glow" },
     { variable: "--bg-glow-bottom", label: "Bottom glow" },
-    { variable: "--bg-gradient-start", label: "Gradient start" },
-    { variable: "--bg-gradient-mid", label: "Gradient mid" },
-    { variable: "--bg-gradient-late", label: "Gradient late" },
-    { variable: "--bg-gradient-end", label: "Gradient end" },
+    { variable: "--bg-gradient-start", label: "Gradient start", picker: true },
+    { variable: "--bg-gradient-mid", label: "Gradient mid", picker: true },
+    { variable: "--bg-gradient-late", label: "Gradient late", picker: true },
+    { variable: "--bg-gradient-end", label: "Gradient end", picker: true },
     { variable: "--bg-overlay-top", label: "Overlay top" },
     { variable: "--bg-overlay-bottom", label: "Overlay bottom" },
   ];
@@ -121,6 +121,29 @@
     const doc = getPreviewDocument();
     if (!doc) return "";
     return getPreviewWindow().getComputedStyle(doc.documentElement).getPropertyValue(variable).trim();
+  };
+
+  const cssColorToHex = (value) => {
+    if (!value) return "";
+
+    const probe = document.createElement("span");
+    probe.style.position = "absolute";
+    probe.style.opacity = "0";
+    probe.style.pointerEvents = "none";
+    probe.style.color = value;
+    document.body.append(probe);
+
+    const resolved = window.getComputedStyle(probe).color;
+    probe.remove();
+
+    const match = resolved.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([0-9.]+))?\)$/i);
+    if (!match) return "";
+
+    const alpha = match[4] === undefined ? 1 : Number(match[4]);
+    if (!Number.isFinite(alpha) || alpha < 0.999) return "";
+
+    const toHex = (channel) => Number(channel).toString(16).padStart(2, "0");
+    return `#${toHex(match[1])}${toHex(match[2])}${toHex(match[3])}`;
   };
 
   const isSelectedHidden = () => {
@@ -357,17 +380,39 @@
   const buildThemeFields = () => {
     refs.themeFields.innerHTML = "";
 
-    THEME_FIELDS.forEach(({ variable, label }) => {
-      const field = document.createElement("label");
-      field.className = "studio-field";
+    THEME_FIELDS.forEach(({ variable, label, picker }) => {
+      const field = document.createElement("div");
+      field.className = "studio-theme-field";
+
+      const top = document.createElement("div");
+      top.className = "studio-theme-field__top";
+
+      const labelWrap = document.createElement("div");
+      labelWrap.className = "studio-theme-field__label";
 
       const title = document.createElement("span");
       title.textContent = label;
+
+      const code = document.createElement("code");
+      code.textContent = variable;
+
+      const swatch = document.createElement("div");
+      swatch.className = "studio-theme-swatch";
+      swatch.dataset.themeSwatch = variable;
+
+      labelWrap.append(title, code);
+      top.append(labelWrap, swatch);
 
       const input = document.createElement("input");
       input.type = "text";
       input.dataset.themeVariable = variable;
       input.placeholder = variable;
+
+      const colorInput = document.createElement("input");
+      colorInput.type = "color";
+      colorInput.className = "studio-theme-picker";
+      colorInput.dataset.themePicker = variable;
+      if (!picker) colorInput.hidden = true;
 
       input.addEventListener("focus", () => pushHistory());
       input.addEventListener("input", (event) => {
@@ -381,14 +426,57 @@
         applyOverridesToPreview();
       });
 
-      field.append(title, input);
+      colorInput.addEventListener("focus", () => pushHistory());
+      colorInput.addEventListener("input", (event) => {
+        const themeStore = ensureThemeStore();
+        themeStore[variable] = event.target.value;
+        applyOverridesToPreview();
+      });
+
+      const controls = document.createElement("div");
+      controls.className = "studio-theme-field__controls";
+      controls.append(input, colorInput);
+
+      const meta = document.createElement("div");
+      meta.className = "studio-theme-meta";
+      meta.dataset.themeMeta = variable;
+
+      field.append(top, controls, meta);
       refs.themeFields.append(field);
     });
   };
 
   const syncThemeFields = () => {
+    const store = ensureThemeStore();
+
     Array.from(refs.themeFields.querySelectorAll("[data-theme-variable]")).forEach((input) => {
-      input.value = getThemeValue(input.dataset.themeVariable);
+      const variable = input.dataset.themeVariable;
+      const currentValue = getThemeValue(variable);
+      const isOverridden = Object.prototype.hasOwnProperty.call(store, variable);
+      const swatch = refs.themeFields.querySelector(`[data-theme-swatch="${variable}"]`);
+      const picker = refs.themeFields.querySelector(`[data-theme-picker="${variable}"]`);
+      const meta = refs.themeFields.querySelector(`[data-theme-meta="${variable}"]`);
+      const pickerValue = cssColorToHex(currentValue);
+
+      if (input.value !== currentValue) {
+        input.value = currentValue;
+      }
+
+      if (swatch) {
+        swatch.style.background = currentValue || "transparent";
+      }
+
+      if (picker) {
+        picker.hidden = !pickerValue;
+        if (pickerValue && picker.value !== pickerValue) {
+          picker.value = pickerValue;
+        }
+      }
+
+      if (meta) {
+        meta.classList.toggle("is-overridden", isOverridden);
+        meta.innerHTML = `<span>Current: <strong>${currentValue || "not set"}</strong></span><span>${isOverridden ? "Override active" : "Using site default"}</span>`;
+      }
     });
   };
 
