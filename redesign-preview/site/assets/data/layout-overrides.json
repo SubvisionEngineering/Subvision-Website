@@ -16,6 +16,12 @@
         },
         "home-why-title": {
           "text": "Biofouling Prevention can Save $1M per Year per Ship"
+        },
+        "home-issues-support-title": {
+          "text": "Lower drag.   \nLess coatings pressure. \nReduced invasive transfer risk."
+        },
+        "home-issues-support-copy": {
+          "text": "\n          "
         }
       },
       "tablet": {},
