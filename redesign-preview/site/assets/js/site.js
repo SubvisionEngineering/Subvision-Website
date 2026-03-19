@@ -140,6 +140,11 @@
     captureOriginalState(element);
     resetEditableElement(element);
 
+    if (override.hidden === true) {
+      element.style.display = "none";
+      return;
+    }
+
     if (element.dataset.editType === "text" && typeof override.text === "string") {
       element.textContent = override.text;
     }

@@ -22,6 +22,12 @@
         },
         "home-issues-support-copy": {
           "text": "\n          "
+        },
+        "home-journey-copy": {
+          "text": "Subvision began as a student club driven by curiosity, hands-on engineering, and a desire to solve real problems in the marine industry. That momentum grew into a startup focused on bringing a better approach to hull maintenance into the world."
+        },
+        "home-journey-title": {
+          "text": "From Club To Startup"
         }
       },
       "tablet": {},
