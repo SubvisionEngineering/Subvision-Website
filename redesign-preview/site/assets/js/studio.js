@@ -42,6 +42,7 @@
     reset: document.querySelector("#studio-reset"),
     export: document.querySelector("#studio-export"),
     save: document.querySelector("#studio-save"),
+    publish: document.querySelector("#studio-publish"),
     fields: {
       text: document.querySelector("#field-text"),
       x: document.querySelector("#field-x"),
@@ -482,6 +483,45 @@
     setStatus("File picker not available in this browser, so the overrides were downloaded instead.");
   };
 
+  const publishPreview = async () => {
+    refs.publish.disabled = true;
+    refs.publish.textContent = "Publishing...";
+
+    try {
+      await saveJsonToLocalServer();
+
+      const timestamp = new Date().toLocaleString("en-CA", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+
+      const response = await fetch("/__studio/publish-preview", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: `Update redesign preview (${timestamp})`,
+        }),
+      });
+
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || payload.ok === false) {
+        throw new Error(payload.message || `Preview publish failed with ${response.status}`);
+      }
+
+      setStatus(payload.message || "Preview branch updated on GitHub.");
+    } catch (error) {
+      setStatus(`Preview publish failed. ${error && error.message ? error.message : ""}`.trim());
+    } finally {
+      refs.publish.disabled = false;
+      refs.publish.textContent = "Save + Push Preview";
+    }
+  };
+
   const resetSelected = () => {
     if (!state.selectedId) return;
     pushHistory();
@@ -559,6 +599,7 @@
     refs.reset.addEventListener("click", resetSelected);
     refs.export.addEventListener("click", exportJson);
     refs.save.addEventListener("click", saveJson);
+    refs.publish.addEventListener("click", publishPreview);
   };
 
   const bindFrameLoad = () => {

@@ -3,7 +3,13 @@
     "index.html": {
       "desktop": {
         "home-hero-proof-title": {
-          "text": "Biofouling slows "
+          "text": "Biofouling "
+        },
+        "home-hero-proof-copy": {
+          "text": "is the accumulation of algae, barnacles, and other micro-organisms onto ship hulls.  "
+        },
+        "home-proof-card-4-value": {
+          "text": "$13.5K"
         }
       },
       "tablet": {},
