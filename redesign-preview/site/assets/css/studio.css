@@ -244,6 +244,11 @@ textarea {
   font-size: 0.82rem;
 }
 
+.studio-element-button.is-hidden {
+  border-color: rgba(255, 127, 127, 0.35);
+  background: rgba(138, 32, 54, 0.14);
+}
+
 .studio-main {
   display: flex;
   flex-direction: column;

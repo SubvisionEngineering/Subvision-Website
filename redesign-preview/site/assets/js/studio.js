@@ -200,7 +200,7 @@
       const title = document.createElement("strong");
       title.textContent = element.dataset.editId;
       const meta = document.createElement("span");
-      meta.textContent = `${element.dataset.editType || "block"} · ${element.tagName.toLowerCase()}`;
+      meta.className = "studio-element-meta";
 
       button.append(title, meta);
       button.addEventListener("click", () => {
@@ -209,6 +209,27 @@
       });
 
       refs.elementList.append(button);
+    });
+
+    refreshElementListStates();
+  };
+
+  const refreshElementListStates = () => {
+    const doc = getPreviewDocument();
+    if (!doc) return;
+
+    Array.from(refs.elementList.querySelectorAll(".studio-element-button")).forEach((button) => {
+      const editId = button.dataset.editId;
+      const meta = button.querySelector(".studio-element-meta");
+      const element = Array.from(doc.querySelectorAll("[data-edit-id]")).find((node) => node.dataset.editId === editId);
+      const type = element ? element.dataset.editType || "block" : "block";
+      const tag = element ? element.tagName.toLowerCase() : "element";
+      const hidden = Boolean((getBreakpointStore()[editId] || {}).hidden);
+
+      button.classList.toggle("is-hidden", hidden);
+      if (meta) {
+        meta.textContent = hidden ? `hidden · ${type} · ${tag}` : `${type} · ${tag}`;
+      }
     });
   };
 
@@ -280,6 +301,14 @@
     refs.fields.padding.value = override.padding !== undefined ? override.padding : "";
     refs.fields.gap.value = override.gap !== undefined ? override.gap : "";
     refs.fields.textAlign.value = override.align || override.textAlign || (isText ? getComputedValue("textAlign") : "");
+    syncHideButton();
+  };
+
+  const syncHideButton = () => {
+    if (!refs.hide) return;
+    const hasSelection = Boolean(state.selectedId);
+    refs.hide.disabled = !hasSelection;
+    refs.hide.textContent = hasSelection && isSelectedHidden() ? "Restore selected" : "Hide selected";
   };
 
   const handleInspectorInput = (key, value) => {
@@ -539,7 +568,24 @@
     delete store[state.selectedId];
     applyOverridesToPreview();
     syncInspector();
+    refreshElementListStates();
     setStatus(`Reset ${state.selectedId} for ${state.breakpoint}.`);
+  };
+
+  const toggleSelectedHidden = () => {
+    if (!state.selectedId) return;
+
+    pushHistory();
+    const hidden = isSelectedHidden();
+    setOverrideValue(state.selectedId, "hidden", hidden ? "" : true);
+    applyOverridesToPreview();
+    refreshElementListStates();
+    syncInspector();
+    setStatus(
+      hidden
+        ? `Restored ${state.selectedId} for ${state.breakpoint}.`
+        : `Hid ${state.selectedId} for ${state.breakpoint}.`,
+    );
   };
 
   const undo = () => {
@@ -549,6 +595,7 @@
     }
     state.overrides = state.history.pop();
     applyOverridesToPreview();
+    refreshElementListStates();
     if (state.selectedId) {
       selectElementById(state.selectedId);
     }
@@ -607,6 +654,7 @@
 
     refs.undo.addEventListener("click", undo);
     refs.reset.addEventListener("click", resetSelected);
+    refs.hide.addEventListener("click", toggleSelectedHidden);
     refs.export.addEventListener("click", exportJson);
     refs.save.addEventListener("click", saveJson);
     refs.publish.addEventListener("click", publishPreview);
@@ -628,6 +676,7 @@
         selectElementById(state.selectedId);
       }
       syncInspector();
+      syncHideButton();
       setStatus(`Preview ready for ${state.page} at ${state.breakpoint}.`);
     });
   };
