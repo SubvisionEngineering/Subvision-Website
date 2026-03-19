@@ -1,4 +1,24 @@
 (() => {
+  const THEME_VARIABLES = [
+    "--bg",
+    "--bg-deep",
+    "--bg-lower",
+    "--bg-panel",
+    "--bg-panel-strong",
+    "--accent",
+    "--accent-bright",
+    "--accent-soft",
+    "--bg-glow-top-left",
+    "--bg-glow-top-right",
+    "--bg-glow-bottom",
+    "--bg-gradient-start",
+    "--bg-gradient-mid",
+    "--bg-gradient-late",
+    "--bg-gradient-end",
+    "--bg-overlay-top",
+    "--bg-overlay-bottom",
+  ];
+
   const EDITABLE_SELECTORS = [
     { selector: ".page-title", type: "text", prefix: "page-title" },
     { selector: ".lede", type: "text", prefix: "lede" },
@@ -135,6 +155,19 @@
     });
   };
 
+  const applyThemeOverrides = (doc = document, themeOverrides = {}) => {
+    const root = doc.documentElement;
+    THEME_VARIABLES.forEach((variable) => {
+      root.style.removeProperty(variable);
+    });
+
+    Object.entries(themeOverrides || {}).forEach(([variable, value]) => {
+      if (!THEME_VARIABLES.includes(variable)) return;
+      if (value === null || value === undefined || value === "") return;
+      root.style.setProperty(variable, String(value).trim());
+    });
+  };
+
   const applyElementOverride = (element, override) => {
     if (!element || !override) return;
     captureOriginalState(element);
@@ -203,6 +236,7 @@
   } = {}) => {
     assignAutoEditHooks(doc);
     resetAllEditableElements(doc);
+    applyThemeOverrides(doc, overrides && overrides.theme ? overrides.theme : {});
     if (!overrides) return;
 
     const merged = getMergedPageOverrides(overrides, pageKey, breakpoint);
@@ -254,6 +288,7 @@
     getMergedPageOverrides,
     loadLayoutOverrides,
     setLayoutOverrides,
+    getThemeVariables: () => [...THEME_VARIABLES],
     getLayoutOverrides: () => layoutState.overrides,
   };
 

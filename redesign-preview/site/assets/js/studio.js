@@ -13,6 +13,26 @@
     mobile: 430,
   };
 
+  const THEME_FIELDS = [
+    { variable: "--bg", label: "Base background" },
+    { variable: "--bg-deep", label: "Deep background" },
+    { variable: "--bg-lower", label: "Lower background" },
+    { variable: "--bg-panel", label: "Panel background" },
+    { variable: "--bg-panel-strong", label: "Panel background strong" },
+    { variable: "--accent", label: "Accent" },
+    { variable: "--accent-bright", label: "Accent bright" },
+    { variable: "--accent-soft", label: "Accent soft" },
+    { variable: "--bg-glow-top-left", label: "Top-left glow" },
+    { variable: "--bg-glow-top-right", label: "Top-right glow" },
+    { variable: "--bg-glow-bottom", label: "Bottom glow" },
+    { variable: "--bg-gradient-start", label: "Gradient start" },
+    { variable: "--bg-gradient-mid", label: "Gradient mid" },
+    { variable: "--bg-gradient-late", label: "Gradient late" },
+    { variable: "--bg-gradient-end", label: "Gradient end" },
+    { variable: "--bg-overlay-top", label: "Overlay top" },
+    { variable: "--bg-overlay-bottom", label: "Overlay bottom" },
+  ];
+
   const state = {
     page: "index.html",
     breakpoint: "desktop",
@@ -44,6 +64,8 @@
     export: document.querySelector("#studio-export"),
     save: document.querySelector("#studio-save"),
     publish: document.querySelector("#studio-publish"),
+    themeFields: document.querySelector("#studio-theme-fields"),
+    themeReset: document.querySelector("#studio-theme-reset"),
     fields: {
       text: document.querySelector("#field-text"),
       x: document.querySelector("#field-x"),
@@ -86,6 +108,19 @@
     if (!state.selectedId) return {};
     const store = getBreakpointStore();
     return store[state.selectedId] || {};
+  };
+
+  const ensureThemeStore = () => {
+    if (!state.overrides.theme) state.overrides.theme = {};
+    return state.overrides.theme;
+  };
+
+  const getThemeValue = (variable) => {
+    const store = ensureThemeStore();
+    if (store[variable] !== undefined) return store[variable];
+    const doc = getPreviewDocument();
+    if (!doc) return "";
+    return getPreviewWindow().getComputedStyle(doc.documentElement).getPropertyValue(variable).trim();
   };
 
   const isSelectedHidden = () => {
@@ -139,6 +174,7 @@
     if (!previewWindow || !previewWindow.SubvisionLayout) return;
     previewWindow.SubvisionLayout.setLayoutOverrides(clone(state.overrides));
     window.requestAnimationFrame(syncSelectionBox);
+    syncThemeFields();
   };
 
   const setBreakpointWidth = () => {
@@ -316,6 +352,52 @@
     setOverrideValue(state.selectedId, key, value, { keepEmptyText: key === "text" });
     applyOverridesToPreview();
     syncInspector();
+  };
+
+  const buildThemeFields = () => {
+    refs.themeFields.innerHTML = "";
+
+    THEME_FIELDS.forEach(({ variable, label }) => {
+      const field = document.createElement("label");
+      field.className = "studio-field";
+
+      const title = document.createElement("span");
+      title.textContent = label;
+
+      const input = document.createElement("input");
+      input.type = "text";
+      input.dataset.themeVariable = variable;
+      input.placeholder = variable;
+
+      input.addEventListener("focus", () => pushHistory());
+      input.addEventListener("input", (event) => {
+        const themeStore = ensureThemeStore();
+        const value = event.target.value.trim();
+        if (!value) {
+          delete themeStore[variable];
+        } else {
+          themeStore[variable] = value;
+        }
+        applyOverridesToPreview();
+      });
+
+      field.append(title, input);
+      refs.themeFields.append(field);
+    });
+  };
+
+  const syncThemeFields = () => {
+    Array.from(refs.themeFields.querySelectorAll("[data-theme-variable]")).forEach((input) => {
+      input.value = getThemeValue(input.dataset.themeVariable);
+    });
+  };
+
+  const resetThemeOverrides = () => {
+    pushHistory();
+    state.overrides.theme = {};
+    applyOverridesToPreview();
+    syncThemeFields();
+    setStatus("Reset theme overrides.");
   };
 
   const bindInspector = () => {
@@ -658,6 +740,7 @@
     refs.export.addEventListener("click", exportJson);
     refs.save.addEventListener("click", saveJson);
     refs.publish.addEventListener("click", publishPreview);
+    refs.themeReset.addEventListener("click", resetThemeOverrides);
   };
 
   const bindFrameLoad = () => {
@@ -677,11 +760,13 @@
       }
       syncInspector();
       syncHideButton();
+      syncThemeFields();
       setStatus(`Preview ready for ${state.page} at ${state.breakpoint}.`);
     });
   };
 
   const init = async () => {
+    buildThemeFields();
     bindTopControls();
     bindInspector();
     bindOverlay();
