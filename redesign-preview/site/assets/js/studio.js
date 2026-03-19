@@ -510,6 +510,9 @@
 
       const payload = await response.json().catch(() => ({}));
       if (!response.ok || payload.ok === false) {
+        if (response.status === 404) {
+          throw new Error("Preview publish endpoint was not found. Restart the custom dev server with `python serve_subvision.py` from `C:\\Users\\aliha\\Desktop\\Code`.");
+        }
         throw new Error(payload.message || `Preview publish failed with ${response.status}`);
       }
 
