@@ -40,6 +40,7 @@
     status: document.querySelector("#studio-status"),
     undo: document.querySelector("#studio-undo"),
     reset: document.querySelector("#studio-reset"),
+    hide: document.querySelector("#studio-hide"),
     export: document.querySelector("#studio-export"),
     save: document.querySelector("#studio-save"),
     publish: document.querySelector("#studio-publish"),
@@ -85,6 +86,11 @@
     if (!state.selectedId) return {};
     const store = getBreakpointStore();
     return store[state.selectedId] || {};
+  };
+
+  const isSelectedHidden = () => {
+    const override = getCurrentOverride();
+    return override.hidden === true;
   };
 
   const setStatus = (message) => {
@@ -151,6 +157,7 @@
       button.classList.remove("is-active");
     });
     syncInspector();
+    syncHideButton();
   };
 
   const selectElementById = (editId) => {
