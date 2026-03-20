@@ -513,6 +513,14 @@ main {
   line-height: 1.7;
 }
 
+.media-card__title {
+  margin: 18px 0 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: clamp(1.38rem, 1.8vw, 1.86rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
 .media-credit {
   margin: 12px 0 0;
   color: var(--text-muted);
