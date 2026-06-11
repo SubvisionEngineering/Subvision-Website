@@ -501,6 +501,7 @@ html {
   left: var(--hx, 50%);
   top: var(--hy, 50%);
   transform: translate(-50%, -50%);
+  z-index: 4;
   width: 34px;
   height: 34px;
   border: 1px solid rgba(105, 226, 255, 0.7);
@@ -817,6 +818,11 @@ html {
 .page-hero .media-card video,
 .page-hero .feature-image img {
   border-radius: 6px;
+}
+
+/* Text-only technology hero: keep the measure readable on wide screens. */
+.page-hero__lead {
+  max-width: 60rem;
 }
 
 /* feature-image heroes have no padding, so the photo would cover the
