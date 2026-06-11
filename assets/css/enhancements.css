@@ -406,7 +406,8 @@ html {
   display: block;
   width: 100%;
   height: 440px;
-  touch-action: none;
+  /* pan-y keeps page scrolling alive on touch screens; taps and horizontal drags still drive the rover. */
+  touch-action: pan-y;
   cursor: crosshair;
 }
 
@@ -445,6 +446,30 @@ html {
 
   .hull-demo__controls {
     margin-left: 0;
+  }
+}
+
+/* Touch ergonomics: bigger targets. */
+@media (pointer: coarse) {
+  .hull-demo__stage canvas {
+    cursor: default;
+  }
+
+  .hotspot-dot {
+    width: 44px;
+    height: 44px;
+  }
+
+  .demo-btn {
+    min-height: 46px;
+  }
+
+  .video-toggle {
+    padding: 11px 14px;
+  }
+
+  .interval-lab__slider {
+    min-height: 32px;
   }
 }
 

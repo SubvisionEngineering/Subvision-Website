@@ -466,6 +466,10 @@
     const auto = { dir: 1, row: 0 };
     const ROVER_RADIUS = 52;
 
+    if (hint && window.matchMedia("(pointer: coarse)").matches) {
+      hint.textContent = "Tap or drag on the plate to drive the rover";
+    }
+
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
       width = rect.width;
