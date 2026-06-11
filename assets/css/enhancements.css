@@ -742,6 +742,168 @@ html {
 }
 
 /* --------------------------------------------------------------------------
+   Hero media overhaul: chamfered HUD frame echoing ZIMA's hexagonal chassis
+   -------------------------------------------------------------------------- */
+.hero-home .media-card--hero,
+.page-hero .media-card,
+.page-hero .feature-image {
+  --chamfer: 22px;
+  --hud-line: rgba(105, 226, 255, 0.6);
+  border-radius: 8px;
+  border-color: rgba(105, 226, 255, 0.28);
+  clip-path: polygon(
+    var(--chamfer) 0,
+    calc(100% - var(--chamfer)) 0,
+    100% var(--chamfer),
+    100% calc(100% - var(--chamfer)),
+    calc(100% - var(--chamfer)) 100%,
+    var(--chamfer) 100%,
+    0 calc(100% - var(--chamfer)),
+    0 var(--chamfer)
+  );
+  /* Corner registration brackets drawn over the panel gradient. */
+  background-image:
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(180deg, rgba(18, 30, 49, 0.92), rgba(9, 18, 34, 0.99));
+  background-repeat: no-repeat;
+  background-size:
+    20px 2px,
+    2px 20px,
+    20px 2px,
+    2px 20px,
+    20px 2px,
+    2px 20px,
+    20px 2px,
+    2px 20px,
+    100% 100%;
+  background-position:
+    left 14px top 14px,
+    left 14px top 14px,
+    right 14px top 14px,
+    right 14px top 14px,
+    left 14px bottom 14px,
+    left 14px bottom 14px,
+    right 14px bottom 14px,
+    right 14px bottom 14px,
+    center;
+  /* clip-path swallows box-shadow; drop-shadow follows the chamfered shape. */
+  box-shadow: none;
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.42));
+  transition:
+    opacity 860ms ease,
+    transform 420ms cubic-bezier(0.2, 0.75, 0.24, 1),
+    filter 420ms ease,
+    border-color 420ms ease;
+}
+
+.hero-home .media-card--hero:hover,
+.page-hero .media-card:hover,
+.page-hero .feature-image:hover {
+  border-color: rgba(105, 226, 255, 0.5);
+  box-shadow: none;
+  filter: drop-shadow(0 26px 48px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 24px rgba(59, 118, 255, 0.16));
+}
+
+.hero-home .media-card--hero img,
+.hero-home .media-card--hero video,
+.page-hero .media-card img,
+.page-hero .media-card video,
+.page-hero .feature-image img {
+  border-radius: 6px;
+}
+
+/* feature-image heroes have no padding, so the photo would cover the
+   brackets — draw them above the image instead. */
+.page-hero .feature-image {
+  position: relative;
+}
+
+.page-hero .feature-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line)),
+    linear-gradient(var(--hud-line), var(--hud-line));
+  background-repeat: no-repeat;
+  background-size:
+    20px 2px,
+    2px 20px,
+    20px 2px,
+    2px 20px,
+    20px 2px,
+    2px 20px,
+    20px 2px,
+    2px 20px;
+  background-position:
+    left 14px top 14px,
+    left 14px top 14px,
+    right 14px top 14px,
+    right 14px top 14px,
+    left 14px bottom 14px,
+    left 14px bottom 14px,
+    right 14px bottom 14px,
+    right 14px bottom 14px;
+}
+
+/* Telemetry-style pill with a pulsing status dot inside hero cards. */
+.hero-home .media-card--hero .pill,
+.page-hero .media-card .pill {
+  gap: 8px;
+  border: 1px solid rgba(105, 226, 255, 0.25);
+  background: rgba(8, 18, 34, 0.72);
+  color: var(--accent-bright);
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-home .media-card--hero .pill::before,
+.page-hero .media-card .pill::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-bright);
+  box-shadow: 0 0 10px rgba(105, 226, 255, 0.8);
+  animation: sv-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes sv-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-home .media-card--hero,
+  .page-hero .media-card,
+  .page-hero .feature-image {
+    --chamfer: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
    Motion pass 2: header reveal, parallax, magnetic buttons, flowing lines
    -------------------------------------------------------------------------- */
 .event-banner--no-logo {
@@ -856,6 +1018,24 @@ html {
 @keyframes sv-line-flow {
   to {
     background-position: -200% 0;
+  }
+}
+
+/* The reveal-blur rule above would otherwise zero out the hero cards'
+   chamfer drop-shadow once revealed — reassert it at higher specificity. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-home .media-card--hero.revealed,
+  .page-hero .media-card.revealed,
+  .page-hero .feature-image.revealed,
+  .page-hero .reveal.revealed .feature-image,
+  .reveal.revealed .media-card--hero {
+    filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.42));
+  }
+
+  .hero-home .media-card--hero.revealed:hover,
+  .page-hero .media-card.revealed:hover,
+  .page-hero .feature-image.revealed:hover {
+    filter: drop-shadow(0 26px 48px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 24px rgba(59, 118, 255, 0.16));
   }
 }
 
