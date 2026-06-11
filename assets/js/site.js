@@ -379,15 +379,31 @@
     }
   };
 
-  autoplayVideos.forEach((video) => {
-    if (reducedMotion) {
-      video.pause();
-      return;
-    }
-
-    attemptPlay(video);
-    video.addEventListener("loadeddata", () => attemptPlay(video), { once: true });
-  });
+  if (reducedMotion) {
+    autoplayVideos.forEach((video) => video.pause());
+  } else if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          video.dataset.inView = entry.isIntersecting ? "true" : "";
+          if (video.dataset.userPaused === "true") return;
+          if (entry.isIntersecting) {
+            attemptPlay(video);
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 },
+    );
+    autoplayVideos.forEach((video) => videoObserver.observe(video));
+  } else {
+    autoplayVideos.forEach((video) => {
+      attemptPlay(video);
+      video.addEventListener("loadeddata", () => attemptPlay(video), { once: true });
+    });
+  }
 
   document.addEventListener("visibilitychange", () => {
     autoplayVideos.forEach((video) => {
@@ -396,7 +412,7 @@
         return;
       }
 
-      if (!video.dataset.userPaused && !reducedMotion) {
+      if (!video.dataset.userPaused && !reducedMotion && video.dataset.inView === "true") {
         attemptPlay(video);
       }
     });
@@ -436,7 +452,7 @@
   const syncAudioButton = (button, video) => {
     const audioOn = !video.muted;
     button.textContent = audioOn ? "Audio on" : "Audio off";
-    button.setAttribute("aria-label", audioOn ? "Mute audio" : "Enable audio");
+    button.setAttribute("aria-pressed", audioOn ? "true" : "false");
   };
 
   const muteOtherAudioVideos = (currentVideo) => {

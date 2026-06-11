@@ -3,15 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn how Subvision describes ZIMA, the industry issues it addresses, and the hardware progression behind the system.">
+  <meta name="description" content="How ZIMA works: hull-climbing mobility, close-range UV-C treatment, and the prevention-first operating model behind Subvision's subsea rover.">
   <meta name="theme-color" content="#07111f">
   <title>Technology | Subvision</title>
+  <link rel="canonical" href="https://subvision.ca/technology.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subvision">
+  <meta property="og:title" content="Technology | Subvision">
+  <meta property="og:description" content="How ZIMA works: hull-climbing mobility, close-range UV-C treatment, and the prevention-first operating model behind Subvision's subsea rover.">
+  <meta property="og:url" content="https://subvision.ca/technology.html">
+  <meta property="og:image" content="https://subvision.ca/assets/media/zima-cad.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/enhancements.css">
   <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -100,7 +110,7 @@
             <p>A hull-climbing platform designed to stay attached and move predictably across curved steel surfaces.</p>
           </article>
           <article class="card">
-            <h3>Close-range UVC treatment</h3>
+            <h3>Close-range UV-C treatment</h3>
             <p>A compact treatment module designed to target early-stage growth before it becomes established fouling.</p>
           </article>
           <article class="card">
@@ -111,6 +121,57 @@
             <h3>Container fleet relevance</h3>
             <p>ZIMA is being developed around commercial operating reality: repeatability, coverage, uptime, and easier integration into maintenance workflows.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="zima-explorer">
+      <div class="container">
+        <div class="section-heading reveal" data-edit-id="tech-explorer-heading" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="tech-explorer-kicker" data-edit-type="text">Explore the platform</p>
+          <h2 class="section-title" data-edit-id="tech-explorer-title" data-edit-type="text">An interactive look at the current ZIMA architecture.</h2>
+          <div class="section-copy" data-edit-id="tech-explorer-copy-block" data-edit-type="block">
+            <p data-edit-id="tech-explorer-copy" data-edit-type="text">
+              Select a marker on the CAD to see what each part of the platform is responsible for.
+            </p>
+          </div>
+        </div>
+
+        <div class="hotspot-stage reveal" data-hotspot-stage>
+          <div class="hotspot-stage__inner">
+            <img src="assets/media/zima-cad.webp" alt="Current ZIMA CAD with interactive component markers" loading="lazy" decoding="async">
+
+            <button class="hotspot-dot" type="button" style="--hx: 26%; --hy: 28%;" data-hotspot="1" aria-expanded="false">
+              <span class="sr-only">Drive modules</span>
+            </button>
+            <button class="hotspot-dot" type="button" style="--hx: 51%; --hy: 43%;" data-hotspot="2" aria-expanded="false">
+              <span class="sr-only">Central treatment bay</span>
+            </button>
+            <button class="hotspot-dot" type="button" style="--hx: 66%; --hy: 64%;" data-hotspot="3" aria-expanded="false">
+              <span class="sr-only">Sealed enclosure</span>
+            </button>
+            <button class="hotspot-dot" type="button" style="--hx: 84%; --hy: 32%;" data-hotspot="4" aria-expanded="false">
+              <span class="sr-only">Hull-scale frame</span>
+            </button>
+
+            <div class="hotspot-card" hidden data-hotspot-card="1">
+              <h3 data-edit-id="tech-hotspot-1-title" data-edit-type="text">Drive modules</h3>
+              <p data-edit-id="tech-hotspot-1-copy" data-edit-type="text">Independently steered swerve-drive units that give the rover traction, fine maneuvering, and tight position control on curved steel.</p>
+            </div>
+            <div class="hotspot-card" hidden data-hotspot-card="2">
+              <h3 data-edit-id="tech-hotspot-2-title" data-edit-type="text">Central treatment bay</h3>
+              <p data-edit-id="tech-hotspot-2-copy" data-edit-type="text">Where the UV-C treatment array integrates into the platform for close-range, repeatable maintenance passes.</p>
+            </div>
+            <div class="hotspot-card" hidden data-hotspot-card="3">
+              <h3 data-edit-id="tech-hotspot-3-title" data-edit-type="text">Sealed enclosure</h3>
+              <p data-edit-id="tech-hotspot-3-copy" data-edit-type="text">Houses the electronics that keep the system operating reliably in a subsea environment.</p>
+            </div>
+            <div class="hotspot-card" hidden data-hotspot-card="4">
+              <h3 data-edit-id="tech-hotspot-4-title" data-edit-type="text">Hull-scale frame</h3>
+              <p data-edit-id="tech-hotspot-4-copy" data-edit-type="text">The structural platform that carries the mobility, treatment, and electronics hardware through each pass.</p>
+            </div>
+          </div>
+          <p class="small-note hotspot-stage__hint" data-edit-id="tech-explorer-hint" data-edit-type="text">Public CAD view. Markers describe the role of each area at a high level.</p>
         </div>
       </div>
     </section>
@@ -136,14 +197,14 @@
           <div class="media-card__header">
             <span class="pill">OppFest simulation demo</span>
             <div class="media-card__actions">
-              <button class="video-toggle" type="button" data-audio-toggle aria-label="Enable audio">Audio off</button>
+              <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
             </div>
           </div>
           <video class="media-video" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/oppfest-sim-demo.webp">
             <source src="assets/media/oppfest-sim-demo.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <p class="media-caption" data-edit-id="tech-sim-caption" data-edit-type="text">Trimmed from the OppFest video at 2:24 to 2:34 and used here as a simulated ZIMA software demo.</p>
+          <p class="media-caption" data-edit-id="tech-sim-caption" data-edit-type="text">Excerpt from Subvision's OppFest presentation, showing early simulation work on ZIMA's motion and pathing.</p>
         </article>
       </div>
     </section>
@@ -176,7 +237,7 @@
             <div class="media-card__header">
               <span class="pill">Cleaning hardware</span>
             </div>
-            <img src="assets/media/uvc-array.png" alt="CAD render of the UVC array mounted inside ZIMA" loading="lazy" decoding="async">
+            <img src="assets/media/uvc-array.png" alt="CAD render of the UV-C array mounted inside ZIMA" loading="lazy" decoding="async">
             <h3 class="media-card__title" data-edit-id="tech-uvc-title" data-edit-type="text">Integrated UV-C treatment array</h3>
             <p class="media-caption" data-edit-id="tech-uvc-caption" data-edit-type="text">
               This module is designed to maintain close-range, repeatable treatment during each pass so the system can operate as a preventative maintenance tool.
@@ -303,6 +364,9 @@
           <article class="media-card">
             <div class="media-card__header">
               <span class="pill">Assembly sequence</span>
+              <div class="media-card__actions">
+                <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
+              </div>
             </div>
             <video class="media-video" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/frame-build.webp">
               <source src="assets/media/assembly-sequence.mp4" type="video/mp4">
@@ -314,6 +378,9 @@
           <article class="media-card">
             <div class="media-card__header">
               <span class="pill">Early underwater test clip</span>
+              <div class="media-card__actions">
+                <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
+              </div>
             </div>
             <video class="media-video" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/early-robot-test.webp">
               <source src="assets/media/test-rig.mp4" type="video/mp4">

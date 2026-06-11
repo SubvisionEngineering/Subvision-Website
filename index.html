@@ -6,12 +6,22 @@
   <meta name="description" content="Subvision is building ZIMA, a subsea rover for prevention-first hull maintenance on container ships.">
   <meta name="theme-color" content="#07111f">
   <title>Subvision | Proactive Hull Maintenance</title>
+  <link rel="canonical" href="https://subvision.ca/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subvision">
+  <meta property="og:title" content="Subvision | Proactive Hull Maintenance">
+  <meta property="og:description" content="Subvision is building ZIMA, a subsea rover for prevention-first hull maintenance on container ships.">
+  <meta property="og:url" content="https://subvision.ca/">
+  <meta property="og:image" content="https://subvision.ca/assets/media/zima-hero-poster.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/enhancements.css">
   <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -58,11 +68,11 @@
               <div class="media-card__header">
                 <span class="pill">1 minute animation</span>
                 <div class="media-card__actions">
-                  <button class="video-toggle" type="button" data-audio-toggle aria-label="Enable audio">Audio off</button>
+                  <button class="video-toggle" type="button" data-audio-toggle aria-pressed="false">Audio off</button>
                   <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
                 </div>
               </div>
-              <video class="media-video media-video--hero" data-autoplay-video muted loop playsinline preload="auto" poster="assets/media/zima-hero-poster.webp">
+              <video class="media-video media-video--hero" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/zima-hero-poster.webp">
                 <source src="assets/media/zima-hero.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -97,7 +107,7 @@
           </li>
           <li data-edit-id="home-proof-card-4" data-edit-type="block">
             <img class="support-card__logo" src="assets/media/partners/chang-institute.webp" alt="Chang Institute logo" loading="lazy" decoding="async">
-            <strong data-edit-id="home-proof-card-4-value" data-edit-type="text">$3.5K</strong>
+            <strong data-edit-id="home-proof-card-4-value" data-edit-type="text">$13.5K</strong>
               <span data-edit-id="home-proof-card-4-copy" data-edit-type="text">Supported by the Chang Institute in building the business behind the technology.</span>
           </li>
           <li data-edit-id="home-proof-card-5" data-edit-type="block">
@@ -121,6 +131,7 @@
             <span data-edit-id="home-hero-signal-1" data-edit-type="text">Built around visible engineering progress</span>
             <span data-edit-id="home-hero-signal-2" data-edit-type="text">Framed for partners and pilot conversations</span>
             <span data-edit-id="home-hero-signal-3" data-edit-type="text">Backed by public funding and awards</span>
+            <span data-edit-id="home-hero-signal-4" data-edit-type="text">New Ventures BC Top 25 — so far</span>
           </div>
         </div>
       </div>
@@ -163,7 +174,7 @@
           </div>
         </div>
 
-        <div class="journey-track stagger" data-auto-scroll data-edit-id="home-journey-track" data-edit-type="block">
+        <div class="journey-track stagger" data-auto-scroll tabindex="0" role="region" aria-label="Development journey timeline, scrollable" data-edit-id="home-journey-track" data-edit-type="block">
           <article class="journey-stop" data-edit-id="home-journey-stage-1" data-edit-type="block">
             <span class="journey-stop__meta">Stage 01</span>
             <h3 class="journey-stop__title">MOP proof of concept</h3>
@@ -208,6 +219,45 @@
             </div>
             <p class="journey-stop__copy">External support and public validation helped move the project from student build to venture-ready system.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="hull-demo">
+      <div class="container">
+        <div class="section-heading section-heading--wide reveal" data-edit-id="home-demo-heading" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="home-demo-kicker" data-edit-type="text">Interactive demo</p>
+          <h2 class="section-title" data-edit-id="home-demo-title" data-edit-type="text">Fouling never stops. See what prevention looks like.</h2>
+          <div class="section-copy" data-edit-id="home-demo-copy-block" data-edit-type="block">
+            <p data-edit-id="home-demo-copy" data-edit-type="text">
+              Growth keeps appearing on the plate below. Drive the rover yourself, or switch to auto passes to see how short, repeatable maintenance cycles keep a hull close to its clean baseline.
+            </p>
+          </div>
+        </div>
+
+        <div class="hull-demo reveal" data-hull-demo>
+          <div class="hull-demo__hud">
+            <div class="hull-demo__stat">
+              <span class="hull-demo__label">Hull cleanliness</span>
+              <div class="hull-demo__meter"><span data-demo-clean-bar></span></div>
+              <strong data-demo-clean-value>100%</strong>
+            </div>
+            <div class="hull-demo__stat">
+              <span class="hull-demo__label">Drag penalty</span>
+              <div class="hull-demo__meter hull-demo__meter--drag"><span data-demo-drag-bar></span></div>
+              <strong data-demo-drag-value>Low</strong>
+            </div>
+            <div class="hull-demo__controls">
+              <button class="demo-btn is-active" type="button" data-demo-mode="manual" aria-pressed="true">You drive</button>
+              <button class="demo-btn" type="button" data-demo-mode="auto" aria-pressed="false">Auto passes</button>
+              <button class="demo-btn" type="button" data-demo-reset>Reset plate</button>
+            </div>
+          </div>
+          <div class="hull-demo__stage">
+            <canvas data-demo-canvas tabindex="0" role="img" aria-label="Interactive demo of a rover keeping a hull plate clean. Use the arrow keys or your cursor to drive the rover."></canvas>
+            <div class="hull-demo__hint" data-demo-hint>Move your cursor or use the arrow keys to drive the rover</div>
+          </div>
+          <p class="small-note hull-demo__note" data-edit-id="home-demo-note" data-edit-type="text">Illustrative interaction to show the prevention-first idea. Not a simulation of real system performance.</p>
         </div>
       </div>
     </section>

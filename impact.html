@@ -6,12 +6,22 @@
   <meta name="description" content="Explore why proactive hull maintenance matters and meet the partner ecosystem supporting Subvision and ZIMA.">
   <meta name="theme-color" content="#07111f">
   <title>Impact &amp; Partners | Subvision</title>
+  <link rel="canonical" href="https://subvision.ca/impact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Subvision">
+  <meta property="og:title" content="Impact &amp; Partners | Subvision">
+  <meta property="og:description" content="Explore why proactive hull maintenance matters and meet the partner ecosystem supporting Subvision and ZIMA.">
+  <meta property="og:url" content="https://subvision.ca/impact.html">
+  <meta property="og:image" content="https://subvision.ca/assets/media/zima-hero-poster.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
   <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/enhancements.css">
   <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -95,15 +105,60 @@
       </div>
     </section>
 
+    <section class="section section--tight" id="interval-lab">
+      <div class="container">
+        <div class="section-heading section-heading--wide reveal" data-edit-id="impact-interval-heading" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="impact-interval-kicker" data-edit-type="text">Try the maintenance rhythm</p>
+          <h2 class="section-title" data-edit-id="impact-interval-title" data-edit-type="text">Move the slider. Watch the penalty curve reset.</h2>
+          <div class="section-copy" data-edit-id="impact-interval-copy-block" data-edit-type="block">
+            <p data-edit-id="impact-interval-copy" data-edit-type="text">
+              The same idea as the reference curves above, made interactive: the more often a hull returns to its clean baseline, the less time it spends paying the added power penalty.
+            </p>
+          </div>
+        </div>
+
+        <div class="interval-lab reveal" data-interval-lab>
+          <div class="interval-lab__head">
+            <label class="interval-lab__label" for="interval-slider">Cleaning interval: <strong data-interval-value>3 months</strong></label>
+            <input class="interval-lab__slider" id="interval-slider" type="range" min="1" max="12" step="1" value="3" data-interval-slider>
+          </div>
+          <canvas data-interval-canvas aria-label="Illustrative chart comparing added power demand with and without regular hull cleaning"></canvas>
+          <div class="interval-lab__legend">
+            <span><span class="legend-dot legend-dot--never"></span> Never cleaned</span>
+            <span><span class="legend-dot legend-dot--zima"></span> Cleaned on the chosen interval</span>
+          </div>
+          <p class="interval-lab__stat" data-interval-stat aria-live="polite"></p>
+          <p class="small-note" data-edit-id="impact-interval-note" data-edit-type="text">Illustrative model inspired by the reference curves above. Not measured ZIMA performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <article class="event-banner event-banner--no-logo reveal" data-edit-id="impact-nvbc-banner" data-edit-type="block">
+          <div class="event-banner__content">
+            <p class="section-kicker" data-edit-id="impact-nvbc-kicker" data-edit-type="text">Competition recognition</p>
+            <h2 class="event-banner__title" data-edit-id="impact-nvbc-title" data-edit-type="text">A New Ventures BC Top 25 company — so far.</h2>
+            <p data-edit-id="impact-nvbc-copy" data-edit-type="text">
+              Subvision has reached the Top 25 in the New Ventures BC Competition and is still advancing.
+            </p>
+          </div>
+          <div class="button-row" data-edit-id="impact-nvbc-buttons" data-edit-type="button-group">
+            <a class="button button--ghost" href="https://www.newventuresbc.com/" target="_blank" rel="noopener noreferrer" data-edit-id="impact-nvbc-cta" data-edit-type="text">New Ventures BC</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="section section--tight">
       <div class="container">
         <article class="event-banner reveal" data-edit-id="impact-websummit-banner" data-edit-type="block">
           <img class="event-banner__logo" src="assets/media/partners/web-summit-vancouver.png" alt="Web Summit Vancouver logo" loading="lazy" decoding="async">
           <div class="event-banner__content">
-            <p class="section-kicker" data-edit-id="impact-websummit-kicker" data-edit-type="text">Upcoming event</p>
-            <h2 class="event-banner__title" data-edit-id="impact-websummit-title" data-edit-type="text">Meet Subvision at Web Summit Vancouver, May 11-14.</h2>
+            <p class="section-kicker" data-edit-id="impact-websummit-kicker" data-edit-type="text">Event recap</p>
+            <h2 class="event-banner__title" data-edit-id="impact-websummit-title" data-edit-type="text">Subvision was at Web Summit Vancouver, May 11-14, 2026.</h2>
             <p data-edit-id="impact-websummit-copy" data-edit-type="text">
-              Subvision will be in Vancouver during Web Summit week and would love to connect with operators, partners, and supporters following the ZIMA program.
+              Subvision spent Web Summit week in Vancouver connecting with operators, partners, and supporters following the ZIMA program.
             </p>
           </div>
           <div class="button-row" data-edit-id="impact-websummit-buttons" data-edit-type="button-group">
