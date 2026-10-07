@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261006d">
   <link rel="stylesheet" href="assets/css/enhancements.css">
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=20261004b" defer></script>
   <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
@@ -28,10 +28,10 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="Subvision home">
+      <a class="brand" href="index.html" aria-label="Subvision Robotics home">
         <img src="assets/media/logo-mark.png" alt="Subvision logo">
         <span class="brand__text">
-          <strong>Subvision</strong>
+          <strong>Subvision Robotics</strong>
           <span>Subsea prevention systems</span>
         </span>
       </a>
@@ -152,17 +152,20 @@
 
     <section class="section section--tight">
       <div class="container">
-        <article class="event-banner reveal" data-edit-id="impact-websummit-banner" data-edit-type="block">
-          <img class="event-banner__logo" src="assets/media/partners/web-summit-vancouver.png" alt="Web Summit Vancouver logo" loading="lazy" decoding="async">
+        <article class="event-banner websummit-recap reveal" data-edit-id="impact-websummit-banner" data-edit-type="block">
+          <div class="feature-image websummit-recap__photo" data-edit-id="impact-websummit-photo" data-edit-type="media">
+            <img src="assets/media/websummit-booth.webp" alt="Subvision at its Web Summit Vancouver booth" loading="lazy" decoding="async" width="1200" height="1600">
+          </div>
           <div class="event-banner__content">
+            <img class="event-banner__logo" src="assets/media/partners/web-summit-vancouver.png" alt="Web Summit Vancouver logo" loading="lazy" decoding="async">
             <p class="section-kicker" data-edit-id="impact-websummit-kicker" data-edit-type="text">Event recap</p>
             <h2 class="event-banner__title" data-edit-id="impact-websummit-title" data-edit-type="text">Subvision was at Web Summit Vancouver, May 11-14, 2026.</h2>
-            <p data-edit-id="impact-websummit-copy" data-edit-type="text">
+            <p class="websummit-recap__copy" data-edit-id="impact-websummit-copy" data-edit-type="text">
               Subvision spent Web Summit week in Vancouver connecting with operators, partners, and supporters following the ZIMA program.
             </p>
-          </div>
-          <div class="button-row" data-edit-id="impact-websummit-buttons" data-edit-type="button-group">
-            <a class="button button--ghost" href="https://vancouver.websummit.com/" target="_blank" rel="noopener noreferrer" data-edit-id="impact-websummit-cta" data-edit-type="text">Web Summit Vancouver</a>
+            <div class="button-row" data-edit-id="impact-websummit-buttons" data-edit-type="button-group">
+              <a class="button button--ghost" href="https://vancouver.websummit.com/" target="_blank" rel="noopener noreferrer" data-edit-id="impact-websummit-cta" data-edit-type="text">Web Summit Vancouver</a>
+            </div>
           </div>
         </article>
       </div>
@@ -239,51 +242,6 @@
     </section>
 
     <section class="section">
-      <div class="container editorial-grid">
-        <div class="reveal">
-          <div class="section-heading">
-            <p class="section-kicker">What support unlocks</p>
-            <h2 class="section-title">The right support accelerates real technical progress.</h2>
-            <div class="section-copy">
-              <p>
-                Funding and partnerships matter when they shorten iteration cycles, create stronger test opportunities, and open the right pilot conversations.
-              </p>
-            </div>
-          </div>
-
-          <div class="card-grid card-grid--compact stagger">
-            <article class="card">
-              <h3>Prototype refinement</h3>
-              <p>More support means faster iteration and stronger hardware hardening.</p>
-            </article>
-            <article class="card">
-              <h3>Validation opportunities</h3>
-              <p>Programs and partners create better chances to test, demo, and communicate the system in credible settings.</p>
-            </article>
-            <article class="card">
-              <h3>Market access</h3>
-              <p>The right introductions help translate engineering progress into pilot conversations.</p>
-            </article>
-          </div>
-        </div>
-
-        <div class="gallery-grid stagger">
-          <div class="feature-image">
-            <img src="assets/media/expo-floor.webp" alt="Visitors gathered around the Subvision booth" loading="lazy" decoding="async">
-          </div>
-          <div class="stack-grid">
-            <div class="feature-image">
-              <img src="assets/media/demo-night.webp" alt="Subvision evening robotics demo" loading="lazy" decoding="async">
-            </div>
-            <div class="feature-image">
-              <img src="assets/media/maddox-prize.webp" alt="Subvision Environmental Innovation Challenge photo" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
       <div class="container cta-panel">
         <div class="cta-shell reveal">
           <div>
@@ -294,7 +252,10 @@
             </p>
           </div>
           <div class="button-row">
-            <a class="button button--primary" href="mailto:subvisionengineering@gmail.com?subject=Partnership%20Inquiry">Email the team</a>
+            <span class="email-contact">
+              <button class="button button--primary" type="button" data-email-reveal data-email-subject="Partnership Inquiry" aria-expanded="false" aria-controls="impact-partnership-email">Show team email</button>
+              <span class="email-contact__details" id="impact-partnership-email" hidden><a data-email-link></a></span>
+            </span>
             <a class="button button--secondary" href="team.html">Meet the team</a>
           </div>
         </div>
@@ -328,7 +289,10 @@
       <div>
         <h3>Reach out</h3>
         <ul class="footer-list">
-          <li><a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a></li>
+          <li class="email-contact">
+            <button class="email-reveal--plain" type="button" data-email-reveal aria-expanded="false" aria-controls="footer-email">Show email</button>
+            <span class="email-contact__details" id="footer-email" hidden><a data-email-link></a></span>
+          </li>
           <li><a href="https://www.linkedin.com/company/subvision-engineering/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/subvision.robotics" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>

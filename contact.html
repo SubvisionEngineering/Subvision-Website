@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261006d">
   <link rel="stylesheet" href="assets/css/enhancements.css">
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=20261004b" defer></script>
   <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
@@ -28,10 +28,10 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="Subvision home">
+      <a class="brand" href="index.html" aria-label="Subvision Robotics home">
         <img src="assets/media/logo-mark.png" alt="Subvision logo">
         <span class="brand__text">
-          <strong>Subvision</strong>
+          <strong>Subvision Robotics</strong>
           <span>Subsea prevention systems</span>
         </span>
       </a>
@@ -61,7 +61,10 @@
             media requests, and general outreach.
           </p>
           <div class="button-row" data-edit-id="contact-hero-buttons" data-edit-type="button-group">
-            <a class="button button--primary" href="mailto:subvisionengineering@gmail.com" data-edit-id="contact-hero-primary-cta" data-edit-type="text">subvisionengineering@gmail.com</a>
+            <span class="email-contact">
+              <button class="button button--primary" type="button" data-email-reveal aria-expanded="false" aria-controls="contact-hero-email" data-edit-id="contact-hero-primary-cta" data-edit-type="text">Show email address</button>
+              <span class="email-contact__details" id="contact-hero-email" hidden><a data-email-link></a></span>
+            </span>
             <a class="button button--ghost" href="https://www.linkedin.com/company/subvision-engineering/" target="_blank" rel="noopener noreferrer" data-edit-id="contact-hero-secondary-cta" data-edit-type="text">LinkedIn</a>
           </div>
           <div class="hero-signal-list" data-edit-id="contact-hero-signals" data-edit-type="block">
@@ -91,19 +94,28 @@
           <article class="contact-card" data-edit-id="contact-card-1" data-edit-type="block">
             <h3>Partnership inquiries</h3>
             <p>If your organization can support pilots, funding, technical validation, or strategic introductions, start here.</p>
-            <a class="contact-link" href="mailto:subvisionengineering@gmail.com?subject=Partnership%20Inquiry">Email about partnerships</a>
+            <span class="email-contact">
+              <button class="contact-link email-reveal--plain" type="button" data-email-reveal data-email-subject="Partnership Inquiry" aria-expanded="false" aria-controls="contact-partnership-email">Show partnership email</button>
+              <span class="email-contact__details" id="contact-partnership-email" hidden><a data-email-link></a></span>
+            </span>
           </article>
 
           <article class="contact-card" data-edit-id="contact-card-2" data-edit-type="block">
             <h3>Pilot and field validation</h3>
             <p>For operators, facilities, or ecosystem partners exploring how ZIMA could fit into a real-world testing plan.</p>
-            <a class="contact-link" href="mailto:subvisionengineering@gmail.com?subject=Pilot%20Conversation">Email about pilots</a>
+            <span class="email-contact">
+              <button class="contact-link email-reveal--plain" type="button" data-email-reveal data-email-subject="Pilot Conversation" aria-expanded="false" aria-controls="contact-pilot-email">Show pilot email</button>
+              <span class="email-contact__details" id="contact-pilot-email" hidden><a data-email-link></a></span>
+            </span>
           </article>
 
           <article class="contact-card" data-edit-id="contact-card-3" data-edit-type="block">
             <h3>Media and showcases</h3>
             <p>For events, demos, speaking, or press conversations tied to Subvision's robotics and ocean-impact story.</p>
-            <a class="contact-link" href="mailto:subvisionengineering@gmail.com?subject=Media%20or%20Showcase%20Inquiry">Email about showcases</a>
+            <span class="email-contact">
+              <button class="contact-link email-reveal--plain" type="button" data-email-reveal data-email-subject="Media or Showcase Inquiry" aria-expanded="false" aria-controls="contact-media-email">Show media and showcase email</button>
+              <span class="email-contact__details" id="contact-media-email" hidden><a data-email-link></a></span>
+            </span>
           </article>
         </div>
       </div>
@@ -141,7 +153,10 @@
             </p>
           </div>
           <div class="button-row">
-            <a class="button button--primary" href="mailto:subvisionengineering@gmail.com">Email Subvision</a>
+            <span class="email-contact">
+              <button class="button button--primary" type="button" data-email-reveal aria-expanded="false" aria-controls="contact-inquiry-email">Show team email</button>
+              <span class="email-contact__details" id="contact-inquiry-email" hidden><a data-email-link></a></span>
+            </span>
             <a class="button button--secondary" href="technology.html">Review the technology</a>
           </div>
         </div>
@@ -175,7 +190,10 @@
       <div>
         <h3>Reach out</h3>
         <ul class="footer-list">
-          <li><a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a></li>
+          <li class="email-contact">
+            <button class="email-reveal--plain" type="button" data-email-reveal aria-expanded="false" aria-controls="footer-email">Show email</button>
+            <span class="email-contact__details" id="footer-email" hidden><a data-email-link></a></span>
+          </li>
           <li><a href="https://www.linkedin.com/company/subvision-engineering/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/subvision.robotics" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>

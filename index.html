@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261006d">
   <link rel="stylesheet" href="assets/css/enhancements.css">
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=20261004b" defer></script>
   <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
@@ -28,10 +28,10 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="Subvision home">
+      <a class="brand" href="index.html" aria-label="Subvision Robotics home">
         <img src="assets/media/logo-mark.png" alt="Subvision logo">
         <span class="brand__text">
-          <strong>Subvision</strong>
+          <strong>Subvision Robotics</strong>
           <span>Subsea prevention systems</span>
         </span>
       </a>
@@ -69,10 +69,9 @@
                 <span class="pill">1 minute animation</span>
                 <div class="media-card__actions">
                   <button class="video-toggle" type="button" data-audio-toggle aria-pressed="false">Audio off</button>
-                  <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
                 </div>
               </div>
-              <video class="media-video media-video--hero" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/zima-hero-poster.webp">
+              <video class="media-video media-video--hero" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/zima-hero-poster.webp" aria-label="Animation explaining ZIMA and the biofouling prevention concept">
                 <source src="assets/media/zima-hero.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
@@ -93,13 +92,29 @@
             <a class="button button--primary" href="technology.html" data-edit-id="home-hero-primary-cta" data-edit-type="text">See how ZIMA works</a>
             <a class="button button--secondary" href="contact.html" data-edit-id="home-hero-secondary-cta" data-edit-type="text">Start a conversation</a>
           </div>
-          <div class="hero-signal-list" data-edit-id="home-hero-signals" data-edit-type="block">
-            <span data-edit-id="home-hero-signal-1" data-edit-type="text">Built around visible engineering progress</span>
-            <span data-edit-id="home-hero-signal-2" data-edit-type="text">Open to partner and pilot conversations</span>
-            <span data-edit-id="home-hero-signal-3" data-edit-type="text">Backed by public funding and awards</span>
-            <span data-edit-id="home-hero-signal-4" data-edit-type="text">New Ventures BC Top 25</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight" id="zima-on-the-water" data-edit-id="home-water-section" data-edit-type="block">
+      <div class="container split-grid split-grid--balanced">
+        <div class="section-heading reveal" data-edit-id="home-water-heading" data-edit-type="block">
+          <p class="section-kicker">Prototype footage</p>
+          <h2 class="section-title">ZIMA on the water.</h2>
+          <div class="section-copy">
+            <p>A close look at the prototype during a supervised shoreline trial.</p>
           </div>
         </div>
+        <article class="media-card reveal" data-edit-id="home-water-video" data-edit-type="media">
+          <div class="media-card__header">
+            <span class="pill">ZIMA on the water</span>
+          </div>
+          <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/rebuilt-overview.webp" aria-label="Close views of the ZIMA prototype on the water">
+            <source src="assets/media/rebuilt-overview.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="media-caption">A close look at the ZIMA prototype during a shoreline trial.</p>
+        </article>
       </div>
     </section>
 
@@ -143,20 +158,23 @@
         <div class="journey-track stagger" data-auto-scroll tabindex="0" role="region" aria-label="Development journey timeline, scrollable" data-edit-id="home-journey-track" data-edit-type="block">
           <article class="journey-stop" data-edit-id="home-journey-stage-1" data-edit-type="block">
             <span class="journey-stop__meta">Stage 01</span>
-            <h3 class="journey-stop__title">First proof of concept</h3>
-            <div class="journey-stop__media">
-              <img src="assets/media/mop-proof.webp" alt="Subvision's first proof-of-concept build on a workbench" loading="lazy" decoding="async">
+            <h3 class="journey-stop__title">Prototype development</h3>
+            <div class="journey-stop__media" data-video-scope>
+              <video data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/rebuilt-drive-detail.webp" aria-label="Close-up work on the rebuilt ZIMA prototype's drive hardware">
+                <source src="assets/media/rebuilt-drive-detail.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <p class="journey-stop__copy">An early proof of concept used to shape the earliest underwater mobility and systems architecture.</p>
+            <p class="journey-stop__copy">Close-up work on the rover's drive hardware before the shoreline trial.</p>
           </article>
 
           <article class="journey-stop" data-edit-id="home-journey-stage-2" data-edit-type="block">
             <span class="journey-stop__meta">Stage 02</span>
-            <h3 class="journey-stop__title">Early robot test</h3>
+            <h3 class="journey-stop__title">Early exploration</h3>
             <div class="journey-stop__media">
-              <img src="assets/media/early-robot-test.webp" alt="Early Subvision robot test near a pool" loading="lazy" decoding="async">
+              <img src="assets/media/early-robot-test.webp" alt="Early underwater robotics work beside a pool" loading="lazy" decoding="async">
             </div>
-            <p class="journey-stop__copy">Early in-water testing helped validate motion, integration, and what needed to change before scaling up.</p>
+            <p class="journey-stop__copy">Early hands-on exploration of underwater robotics.</p>
           </article>
 
           <article class="journey-stop" data-edit-id="home-journey-stage-3" data-edit-type="block">
@@ -171,10 +189,13 @@
           <article class="journey-stop" data-edit-id="home-journey-stage-4" data-edit-type="block">
             <span class="journey-stop__meta">Stage 04</span>
             <h3 class="journey-stop__title">Build and field demos</h3>
-            <div class="journey-stop__media">
-              <img src="assets/media/frame-build.webp" alt="Large ZIMA frame assembly in progress" loading="lazy" decoding="async">
+            <div class="journey-stop__media" data-video-scope>
+              <video data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/rebuilt-shoreline-trial.webp" aria-label="The team lowering the rebuilt ZIMA prototype into the water">
+                <source src="assets/media/rebuilt-shoreline-trial.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
             </div>
-            <p class="journey-stop__copy">Prototype assembly work translating the design into hull-scale hardware.</p>
+            <p class="journey-stop__copy">Preparing and lowering the rebuilt prototype into the water for a supervised shoreline trial.</p>
           </article>
 
           <article class="journey-stop" data-edit-id="home-journey-stage-5" data-edit-type="block">
@@ -189,42 +210,61 @@
       </div>
     </section>
 
-    <section class="section" id="hull-demo">
+    <section class="section section--tight" id="hands-on-build" data-edit-id="home-build-section" data-edit-type="block">
       <div class="container">
-        <div class="section-heading section-heading--wide reveal" data-edit-id="home-demo-heading" data-edit-type="block">
-          <p class="section-kicker" data-edit-id="home-demo-kicker" data-edit-type="text">Interactive demo</p>
-          <h2 class="section-title" data-edit-id="home-demo-title" data-edit-type="text">Fouling never stops. See what prevention looks like.</h2>
-          <div class="section-copy" data-edit-id="home-demo-copy-block" data-edit-type="block">
-            <p data-edit-id="home-demo-copy" data-edit-type="text">
-              Growth keeps appearing on the plate below. Drive the rover yourself, or switch to auto passes to see how short, repeatable maintenance cycles keep a hull close to its clean baseline.
-            </p>
+        <div class="section-heading reveal" data-edit-id="home-build-heading" data-edit-type="block">
+          <p class="section-kicker">Machining and assembly</p>
+          <h2 class="section-title">Hands-on work behind ZIMA.</h2>
+        </div>
+        <div class="build-media-grid">
+          <article class="media-card reveal" data-edit-id="home-component-finishing" data-edit-type="media">
+            <div class="media-card__header">
+              <span class="pill">Component finishing</span>
+            </div>
+            <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/component-finishing.webp" aria-label="Workbench assembly and Dennis using a Dremel on a component outside by the stairs">
+              <source src="assets/media/component-finishing.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption">Workbench assembly, plus Dennis finishing a component with a Dremel by the stairs.</p>
+          </article>
+          <article class="media-card reveal" data-edit-id="home-shoreline-assembly" data-edit-type="media">
+            <div class="media-card__header">
+              <span class="pill">Shoreline assembly</span>
+            </div>
+            <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/shoreline-assembly.webp" aria-label="The Subvision team working on the prototype's electronics housing and connections on the shore">
+              <source src="assets/media/shoreline-assembly.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption">Hands-on work on the electronics housing and connections before a water trial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="simulation">
+      <div class="container split-grid split-grid--balanced">
+        <div class="reveal" data-edit-id="home-sim-intro" data-edit-type="block">
+          <div class="section-heading">
+            <p class="section-kicker" data-edit-id="home-sim-kicker" data-edit-type="text">Simulation demo</p>
+            <h2 class="section-title" data-edit-id="home-sim-title" data-edit-type="text">ZIMA in simulation.</h2>
+            <div class="section-copy">
+              <p data-edit-id="home-sim-copy-1" data-edit-type="text">
+                Early simulation work exploring ZIMA's motion, pathing, and system behavior alongside the physical build.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="hull-demo reveal" data-hull-demo>
-          <div class="hull-demo__hud">
-            <div class="hull-demo__stat">
-              <span class="hull-demo__label">Hull cleanliness</span>
-              <div class="hull-demo__meter"><span data-demo-clean-bar></span></div>
-              <strong data-demo-clean-value>100%</strong>
-            </div>
-            <div class="hull-demo__stat">
-              <span class="hull-demo__label">Drag penalty</span>
-              <div class="hull-demo__meter hull-demo__meter--drag"><span data-demo-drag-bar></span></div>
-              <strong data-demo-drag-value>Low</strong>
-            </div>
-            <div class="hull-demo__controls">
-              <button class="demo-btn is-active" type="button" data-demo-mode="manual" aria-pressed="true">You drive</button>
-              <button class="demo-btn" type="button" data-demo-mode="auto" aria-pressed="false">Auto passes</button>
-              <button class="demo-btn" type="button" data-demo-reset>Reset plate</button>
-            </div>
+        <article class="media-card reveal" data-edit-id="home-sim-video" data-edit-type="media">
+          <div class="media-card__header">
+            <span class="pill">Simulation demo</span>
           </div>
-          <div class="hull-demo__stage">
-            <canvas data-demo-canvas tabindex="0" role="img" aria-label="Interactive demo of a rover keeping a hull plate clean. Use the arrow keys or your cursor to drive the rover."></canvas>
-            <div class="hull-demo__hint" data-demo-hint>Move your cursor or use the arrow keys to drive the rover</div>
-          </div>
-          <p class="small-note hull-demo__note" data-edit-id="home-demo-note" data-edit-type="text">Illustrative interaction to show the prevention-first idea. Not a simulation of real system performance.</p>
-        </div>
+          <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/oppfest-sim-demo.webp" aria-label="Simulation of ZIMA moving along a virtual hull">
+            <source src="assets/media/oppfest-sim-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="media-caption" data-edit-id="home-sim-caption" data-edit-type="text">Early simulation of ZIMA’s motion and pathing. Real-world passes would use tighter, more closely spaced patterns.</p>
+        </article>
       </div>
     </section>
 
@@ -232,7 +272,7 @@
       <div class="container">
         <div class="funding-summary reveal" data-edit-id="home-funding-summary" data-edit-type="block">
           <p class="section-kicker" data-edit-id="home-funding-kicker" data-edit-type="text">Funding sourced</p>
-          <h2 class="funding-summary__title" data-edit-id="home-funding-title" data-edit-type="text">$55k raised in non-dilutive funding</h2>
+          <h2 class="funding-summary__title" data-edit-id="home-funding-title" data-edit-type="text">$56k raised in non-dilutive funding</h2>
           <p class="funding-summary__copy" data-edit-id="home-funding-copy" data-edit-type="text">Total funding sourced across public programs, institutional backing, and awards.</p>
         </div>
 
@@ -244,7 +284,7 @@
           </li>
           <li data-edit-id="home-proof-card-3" data-edit-type="block">
             <img class="support-card__logo" src="assets/media/partners/sfu-engineering-student-society.png" alt="SFU Engineering Student Society logo" loading="lazy" decoding="async">
-            <strong data-edit-id="home-proof-card-3-value" data-edit-type="text">$5K</strong>
+            <strong data-edit-id="home-proof-card-3-value" data-edit-type="text">$6K</strong>
               <span data-edit-id="home-proof-card-3-copy" data-edit-type="text">SFU Engineering Student Society support that helped back the team during early prototype development.</span>
           </li>
           <li data-edit-id="home-proof-card-4" data-edit-type="block">
@@ -311,7 +351,10 @@
       <div>
         <h3>Reach out</h3>
         <ul class="footer-list">
-          <li><a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a></li>
+          <li class="email-contact">
+            <button class="email-reveal--plain" type="button" data-email-reveal aria-expanded="false" aria-controls="footer-email">Show email</button>
+            <span class="email-contact__details" id="footer-email" hidden><a data-email-link></a></span>
+          </li>
           <li><a href="https://www.linkedin.com/company/subvision-engineering/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/subvision.robotics" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>

@@ -12,15 +12,15 @@
   <meta property="og:title" content="Team | Subvision">
   <meta property="og:description" content="Meet the core team behind Subvision and ZIMA.">
   <meta property="og:url" content="https://subvision.ca/team.html">
-  <meta property="og:image" content="https://subvision.ca/assets/media/full-team.webp">
+  <meta property="og:image" content="https://subvision.ca/assets/media/maddox-team-hero.webp">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261006d">
   <link rel="stylesheet" href="assets/css/enhancements.css">
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=20261004b" defer></script>
   <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
@@ -28,10 +28,10 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="Subvision home">
+      <a class="brand" href="index.html" aria-label="Subvision Robotics home">
         <img src="assets/media/logo-mark.png" alt="Subvision logo">
         <span class="brand__text">
-          <strong>Subvision</strong>
+          <strong>Subvision Robotics</strong>
           <span>Subsea prevention systems</span>
         </span>
       </a>
@@ -66,8 +66,12 @@
         </div>
 
         <div class="feature-image reveal" data-edit-id="team-hero-image" data-edit-type="media">
-          <img src="assets/media/full-team.webp" alt="Subvision team standing together with the rover" loading="eager" decoding="async">
+          <img src="assets/media/maddox-team-hero.webp" alt="Subvision team at the Maddox Prize presentation" loading="eager" decoding="async" width="827" height="545" style="height: auto; min-height: 0;">
         </div>
+      </div>
+      <div class="container team-bio reveal" data-edit-id="team-bio" data-edit-type="block">
+        <p class="lede" data-edit-id="team-bio-origins" data-edit-type="text">Subvision started with a group of us at Simon Fraser University who wanted to build underwater robots. We created a marine engineering club to make it happen. Building a robot together took us to the MATE ROV World Championship in Tennessee, but it also made us want to do something beyond competitions. We wanted to take what we’d learned and put it toward a problem that mattered to the ocean and the people who work on it.</p>
+        <p class="lede" data-edit-id="team-bio-current" data-edit-type="text">Today, we’re a Vancouver-based team building ZIMA from the ground up. We bring different strengths in mechanical design, electronics, power systems, and robotics software, but the work is rarely neatly divided. We help each other troubleshoot, challenge each other’s ideas, and learn together when a design doesn’t behave the way we expected. From the custom underwater drive system to the controls that guide ZIMA across a ship’s hull, this is something we’re making together. We’re proud of how far we’ve come, and we’re building toward a goal we all care about: helping ships stay efficient while protecting the waters they travel through.</p>
       </div>
     </section>
 
@@ -102,11 +106,19 @@
                 </div>
               </article>
               <article class="cluster-person">
-                <div class="avatar-fallback" aria-hidden="true">DC</div>
+                <div class="avatar"><img src="assets/media/team/dennis-cofler.webp" alt="Dennis Cofler headshot" loading="lazy" decoding="async" width="600" height="800" style="object-position: 50% 35%; transform: scale(1.8); transform-origin: 50% 35%;"></div>
                 <div>
                   <h4 class="leader-name">Dennis Cofler</h4>
                   <p class="cluster-role">Mechanical Lead</p>
                   <p>Supports mechanical design, prototyping, and subsystem refinement across the platform.</p>
+                </div>
+              </article>
+              <article class="cluster-person" id="sehaj-khalsi">
+                <div class="avatar"><img src="assets/media/team/sehaj-khalsi.webp" alt="Sehaj Khalsi headshot" loading="lazy" decoding="async" width="600" height="800" style="object-position: 50% 50%; transform: scale(1.9); transform-origin: 50% 50%;"></div>
+                <div>
+                  <h4 class="leader-name">Sehaj Khalsi</h4>
+                  <p class="cluster-role">Mechanical Member</p>
+                  <p>UV-C specialist integrating the electronics.</p>
                 </div>
               </article>
               <article class="cluster-person">
@@ -147,46 +159,37 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container editorial-grid">
-        <div class="reveal">
-          <div class="section-heading">
-            <p class="section-kicker">How the team works</p>
-            <h2 class="section-title">Hardware and software move forward together.</h2>
-            <div class="section-copy">
-              <p>
-                Subvision gets stronger when every discipline pushes the same system forward. Each build cycle turns CAD into prototypes, prototypes into test data, and test data into the next design decision.
-              </p>
-            </div>
-          </div>
-
-          <div class="card-grid card-grid--compact stagger">
-            <article class="card">
-              <h3>Build visibly</h3>
-              <p>Physical progress makes the technical work easier to understand and evaluate.</p>
-            </article>
-            <article class="card">
-              <h3>Test early</h3>
-              <p>Field tests and demos expose issues early and sharpen the next iteration.</p>
-            </article>
-            <article class="card">
-              <h3>Communicate clearly</h3>
-              <p>The team explains the product in a way that makes the engineering legible outside the lab.</p>
-            </article>
+    <section class="section" id="team-in-action">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">How the team works</p>
+          <h2 class="section-title">Hardware and software move forward together.</h2>
+          <div class="section-copy">
+            <p>
+              Subvision gets stronger when every discipline pushes the same system forward. Each build cycle turns CAD into prototypes, prototypes into test data, and test data into the next design decision.
+            </p>
           </div>
         </div>
-
-        <div class="gallery-grid stagger">
-          <div class="feature-image">
-            <img src="assets/media/lab-team.webp" alt="Subvision team around a rover in the lab" loading="lazy" decoding="async">
+        <div class="build-media-grid team-media-gallery">
+          <article class="media-card reveal" data-edit-id="team-film-video" data-edit-type="media">
+            <div class="media-card__header">
+              <span class="pill">The people behind Subvision</span>
+            </div>
+            <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/subvision-team-film.webp" aria-label="Subvision team members presenting the mission in the company build film">
+              <source src="assets/media/subvision-team-film.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption">Meet the team sharing the mission behind ZIMA in our build film.</p>
+            <a class="button button--ghost" href="https://www.youtube.com/watch?v=PfqEyPNROHo" target="_blank" rel="noopener noreferrer">Watch the full story</a>
+          </article>
+          <div class="feature-image reveal">
+            <img src="assets/media/oppfest-team-hero.webp" alt="Subvision team with certificates and the ZIMA prototype at Opportunity Fest" loading="lazy" decoding="async" width="1600" height="1200">
           </div>
-          <div class="stack-grid">
-            <div class="feature-image">
-              <img src="assets/media/demo-night.webp" alt="Subvision evening robotics demo setup" loading="lazy" decoding="async">
-            </div>
-            <div class="feature-image">
-              <img src="assets/media/expo-floor.webp" alt="Visitors gathered around the Subvision booth" loading="lazy" decoding="async">
-            </div>
+          <div class="feature-image reveal">
+            <img src="assets/media/workshop-build-team.webp" alt="Two Subvision team members holding machined components in the workshop" loading="lazy" decoding="async" width="1600" height="1200">
+          </div>
+          <div class="feature-image reveal">
+            <img src="assets/media/expo-floor.webp" alt="Visitors gathered around the Subvision booth at the Environmental Innovation Challenge" loading="lazy" decoding="async" width="1500" height="1125">
           </div>
         </div>
       </div>
@@ -203,7 +206,10 @@
             </p>
           </div>
           <div class="button-row">
-            <a class="button button--primary" href="mailto:subvisionengineering@gmail.com?subject=General%20Inquiry">Email Subvision</a>
+            <span class="email-contact">
+              <button class="button button--primary" type="button" data-email-reveal data-email-subject="General Inquiry" aria-expanded="false" aria-controls="team-inquiry-email">Show team email</button>
+              <span class="email-contact__details" id="team-inquiry-email" hidden><a data-email-link></a></span>
+            </span>
             <a class="button button--secondary" href="technology.html">Review the technology</a>
           </div>
         </div>
@@ -237,7 +243,10 @@
       <div>
         <h3>Reach out</h3>
         <ul class="footer-list">
-          <li><a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a></li>
+          <li class="email-contact">
+            <button class="email-reveal--plain" type="button" data-email-reveal aria-expanded="false" aria-controls="footer-email">Show email</button>
+            <span class="email-contact__details" id="footer-email" hidden><a data-email-link></a></span>
+          </li>
           <li><a href="https://www.linkedin.com/company/subvision-engineering/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/subvision.robotics" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>

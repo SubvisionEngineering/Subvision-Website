@@ -366,44 +366,56 @@
   }
 
   const autoplayVideos = Array.from(document.querySelectorAll("[data-autoplay-video]"));
-  const attemptPlay = (video) => {
+  const pendingPlayback = new WeakSet();
+  const videoForButton = (button) => {
+    const scope = button.closest("[data-video-scope], .media-card, .journey-stop");
+    return scope ? scope.querySelector("video") : null;
+  };
+
+  const attemptPlay = async (video, allowMutedFallback = true) => {
+    if (document.hidden || !video.paused || pendingPlayback.has(video)) return;
+
+    pendingPlayback.add(video);
     const shouldMute = video.dataset.userUnmuted !== "true";
     video.muted = shouldMute;
     video.defaultMuted = shouldMute;
-    video.loop = true;
-    video.playsInline = true;
+    const startedWithAudio = !video.muted;
 
-    const playPromise = video.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(() => {});
+    try {
+      await video.play();
+    } catch (error) {
+      if (
+        allowMutedFallback && startedWithAudio && error && error.name === "NotAllowedError" &&
+        !document.hidden
+      ) {
+        video.dataset.userUnmuted = "";
+        video.muted = true;
+        video.defaultMuted = true;
+        try {
+          await video.play();
+        } catch (_) {
+          // The browser can block playback even after falling back to muted audio.
+        }
+      }
+    } finally {
+      pendingPlayback.delete(video);
     }
   };
 
-  if (reducedMotion) {
-    autoplayVideos.forEach((video) => video.pause());
-  } else if ("IntersectionObserver" in window) {
-    const videoObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const video = entry.target;
-          video.dataset.inView = entry.isIntersecting ? "true" : "";
-          if (video.dataset.userPaused === "true") return;
-          if (entry.isIntersecting) {
-            attemptPlay(video);
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.25 },
-    );
-    autoplayVideos.forEach((video) => videoObserver.observe(video));
-  } else {
-    autoplayVideos.forEach((video) => {
-      attemptPlay(video);
-      video.addEventListener("loadeddata", () => attemptPlay(video), { once: true });
+  autoplayVideos.forEach((video) => {
+    video.autoplay = true;
+    video.muted = true;
+    video.defaultMuted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.addEventListener("play", () => {
+      if (document.hidden) video.pause();
     });
-  }
+    video.addEventListener("loadeddata", () => attemptPlay(video), { once: true });
+    video.addEventListener("canplay", () => attemptPlay(video), { once: true });
+    if (document.hidden) video.pause();
+    else attemptPlay(video);
+  });
 
   document.addEventListener("visibilitychange", () => {
     autoplayVideos.forEach((video) => {
@@ -412,40 +424,8 @@
         return;
       }
 
-      if (!video.dataset.userPaused && !reducedMotion && video.dataset.inView === "true") {
-        attemptPlay(video);
-      }
+      attemptPlay(video);
     });
-  });
-
-  document.querySelectorAll("[data-video-toggle]").forEach((button) => {
-    const card = button.closest(".media-card");
-    const video = card ? card.querySelector("video") : null;
-    if (!video) return;
-
-    const syncLabel = () => {
-      const paused = video.paused;
-      button.textContent = paused ? "Play video" : "Pause video";
-      button.setAttribute("aria-label", paused ? "Play video" : "Pause video");
-    };
-
-    button.addEventListener("click", () => {
-      if (video.paused) {
-        video.dataset.userPaused = "";
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch(() => {});
-        }
-      } else {
-        video.dataset.userPaused = "true";
-        video.pause();
-      }
-      syncLabel();
-    });
-
-    video.addEventListener("play", syncLabel);
-    video.addEventListener("pause", syncLabel);
-    syncLabel();
   });
 
   const audioButtons = Array.from(document.querySelectorAll("[data-audio-toggle]"));
@@ -457,8 +437,7 @@
 
   const muteOtherAudioVideos = (currentVideo) => {
     audioButtons.forEach((otherButton) => {
-      const otherCard = otherButton.closest(".media-card");
-      const otherVideo = otherCard ? otherCard.querySelector("video") : null;
+      const otherVideo = videoForButton(otherButton);
       if (!otherVideo || otherVideo === currentVideo) return;
 
       otherVideo.dataset.userUnmuted = "";
@@ -469,8 +448,7 @@
   };
 
   audioButtons.forEach((button) => {
-    const card = button.closest(".media-card");
-    const video = card ? card.querySelector("video") : null;
+    const video = videoForButton(button);
     if (!video) return;
 
     button.addEventListener("click", () => {
@@ -485,14 +463,19 @@
         video.muted = false;
         video.defaultMuted = false;
 
-        const playPromise = video.play();
-        if (playPromise && typeof playPromise.catch === "function") {
-          playPromise.catch(() => {
-            video.dataset.userUnmuted = "";
-            video.muted = true;
-            video.defaultMuted = true;
-            syncAudioButton(button, video);
-          });
+        const restoreMutedAudio = () => {
+          video.dataset.userUnmuted = "";
+          video.muted = true;
+          video.defaultMuted = true;
+          syncAudioButton(button, video);
+        };
+        try {
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === "function") {
+            playPromise.catch(restoreMutedAudio);
+          }
+        } catch (_) {
+          restoreMutedAudio();
         }
       }
 
@@ -547,6 +530,26 @@
       }, 30);
     });
   }
+
+  document.querySelectorAll("[data-email-reveal]").forEach((button) => {
+    const details = document.getElementById(button.getAttribute("aria-controls"));
+    const link = details ? details.querySelector("[data-email-link]") : null;
+    if (!link) return;
+
+    button.addEventListener("click", () => {
+      const address = String.fromCharCode(
+        115, 117, 98, 118, 105, 115, 105, 111, 110, 101, 110, 103, 105, 110, 101, 101,
+        114, 105, 110, 103, 64, 103, 109, 97, 105, 108, 46, 99, 111, 109,
+      );
+      const subject = button.dataset.emailSubject;
+      const protocol = String.fromCharCode(109, 97, 105, 108, 116, 111, 58);
+      link.textContent = address;
+      link.href = `${protocol}${address}${subject ? `?subject=${encodeURIComponent(subject)}` : ""}`;
+      details.hidden = false;
+      button.setAttribute("aria-expanded", "true");
+      link.focus();
+    });
+  });
 
   document.querySelectorAll("[data-current-year]").forEach((node) => {
     node.textContent = String(new Date().getFullYear());

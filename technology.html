@@ -18,9 +18,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/media/logo-mark.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261006e">
   <link rel="stylesheet" href="assets/css/enhancements.css">
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=20261004b" defer></script>
   <script src="assets/js/enhancements.js" defer></script>
 </head>
 <body>
@@ -28,10 +28,10 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="brand" href="index.html" aria-label="Subvision home">
+      <a class="brand" href="index.html" aria-label="Subvision Robotics home">
         <img src="assets/media/logo-mark.png" alt="Subvision logo">
         <span class="brand__text">
-          <strong>Subvision</strong>
+          <strong>Subvision Robotics</strong>
           <span>Subsea prevention systems</span>
         </span>
       </a>
@@ -67,6 +67,50 @@
       </div>
     </section>
 
+    <section class="section section--tight" id="build-and-test">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Build and test media</p>
+          <h2 class="section-title">From fabrication and integration to the water.</h2>
+        </div>
+
+        <div class="build-media-grid">
+          <article class="media-card reveal">
+            <div class="media-card__header">
+              <span class="pill">Assembly sequence</span>
+            </div>
+            <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/prototype-assembly.webp" aria-label="Hands-on assembly and connection work on the ZIMA prototype">
+              <source src="assets/media/prototype-assembly.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption">Hands-on assembly and connection work before the shoreline trial.</p>
+          </article>
+
+          <article class="media-card reveal" data-edit-id="tech-integration-film" data-edit-type="media">
+            <div class="media-card__header">
+              <span class="pill">Bench integration</span>
+            </div>
+            <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/rebuilt-bench-integration.webp" aria-label="Assembly, treatment bars and electrical integration on the ZIMA prototype">
+              <source src="assets/media/rebuilt-bench-integration.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption">Assembly, treatment hardware, and electrical integration on the rebuilt prototype.</p>
+          </article>
+
+          <article class="media-card wide-span reveal" data-edit-id="tech-water-film" data-edit-type="media">
+            <div class="media-card__header">
+              <span class="pill">In-water prototype views</span>
+            </div>
+            <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/rebuilt-water-trial.webp" aria-label="Close surface and underwater views of the rebuilt ZIMA prototype">
+              <source src="assets/media/rebuilt-water-trial.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption">Close surface and underwater views during a supervised shoreline trial.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--tight" id="zima-explorer">
       <div class="container">
         <div class="section-heading reveal" data-edit-id="tech-explorer-heading" data-edit-type="block">
@@ -86,8 +130,8 @@
             <button class="hotspot-dot" type="button" style="--hx: 26%; --hy: 31%;" data-hotspot="1" aria-expanded="false">
               <span class="sr-only">Drive modules</span>
             </button>
-            <button class="hotspot-dot" type="button" style="--hx: 48%; --hy: 45%;" data-hotspot="2" aria-expanded="false">
-              <span class="sr-only">Central treatment bay</span>
+            <button class="hotspot-dot" type="button" style="--hx: 38%; --hy: 45%;" data-hotspot="2" aria-expanded="false">
+              <span class="sr-only">UV-C treatment panels</span>
             </button>
             <button class="hotspot-dot" type="button" style="--hx: 64%; --hy: 67%;" data-hotspot="3" aria-expanded="false">
               <span class="sr-only">Sealed enclosure</span>
@@ -101,8 +145,8 @@
               <p data-edit-id="tech-hotspot-1-copy" data-edit-type="text">Independently steered swerve-drive units that give the rover traction, fine maneuvering, and tight position control on curved steel.</p>
             </div>
             <div class="hotspot-card" hidden data-hotspot-card="2">
-              <h3 data-edit-id="tech-hotspot-2-title" data-edit-type="text">Central treatment bay</h3>
-              <p data-edit-id="tech-hotspot-2-copy" data-edit-type="text">Where the UV-C treatment array integrates into the platform for close-range, repeatable maintenance passes.</p>
+              <h3 data-edit-id="tech-hotspot-2-title" data-edit-type="text">UV-C treatment panels</h3>
+              <p data-edit-id="tech-hotspot-2-copy" data-edit-type="text">The three clear plates carrying UV-C tubes are designed for close-range, repeatable treatment passes.</p>
             </div>
             <div class="hotspot-card" hidden data-hotspot-card="3">
               <h3 data-edit-id="tech-hotspot-3-title" data-edit-type="text">Sealed enclosure</h3>
@@ -118,122 +162,87 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container split-grid split-grid--balanced">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Prevention first</p>
-          <h2 class="section-title">Prevent growth early instead of removing heavy fouling later.</h2>
-          <div class="section-copy">
-            <p>
-              The goal is not to wait until the hull is dirty enough to justify a major cleaning event. The goal is to keep the hull from getting there in the first place.
+    <section class="section" id="hull-demo">
+      <div class="container">
+        <div class="section-heading section-heading--wide reveal" data-edit-id="tech-demo-heading" data-edit-type="block">
+          <p class="section-kicker" data-edit-id="tech-demo-kicker" data-edit-type="text">Interactive demo</p>
+          <h2 class="section-title" data-edit-id="tech-demo-title" data-edit-type="text">Fouling never stops. See what prevention looks like.</h2>
+          <div class="section-copy" data-edit-id="tech-demo-copy-block" data-edit-type="block">
+            <p data-edit-id="tech-demo-copy" data-edit-type="text">
+              Growth keeps appearing on the plate below. Drive the rover yourself, or switch to auto passes to see how short, repeatable maintenance cycles keep a hull close to its clean baseline.
             </p>
           </div>
         </div>
 
-        <aside class="support-band reveal">
-          <p class="section-kicker">ZIMA in one line</p>
-          <strong>Hull-climbing mobility, close-range treatment, repeatable maintenance passes.</strong>
-          <p>
-            The operating logic is simple — and the progression behind it is visible, from first proof of concept to the current hardware.
-          </p>
-        </aside>
+        <div class="hull-demo reveal" data-hull-demo>
+          <div class="hull-demo__hud">
+            <div class="hull-demo__stat">
+              <span class="hull-demo__label">Hull cleanliness</span>
+              <div class="hull-demo__meter"><span data-demo-clean-bar></span></div>
+              <strong data-demo-clean-value>100%</strong>
+            </div>
+            <div class="hull-demo__stat">
+              <span class="hull-demo__label">Drag penalty</span>
+              <div class="hull-demo__meter hull-demo__meter--drag"><span data-demo-drag-bar></span></div>
+              <strong data-demo-drag-value>Low</strong>
+            </div>
+            <div class="hull-demo__controls">
+              <button class="demo-btn is-active" type="button" data-demo-mode="manual" aria-pressed="true">You drive</button>
+              <button class="demo-btn" type="button" data-demo-mode="auto" aria-pressed="false">Auto passes</button>
+              <button class="demo-btn" type="button" data-demo-reset>Reset plate</button>
+            </div>
+          </div>
+          <div class="hull-demo__stage">
+            <canvas data-demo-canvas tabindex="0" role="img" aria-label="Interactive demo of a rover keeping a hull plate clean. Use the arrow keys or your cursor to drive the rover."></canvas>
+            <div class="hull-demo__hint" data-demo-hint>Move your cursor or use the arrow keys to drive the rover</div>
+          </div>
+          <p class="small-note hull-demo__note" data-edit-id="tech-demo-note" data-edit-type="text">Illustrative interaction to show the prevention-first idea. Not a simulation of real system performance.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="operating-logic">
       <div class="container">
+        <div class="tech-operating-intro">
         <div class="section-heading reveal" data-edit-id="tech-operating-logic-heading" data-edit-type="block">
           <p class="section-kicker" data-edit-id="tech-operating-logic-kicker" data-edit-type="text">Operating logic</p>
           <h2 class="section-title" data-edit-id="tech-operating-logic-title" data-edit-type="text">What the system is designed to do.</h2>
         </div>
-
-        <div class="card-grid card-grid--four stagger">
-          <article class="card">
-            <h3>Adhering mobility platform</h3>
-            <p>A hull-climbing platform designed to stay attached and move predictably across curved steel surfaces.</p>
-          </article>
-          <article class="card">
-            <h3>Close-range UV-C treatment</h3>
-            <p>A compact treatment module designed to target early-stage growth before it becomes established fouling.</p>
-          </article>
-          <article class="card">
-            <h3>Frequent maintenance passes</h3>
-            <p>Regular treatment cycles keep the hull closer to a clean baseline instead of letting buildup accumulate.</p>
-          </article>
-          <article class="card">
-            <h3>Container fleet relevance</h3>
-            <p>ZIMA is being developed around commercial operating reality: repeatability, coverage, uptime, and easier integration into maintenance workflows.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split-grid split-grid--balanced">
-        <div class="reveal" data-edit-id="tech-sim-intro" data-edit-type="block">
-          <div class="section-heading">
-            <p class="section-kicker" data-edit-id="tech-sim-kicker" data-edit-type="text">Simulation demo</p>
-            <h2 class="section-title" data-edit-id="tech-sim-title" data-edit-type="text">Simulation and controls work supporting the physical build.</h2>
-            <div class="section-copy">
-              <p data-edit-id="tech-sim-copy-1" data-edit-type="text">
-                This clip shows how the team is thinking about motion, pathing, and system behavior beyond the physical prototype. It connects the visible hardware program to the software and controls layer underneath it.
-              </p>
-              <p data-edit-id="tech-sim-copy-2" data-edit-type="text">
-                The development work is not just mechanical — controls and system behavior are part of the build too.
-              </p>
-            </div>
-          </div>
+          <aside class="prevention-note reveal">
+            <p class="section-kicker">Prevention first</p>
+            <h3>Prevent growth early.</h3>
+            <p>Hull-climbing mobility, close-range UV-C treatment, and short, repeatable passes are designed to keep early growth from becoming heavy fouling.</p>
+          </aside>
         </div>
 
-        <article class="media-card reveal" data-edit-id="tech-sim-video" data-edit-type="media">
-          <div class="media-card__header">
-            <span class="pill">OppFest simulation demo</span>
-            <div class="media-card__actions">
-              <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
-            </div>
+        <div class="tech-operating-layout">
+          <div class="card-grid tech-operating-cards">
+            <article class="card reveal">
+              <h3>Adhering mobility platform</h3>
+              <p>A hull-climbing platform designed to stay attached and move predictably across curved steel surfaces.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Close-range UV-C treatment</h3>
+              <p>A compact treatment module designed to target early-stage growth before it becomes established fouling.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Frequent maintenance passes</h3>
+              <p>Regular treatment cycles keep the hull closer to a clean baseline instead of letting buildup accumulate.</p>
+            </article>
+            <article class="card reveal">
+              <h3>Container fleet relevance</h3>
+              <p>ZIMA is being developed around commercial operating reality: repeatability, coverage, uptime, and easier integration into maintenance workflows.</p>
+            </article>
           </div>
-          <video class="media-video" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/oppfest-sim-demo.webp">
-            <source src="assets/media/oppfest-sim-demo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p class="media-caption" data-edit-id="tech-sim-caption" data-edit-type="text">Excerpt from Subvision's OppFest presentation, showing early simulation work on ZIMA's motion and pathing.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-heading reveal" data-edit-id="tech-proprietary-heading" data-edit-type="block">
-          <p class="section-kicker" data-edit-id="tech-proprietary-kicker" data-edit-type="text">Proprietary development</p>
-          <h2 class="section-title" data-edit-id="tech-proprietary-title" data-edit-type="text">Two core subsystems under active development.</h2>
-          <div class="section-copy">
-            <p data-edit-id="tech-proprietary-copy" data-edit-type="text">
-              These CAD views highlight two important parts of the ZIMA platform: the mobility system that controls motion on the hull and the UV-C treatment module that enables prevention-focused operation.
-            </p>
-          </div>
-        </div>
-
-        <div class="build-media-grid stagger">
-          <article class="media-card" data-edit-id="tech-swerve-card" data-edit-type="media">
+          <article class="media-card reveal" data-edit-id="tech-operating-sim-video" data-edit-type="media">
             <div class="media-card__header">
-              <span class="pill">Mobility platform</span>
+              <span class="pill">Simulation demo</span>
             </div>
-            <img src="assets/media/swerve-drive-gearbox.png" alt="CAD render of Subvision's underwater swerve drive gearbox" loading="lazy" decoding="async">
-            <h3 class="media-card__title" data-edit-id="tech-swerve-title" data-edit-type="text">Underwater swerve-drive mobility</h3>
-            <p class="media-caption" data-edit-id="tech-swerve-caption" data-edit-type="text">
-              This drive system is being developed to give ZIMA finer maneuvering, better positioning, and tighter motion control while attached to the hull.
-            </p>
-          </article>
-
-          <article class="media-card" data-edit-id="tech-uvc-card" data-edit-type="media">
-            <div class="media-card__header">
-              <span class="pill">Cleaning hardware</span>
-            </div>
-            <img src="assets/media/uvc-array.png" alt="CAD render of the UV-C array mounted inside ZIMA" loading="lazy" decoding="async">
-            <h3 class="media-card__title" data-edit-id="tech-uvc-title" data-edit-type="text">Integrated UV-C treatment array</h3>
-            <p class="media-caption" data-edit-id="tech-uvc-caption" data-edit-type="text">
-              This module is designed to maintain close-range, repeatable treatment during each pass so the system can operate as a preventative maintenance tool.
-            </p>
+            <video class="media-video" data-autoplay-video autoplay muted loop playsinline preload="metadata" poster="assets/media/oppfest-sim-demo.webp" aria-label="Simulation of ZIMA moving along a virtual hull">
+              <source src="assets/media/oppfest-sim-demo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="media-caption" data-edit-id="tech-operating-sim-caption" data-edit-type="text">Early simulation of ZIMA’s motion and pathing. Real-world passes would use tighter, more closely spaced patterns.</p>
           </article>
         </div>
       </div>
@@ -301,91 +310,46 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" id="development-story">
       <div class="container editorial-grid">
         <div class="reveal" data-edit-id="tech-development-story" data-edit-type="block">
           <div class="section-heading">
             <p class="section-kicker" data-edit-id="tech-development-kicker" data-edit-type="text">Development story</p>
-            <h2 class="section-title" data-edit-id="tech-development-title" data-edit-type="text">Built through iteration, not just concept work.</h2>
+            <h2 class="section-title" data-edit-id="tech-development-title" data-edit-type="text">Built through iteration.</h2>
             <div class="section-copy">
               <p data-edit-id="tech-development-copy" data-edit-type="text">
-                The program has moved from early proof-of-concept hardware to integrated CAD, larger assemblies, and in-water testing. That progression matters because it shows the rover is being solved as a real subsea system.
+                Our early proof-of-concept hardware and hands-on underwater robotics work shaped the team’s approach to subsea design. Today, we’re developing ZIMA’s custom swerve drive, UV-C treatment hardware, electronics, and controls together, moving from CAD to machining and assembly. Working on the complete rover helps us see how the parts fit together and what to refine in the next build.
               </p>
             </div>
           </div>
-
-          <div class="card-grid card-grid--compact stagger">
-            <article class="card">
-              <h3>First proof of concept</h3>
-              <p>An early proof of concept that established the first system architecture.</p>
-            </article>
-            <article class="card">
-              <h3>Early testing</h3>
-              <p>In-water tests that turned isolated parts into real design decisions.</p>
-            </article>
-            <article class="card">
-              <h3>Current direction</h3>
-              <p>A more complete rover architecture shaped by build experience and testing.</p>
-            </article>
-          </div>
         </div>
 
-        <div class="gallery-grid stagger">
-          <div class="feature-image">
-            <img src="assets/media/mop-proof.webp" alt="Subvision's first proof-of-concept build on a workbench" loading="lazy" decoding="async">
-          </div>
-          <div class="stack-grid">
+        <div class="development-gallery stagger">
+          <figure class="development-gallery__lead">
             <div class="feature-image">
-              <img src="assets/media/early-robot-test.webp" alt="Early robot test near a pool" loading="lazy" decoding="async">
+              <img src="assets/media/swerve-drive-workbench.webp" alt="Swerve-drive housings, gears and components laid out on the workbench" width="1200" height="1600" loading="lazy" decoding="async">
             </div>
-            <div class="feature-image">
-              <img src="assets/media/frame-build.webp" alt="Large rover frame assembly" loading="lazy" decoding="async">
-            </div>
+            <figcaption class="media-caption">Swerve-drive components on the workbench.</figcaption>
+          </figure>
+          <div class="development-gallery__archive">
+            <figure class="development-gallery__proof">
+              <div class="feature-image">
+                <img src="assets/media/mop-proof.webp" alt="An early proof-of-concept build on a workbench" width="1125" height="1500" loading="lazy" decoding="async">
+              </div>
+              <figcaption class="media-caption">Early proof of concept.</figcaption>
+            </figure>
+            <figure class="development-gallery__early">
+              <div class="feature-image">
+                <img src="assets/media/early-robot-test.webp" alt="Early underwater robotics work beside a pool" width="1125" height="1500" loading="lazy" decoding="async">
+              </div>
+              <figcaption class="media-caption">Early underwater robotics exploration.</figcaption>
+            </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Build and test media</p>
-          <h2 class="section-title">Build footage and test media from the current development cycle.</h2>
-        </div>
-
-        <div class="build-media-grid stagger">
-          <article class="media-card">
-            <div class="media-card__header">
-              <span class="pill">Assembly sequence</span>
-              <div class="media-card__actions">
-                <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
-              </div>
-            </div>
-            <video class="media-video" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/frame-build.webp">
-              <source src="assets/media/assembly-sequence.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <p class="media-caption">Fabrication footage showing how the current system is being assembled and refined.</p>
-          </article>
-
-          <article class="media-card">
-            <div class="media-card__header">
-              <span class="pill">Early underwater test clip</span>
-              <div class="media-card__actions">
-                <button class="video-toggle" type="button" data-video-toggle aria-label="Pause video">Pause video</button>
-              </div>
-            </div>
-            <video class="media-video" data-autoplay-video muted loop playsinline preload="metadata" poster="assets/media/early-robot-test.webp">
-              <source src="assets/media/test-rig.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <p class="media-caption">Early in-water testing that keeps the technology grounded in real experimentation.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
+<section class="section">
       <div class="container cta-panel">
         <div class="cta-shell reveal">
           <div>
@@ -430,7 +394,10 @@
       <div>
         <h3>Reach out</h3>
         <ul class="footer-list">
-          <li><a href="mailto:subvisionengineering@gmail.com">subvisionengineering@gmail.com</a></li>
+          <li class="email-contact">
+            <button class="email-reveal--plain" type="button" data-email-reveal aria-expanded="false" aria-controls="footer-email">Show email</button>
+            <span class="email-contact__details" id="footer-email" hidden><a data-email-link></a></span>
+          </li>
           <li><a href="https://www.linkedin.com/company/subvision-engineering/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/subvision.robotics" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         </ul>
